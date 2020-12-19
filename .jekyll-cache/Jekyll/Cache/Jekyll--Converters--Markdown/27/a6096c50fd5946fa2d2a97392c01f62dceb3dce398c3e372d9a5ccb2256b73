@@ -1,0 +1,49 @@
+I"�<h1 id="jekyll-xixia">Jekyll Xixia</h1>
+
+<ul>
+  <li>Get it from <a href="https://github.com/zxixia/jekyll-xixia">github</a>.</li>
+  <li>See the <a href="http://xixia.info/jekyll-xixia/">live demo</a>.</li>
+  <li>See it <a href="http://xixia.info/">in action on my own blog</a>.</li>
+</ul>
+
+<p>A simple and clean Jekyll theme using <a href="http://getbootstrap.com">bootstrap</a>
+(not to be confused with jekyll-bootstrap) that’s easy to modify and very
+modular in component and element reuse.</p>
+
+<p>The theme works well on mobile phones, using a collapsable nav bar and hiding the
+sidebar. The links pane in the sidebar is available on mobile through the nav menu,
+and you can do the same thing for any other sections added to the sidebar.</p>
+
+<p>Don’t forget to occassionally merge against my upstream repository so you can get
+the latest changes. Pull requests are encouraged and accepted!</p>
+
+<h1 id="preview">Preview</h1>
+<p><img src="/jekyll-xixia//assets/images/preview.png" alt="Xixia" /></p>
+
+<h1 id="license">License</h1>
+
+<p>The content of this theme is distributed and licensed under a
+<img src="/jekyll-xixia/assets/images/cc_by_88x31.png" alt="License Badge" />
+<a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 License</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This license lets others distribute, remix, tweak, and build upon your work,
+even commercially, as long as they credit you for the original creation. This
+is the most accommodating of licenses offered. Recommended for maximum
+dissemination and use of licensed materials.
+</code></pre></div></div>
+
+<p>In other words: you can do anything you want with this theme on any site, just please
+provide a link to <a href="https://github.com/zxixia/jekyll-xixia">the original theme on github</a>
+so I get credit for the original design. Beyond that, have at it!</p>
+
+<h1 id="thanks">Thanks</h1>
+
+<p>1，<a href="http://jekyllrb.com/">Jekyll</a></p>
+
+<p>2，<a href="http://getbootstrap.com/">Bootstrap</a></p>
+
+<p>3，<a href="https://github.com/">Github</a></p>
+
+<p>4，<a href="https://github.com/scotte/jekyll-clean">Jekyll Clean Theme</a></p>
+
+:ET
