@@ -1,92 +1,136 @@
 ---
 layout: default
+# The posts' layout
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2017-2019 Cotes Chung
+# MIT Licensed
 ---
-{% assign trans = site.data.values[site.lan] %}
-<div class="well article">
-        <h2><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a></h2>
-        <span class="post-date">
-            {% assign date_format = site.date_format.title %}
-            {{ page.date | date: date_format }}
-        </span>
-        <hr style="border-top:1px solid #28323C;"/>
-    {% if site.comments and page.comments %}
-        {% if site.disqus != '' %}
-        <p class="author"><a href="#disqus_thread" data-disqus-identifier="{{ page.url | slugify }}">Comments</a></p>
-        {% elsif site.isso != '' %}
-        <p class="author"><a href="{{ site.baseurl }}{{ page.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
+
+<div class="row">
+
+  <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
+
+    <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+      <h1 data-toc-skip>{{ page.title }}</h1>
+
+      <div class="post-meta text-muted d-flex flex-column">
+        <!-- Published date and author -->
+        <div>
+          {% include timeago.html date=page.date tooltip=true %}
+          by
+          <span class="author">
+            {{ page.author | default: site.author }}
+          </span>
+        </div>
+
+        <div>
+          <!-- lastmod -->
+          {% if page.last_modified_at %}
+          <span>
+            Updated
+            {% include timeago.html date=page.last_modified_at class="lastmod" tooltip=true %}
+          </span>
+          {% endif %}
+
+          <!-- read time -->
+          {% include read-time.html content=content %}
+
+          <!-- page views -->
+          {% if site.google_analytics.pv.enabled %}
+          <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
+          {% endif %}
+
+        </div>
+
+      </div> <!-- .post-meta -->
+
+      <div class="post-content">
+        {%- capture img_placehodler -%}
+          data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+        {%- endcapture -%}
+
+        {% if page.image %}
+          <img src="{{ img_placehodler }}" data-src="{{ page.image }}" class="preview-img">
         {% endif %}
-    {% endif %}
-    <div class="post-content">
-    {{ content }}
-    <hr style="border-top:1px solid #28323C;"/>
 
-    <!-- tags and categories under post -->
-    {% unless page.categories == empty %}
-    <ul class="list-unstyled list-inline">
-      <li><i class="icon-folder-open"></i></li>
-      {% assign categories_list = page.categories %}
-      {% if categories_list.first[0] == null %}
-        {% for category in categories_list %} 
-            <li class="icon-style"><a href="{{ site.baseurl }}/categories.html">
-                {{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
-                {% unless forloop.last %},{% endunless %}
-            </a></li>
-        {% endfor %}
-      {% else %}
-        {% for category in categories_list %} 
-            <li class="icon-style"><a href="{{ site.baseurl }}/categories.html">
-                {{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span>
-            </a></li>
-        {% endfor %}
-      {% endif %}
-    </ul>
-    {% endunless %}  
-
-    {% unless page.tags == empty %}
-    <ul class="list-unstyled list-inline">
-      <li><i class="icon-tags"></i></li>
-      {% assign tags_list = page.tags %}
-      {% if tags_list.first[0] == null %}
-        {% for tag in tags_list %} 
-            <li class="icon-style">
-                <a href="{{ site.baseurl }}/tags.html">
-                {{ tag }} <span>({{ site.tags[tag].size }})</span>
-                {% unless forloop.last %},{% endunless %}
-                </a>
-            </li>
-        {% endfor %}
-      {% else %}
-        {% for tag in tags_list %} 
-            <li class="icon-style">
-                <a href="{{ site.baseurl }}/tags.html">
-                    {{ tag[0] }} <span>({{ tag[1].size }})</span>
-                    {% unless forloop.last %},{% endunless %}
-                </a>
-            </li>
-           
-        {% endfor %}
-      {% endif %}
-      {% assign tags_list = nil %}
-    </ul>
-    {% endunless %}  
-
-    </div>
-    {% if page.comments %}
-        {% if site.disqus != '' %}
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-        {% elsif site.isso != '' %}
-        <section id="isso-thread"></section>
+        <!-- Using lozad. See: <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+        {% if content contains '<img src=' %}
+          {% assign replacement = '<img src="' | append: img_placehodler | append: '" data-src=' %}
+          {{ content | replace: '<img src=', replacement }}
+        {% else %}
+          {{ content }}
         {% endif %}
+      </div>
+
+      <div class="post-tail-wrapper text-muted">
+
+        <!-- categories -->
+        {% if page.categories.size > 0 %}
+        <div class="post-meta mb-3">
+          <i class="far fa-folder-open fa-fw mr-1"></i>
+          {% for category in page.categories %}
+            <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- tags -->
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw mr-1"></i>
+          {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+            class="post-tag no-text-decoration" >
+            {{- tag -}}
+          </a>
+          {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="post-tail-bottom
+          d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+          {% if site.data.rights.license %}
+          <div class="license-wrapper">
+            This post is licensed under
+            <a href="{{ site.data.rights.license.link }}">{{ site.data.rights.license.name }}</a>
+            by the author.
+          </div>
+          {% endif %}
+
+          {% include post-sharing.html %}
+
+        </div><!-- .post-tail-bottom -->
+
+      </div><!-- div.post-tail -->
+
+    </div> <!-- .post -->
+
+
+  </div> <!-- #post-wrapper -->
+
+  {% include panel.html %}
+
+</div> <!-- .row -->
+
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+    {% include related-posts.html %}
+
+    {% include post-nav.html %}
+
+    {% if site.disqus.comments and page.comments %}
+      {% include disqus.html %}
     {% endif %}
-</div>
-<div class="pagination">
-    {% if page.next %}
-    <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">{{ trans.newer_post }}</a>
-    {% endif %}
-    {% if page.previous %}
-    <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">{{ trans.older_post }}</a>
-    {% endif %}
-</div>
+
+    </div> <!-- #post-extend-wrapper -->
+
+  </div> <!-- .col-* -->
+
+</div> <!-- .row -->
+
+{% include lozad.html %}

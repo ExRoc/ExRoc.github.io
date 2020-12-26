@@ -1,8 +1,7 @@
-*Thumbs.db
-.bundle
-.sass-cache
-Gemfile.lock
+# hidden files
+.*
+!.github
+
+# jekyll cache
 _site
-*.gem
-*.bak
-.jekyll-cache/*
+vendor

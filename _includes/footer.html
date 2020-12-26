@@ -1,22 +1,33 @@
-{% assign trans = site.data.values[site.lan] %}
-<div class="footer">
-    <p>&copy;{{ site.time | date: '%Y' }} {{ site.name }}{{ trans.thanks }}
-            {% for thank in site.data.thanks %}
-                <a href="{{ thank.url }}">
-                {{ thank.title }}
-                </a>
-                <!-- not the last, output a ',' -->
-                {% if forloop.last == false %}
-                ,
-                {% endif %}
-            {% endfor %}
-    </p>
-</div>
-
-<!-- 
-    {% include disqus-counts.html %}
-    {% include analytics.html %} 
+<!--
+  The Footer
+  v2.0
+  https://github.com/cotes2020/jekyll-theme-chirpy
+  © 2017-2019 Cotes Chung
+  MIT License
 -->
 
-</body>
-</html>
+<footer class="d-flex w-100 justify-content-center">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="footer-left">
+      <p class="mb-0">
+        © {{ 'now' | date: "%Y" }}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+        {% if site.data.rights.brief %}
+        <span data-toggle="tooltip" data-placement="top"
+          title="{{ site.data.rights.verbose }}">{{ site.data.rights.brief }}</span>
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <p class="mb-0">
+        Powered by
+        <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+        with
+        <a href="{{ site.data.meta.homepage }}" target="_blank" rel="noopener">{{ site.data.meta.name }}</a>
+        theme.
+      </p>
+    </div>
+
+  </div> <!-- div.d-flex -->
+</footer>
