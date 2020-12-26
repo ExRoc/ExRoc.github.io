@@ -1,6 +1,7 @@
 # hidden files
 .*
 !.github
+!.gitignore
 
 # jekyll cache
 _site
