@@ -39,6 +39,8 @@ baidu_site_verification: code-WA9wrbry75
 
 baseurl: ''
 
+encoding: UTF-8
+
 # › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Shanghai
 
