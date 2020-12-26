@@ -9,7 +9,7 @@
   icon: 'fab fa-github-alt'
 -
   type: qq
-  icon: 'fab fa-qq'
+  icon: 'fa fa-qq'
 -
   type: email
   icon: 'fas fa-envelope'
