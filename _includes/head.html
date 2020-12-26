@@ -43,6 +43,14 @@
     {% endif %}
   {% endif %}
 
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.google_analytics.gtm_id }}');</script>
+  <!-- End Google Tag Manager -->
+
   <!-- Baidu Verification -->
   <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}" />
 
@@ -60,7 +68,6 @@
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
     integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
     crossorigin="anonymous">
-   <link rel="stylesheet" href="assets/css/font-awesome.css">
 
   {% include css-selector.html %}
 
