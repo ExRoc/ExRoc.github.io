@@ -7,19 +7,17 @@
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: ExRoc                          # the main title
 
-tagline: A text-focused Jekyll theme.  # it will display as the sub-title
+tagline: 欲问苍天借看破<br/>知世事因果  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  这是一个和 ExRoc 相关的博客，里面有他的个人生活、兴趣、吐槽、想法，还有关于 ACM 的题解、知识点讲解，和一些技术文章，不定期更新……
 
 # fill in the base hostname & protocol for your site, e.g., 'https://username.github.io'
 url: ''
 
-author: your_full_name                  # change to your full name
+author: ExRoc                  # change to your full name
 
 avatar: /assets/img/sample/avatar.jpg   # support internet resources
 
