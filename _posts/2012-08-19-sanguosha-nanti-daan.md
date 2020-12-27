@@ -1,8 +1,8 @@
 ---
 title: 三国杀难题答案
 date: 2012-08-19 21:56:00 +0800
-categories: [三国杀, 答案]
-tags: [三国杀]
+categories: [High school, Three kingdoms]
+tags: [Three kingdoms, Solution]
 author: 江山如画丨
 ---
 

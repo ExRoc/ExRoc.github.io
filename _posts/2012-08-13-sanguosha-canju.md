@@ -1,8 +1,8 @@
 ---
 title: 三国杀残局
 date: 2012-08-13 19:43:00 +0800
-categories: [三国杀, 谜题]
-tags: [三国杀]
+categories: [High school, Three kingdoms]
+tags: [Three kingdoms, Puzzle]
 author: 江山如画丨
 ---
 

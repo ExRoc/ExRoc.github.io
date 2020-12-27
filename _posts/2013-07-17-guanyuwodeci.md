@@ -1,8 +1,8 @@
 ---
 title: 关于我的词
 date: 2013-07-17 20:05:00 +0800
-categories: [高中, 其他]
-tags: [杂]
+categories: [High school, Others]
+tags: []
 author: 江山如画丨
 ---
 

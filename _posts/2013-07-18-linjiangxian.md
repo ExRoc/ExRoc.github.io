@@ -1,8 +1,8 @@
 ---
 title: 临江仙
 date: 2013-07-18 13:25:00 +0800
-categories: [高中, 词]
-tags: [词]
+categories: [High school, Poems]
+tags: [Poem]
 author: 江山如画丨
 ---
 

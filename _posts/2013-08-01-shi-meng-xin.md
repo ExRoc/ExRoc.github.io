@@ -1,8 +1,8 @@
 ---
 title: 拾、梦 馨
 date: 2013-08-01 21:50:00 +0800
-categories: [高中, 古风]
-tags: [古风]
+categories: [High school, Antiquity]
+tags: [Antiquity]
 author: 江山如画丨
 ---
 
