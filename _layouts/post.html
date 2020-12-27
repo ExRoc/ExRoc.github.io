@@ -25,25 +25,20 @@ layout: default
           </span>
         </div>
 
-        <div>
-          <!-- lastmod -->
-          <script>
-            console.log('{{ page.last_modified_at }}')
-          </script>
-          
-          {% if page.last_modified_at %}
-          <span>
+        <!-- lastmod -->
+        {% if page.last_modified_at %}
+          <div>
             Updated
             {% include timeago.html date=page.last_modified_at class="lastmod" tooltip=true %}
-          </span>
-          {% endif %}
+          </div>
+        {% endif %}
 
-          <!-- page views -->
-          {% if site.google_analytics.pv.enabled %}
-          <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
-          {% endif %}
-
-        </div>
+        <!-- page views -->
+        {% if site.google_analytics.pv.enabled %}
+          <div>
+            <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
+          </div>
+        {% endif %}
 
       </div> <!-- .post-meta -->
 
