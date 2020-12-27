@@ -12,8 +12,7 @@ jobs:
   continuous-delivery:
 
     runs-on: ubuntu-latest
-    timeout-minutes: 1200
-    
+
     env:
       GEMS_PATH: ~/vendor/bundle
 
