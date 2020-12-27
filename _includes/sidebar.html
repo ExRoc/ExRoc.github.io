@@ -63,8 +63,8 @@
     {% capture url %}
       {%- if entry.type == 'github' -%}
         https://github.com/{{ site.github.username }}
-      {%- elsif entry.type == 'twitter' -%}
-        https://twitter.com/{{ site.twitter.username }}
+      {%- elsif entry.type == 'qq' -%}
+        http://wpa.qq.com/msgrd?v=3&uin={{ site.qq.number }}&site=qq&menu=yes
       {%- elsif entry.type == 'email' -%}
         {% assign email = site.social.email | split: '@' %}
         javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
