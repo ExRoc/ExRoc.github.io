@@ -6,7 +6,7 @@
 {% assign words = include.content | strip_html | number_of_words: "auto" %}
 {% endcomment %}
 
-{% assign ccontent = include.content | strip_html | number_of_words: 'auto' %}
+{% assign ccontent = include.content | strip_html | number_of_words: 'cjk' %}
 <script>
   console.log('{{ ccontent }}')
 </script>
