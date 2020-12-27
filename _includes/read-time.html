@@ -6,6 +6,11 @@
 {% assign words = include.content | strip_html | number_of_words: "auto" %}
 {% endcomment %}
 
+{% assign ccontent = include.content %}
+<script>
+  console.log('{{ ccontent }}')
+</script>
+
 {% assign words = 179 %}
 
 {% assign read_time = words | divided_by: site.data.read_time.wpm %}
