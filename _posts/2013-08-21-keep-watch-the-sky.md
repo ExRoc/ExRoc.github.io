@@ -4,7 +4,7 @@ date: 2013-08-21 12:50:00 +0800
 categories: [High_school, Antiquity]
 tags: [New_Moon]
 author: 寒月
-image: /assets/img/posts/shouwangyifangtiankong/title_page.jpg
+image: /assets/img/posts/keep-watch-the-sky/title_page.jpg
 ---
 
 我曾想过一千次与你相遇的情景
