@@ -1,9 +1,5 @@
 ---
 title: Creative Docs .NET
-author: PipisCrew
-date: 2012-02-13
-categories: Hello
-toc: true
 ---
 
 Specially designed as a vector-based graphic design instrument that supports rich text and is ideal write short documents, posters, illustrations, schemas, flow charts, and other type of documents
