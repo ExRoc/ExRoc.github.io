@@ -27,6 +27,10 @@ layout: default
 
         <div>
           <!-- lastmod -->
+          <script>
+            console.log('{{ page.last_modified_at }}')
+          </script>
+          
           {% if page.last_modified_at %}
           <span>
             Updated
