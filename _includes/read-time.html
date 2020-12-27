@@ -6,13 +6,13 @@
 {% assign words = include.content | strip_html | number_of_words: "auto" %}
 
 {% assign read_time = words | divided_by: site.data.read_time.wpm %}
+{% endcomment %}
+
+{% assign read_time = 0 %}
 
 {% unless read_time > 0 %}
   {% assign read_time = site.data.read_time.min_time %}
 {% endunless %}
-{% endcomment %}
-
-{% assign read_time = 10 %}
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="{{ words }} words">
