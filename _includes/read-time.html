@@ -4,11 +4,11 @@
 
 {% comment %}
 {% assign words = include.content | strip_html | number_of_words: "auto" %}
-
-{% assign read_time = words | divided_by: site.data.read_time.wpm %}
 {% endcomment %}
 
-{% assign read_time = 0 %}
+{% assign words = 179 %}
+
+{% assign read_time = words | divided_by: site.data.read_time.wpm %}
 
 {% unless read_time > 0 %}
   {% assign read_time = site.data.read_time.min_time %}
