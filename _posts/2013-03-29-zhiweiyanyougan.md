@@ -1,8 +1,8 @@
 ---
 title: 志伟言有感
 date: 2013-03-29 20:25:00 +0800
-categories: [High school, Classical Chinese]
-tags: [Classical Chinese, Article]
+categories: [High_school, Classical_Chinese]
+tags: [Classical_Chinese, Article]
 author: 江山如画丨
 ---
 

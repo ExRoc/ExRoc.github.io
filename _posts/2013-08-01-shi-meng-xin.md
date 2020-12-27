@@ -1,7 +1,7 @@
 ---
 title: 拾、梦 馨
 date: 2013-08-01 21:50:00 +0800
-categories: [High school, Antiquity]
+categories: [High_school, Antiquity]
 tags: [Antiquity]
 author: 江山如画丨
 ---

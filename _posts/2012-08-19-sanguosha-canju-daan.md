@@ -1,8 +1,8 @@
 ---
 title: 三国杀残局答案
 date: 2012-08-19 21:55:00 +0800
-categories: [High school, Three kingdoms]
-tags: [Three kingdoms, Solution]
+categories: [High_school, Three_kingdoms]
+tags: [Three_kingdoms, Solution]
 author: 江山如画丨
 ---
 

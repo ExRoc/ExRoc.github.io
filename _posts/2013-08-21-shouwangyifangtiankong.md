@@ -1,8 +1,8 @@
 ---
 title: 守望一方天空【转】
 date: 2013-08-21 12:50:00 +0800
-categories: [High school, Antiquity]
-tags: [New Moon]
+categories: [High_school, Antiquity]
+tags: [New_Moon]
 author: 寒月
 image: /assets/img/posts/shouwangyifangtiankong/title_page.jpg
 ---

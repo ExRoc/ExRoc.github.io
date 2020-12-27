@@ -1,7 +1,7 @@
 ---
 title: 致校运会
 date: 2012-12-08 22:22:00 +0800
-categories: [High school, Others]
+categories: [High_school, Others]
 tags: [Article]
 author: 江山如画丨
 ---

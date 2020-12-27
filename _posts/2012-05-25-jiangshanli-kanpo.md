@@ -1,7 +1,7 @@
 ---
 title: 看破
 date: 2012-05-25 20:12:00 +0800
-categories: [High school, Poems]
+categories: [High_school, Poems]
 tags: [Poem]
 author: 江山如画丨
 ---
