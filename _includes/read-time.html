@@ -1,14 +1,18 @@
 <!--
   Calculate the post's reading time, and display the word count in tooltip
  -->
+
+{% comment %}
 {% assign words = include.content | strip_html | number_of_words: "auto" %}
 
-<!-- {% assign read_time = words | divided_by: site.data.read_time.wpm %} -->
-{% assign read_time = words %}
+{% assign read_time = words | divided_by: site.data.read_time.wpm %}
 
 {% unless read_time > 0 %}
   {% assign read_time = site.data.read_time.min_time %}
 {% endunless %}
+{% endcomment %}
+
+{% assign read_time = 10 %}
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="{{ words }} words">
