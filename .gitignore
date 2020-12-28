@@ -4,6 +4,6 @@
 !.gitignore
 
 # jekyll cache
-# _site
+_site
 vendor
 
