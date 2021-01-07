@@ -10,15 +10,5 @@ order: 4
 # MIT License
 ---
 
-## Links
 
-- [CSDN](https://blog.csdn.net/csdnjiangshan)
-- [作业部落](https://www.zybuluo.com/Dmaxiya/note/1015036)
-
-## Tanks
-
-- [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/)
-- [Github](https://github.com/)
-- [Jekyll](https://jekyllrb.com/)
-- [Bootstrap](https://getbootstrap.com/)
-
+> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
