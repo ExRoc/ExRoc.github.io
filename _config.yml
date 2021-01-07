@@ -152,6 +152,17 @@ defaults:
           label: Home
           url: /
 
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: '/tags/:name/'
+    category: '/categories/:name/'
+
 sass:
   sass_dir: /assets/css
   style: compressed
@@ -173,12 +184,3 @@ exclude:
   - docs
   - README.md
   - LICENSE
-
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: '/tags/:name/'
-    category: '/categories/:name/'
