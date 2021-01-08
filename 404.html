@@ -70,13 +70,10 @@ dynamic_title: true
 
 <div class="lead">
   <img src="{{ site.baseurl }}/assets/img/site/404.png" />
-  <p>啊哦~你访问的页面不见了……</p>
-  <p>你可以点击<a href="{{ site.baseurl }}/">这里</a>返回首页，或者进入 <a href="{{ site.baseurl }}/tabs/archives"> Archives 页面</a>再次查找。</p>
-  <button type="button" class="btn btn-info" οnclick="window.location.href='{{ site.baseurl }}/'">返回首页</button>
-  <center>
-    <div class="btn-group">
-      <button type="button" class="btn btn-404" onclick="window.location.href('{{ site.baseurl }}/')">返回首页</button>
-      <button type="button" class="btn btn-404" οnclick="window.location.href='{{ site.baseurl }}/tabs/archives'">进入 Archives 页面</button>
-    </div>
-  </center>
 </div>
+<center>
+  <div class="btn-group">
+    <button type="button" class="btn btn-404" onclick="location.href='{{ site.baseurl }}/'">返回首页</button>
+    <button type="button" class="btn btn-404" onclick="location.href='{{ site.baseurl }}/tabs/archives'">进入Archives</button>
+  </div>
+</center>
