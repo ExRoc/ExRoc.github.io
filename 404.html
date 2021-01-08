@@ -5,7 +5,7 @@
 # © 2017-2019 Cotes Chung
 # MIT License
 layout: page
-title: "404: Page not found"
+# title: "404: Page not found"
 permalink: /404.html
 
 redirect_from:  # part of site.sitemap_exclude
@@ -18,8 +18,65 @@ redirect_from:  # part of site.sitemap_exclude
 
 dynamic_title: true
 ---
+<head>
+  <style>
+    .btn-404 { 
+      color: #ffffff; 
+      background-color: #5671D4; 
+      border-color: #5671D4; 
+    } 
+    
+    .btn-404:hover, 
+    .btn-404:focus, 
+    .btn-404:active, 
+    .btn-404.active, 
+    .open .dropdown-toggle.btn-404 { 
+      color: #ffffff; 
+      background-color: #40549C; 
+      border-color: #5671D4; 
+    } 
+    
+    .btn-404:active, 
+    .btn-404.active, 
+    .open .dropdown-toggle.btn-404 { 
+      background-image: none; 
+    } 
+    
+    .btn-404.disabled, 
+    .btn-404[disabled], 
+    fieldset[disabled] .btn-404, 
+    .btn-404.disabled:hover, 
+    .btn-404[disabled]:hover, 
+    fieldset[disabled] .btn-404:hover, 
+    .btn-404.disabled:focus, 
+    .btn-404[disabled]:focus, 
+    fieldset[disabled] .btn-404:focus, 
+    .btn-404.disabled:active, 
+    .btn-404[disabled]:active, 
+    fieldset[disabled] .btn-404:active, 
+    .btn-404.disabled.active, 
+    .btn-404[disabled].active, 
+    fieldset[disabled] .btn-404.active { 
+      background-color: #5671D4; 
+      border-color: #5671D4; 
+    } 
+    
+    .btn-404 .badge { 
+      color: #5671D4; 
+      background-color: #ffffff; 
+    }
+  </style>
+</head>
 
 <div class="lead">
-  <p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. </p>
-  <p><a href="{{ site.baseurl }}/">Head back Home</a> to try finding it again, or search for it on the <a href="{{ site.baseurl }}/tabs/archives">Archives page</a>.</p>
+  <img src="{{ site.baseurl }}/assets/img/site/404.png" />
+  <p>啊哦~你访问的页面不见了……</p>
+  <p>你可以点击<a href="{{ site.baseurl }}/">这里</a>返回首页，或者进入 <a href="{{ site.baseurl }}/tabs/archives"> Archives 页面</a>再次查找。</p>
+  <button type="button" class="btn btn-info" οnclick="window.location.href='{{ site.baseurl }}/'">返回首页</button>
+  <center>
+    <div class="btn-group">
+      <button type="button" class="btn btn-404" onclick="window.location.href('{{ site.baseurl }}/')">返回首页</button>
+      <button type="button" class="btn btn-404" οnclick="window.location.href='{{ site.baseurl }}/tabs/archives'">进入 Archives 页面</button>
+    </div>
+  </center>
 </div>
