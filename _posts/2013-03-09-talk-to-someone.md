@@ -1,8 +1,8 @@
 ---
 title: 与君谈记
 date: 2013-03-09 23:41:00 +0800
-categories: [High_school, Classical_Chinese]
-tags: [Classical_Chinese, Article]
+categories: [classical-chinese]
+tags: [high-school, article]
 author: 江山如画丨
 ---
 

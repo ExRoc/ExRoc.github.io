@@ -1,8 +1,8 @@
 ---
 title: 夏令营
 date: 2014-7-3 22:48:00 +0800
-categories: [High_school, Memories]
-tags: [Memorie, Life]
+categories: [diaries, experiences]
+tags: [high-school, article]
 author: 江山如画丨
 ---
 

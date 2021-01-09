@@ -1,8 +1,8 @@
 ---
 title: 今年，我爷爷七十岁
-date: 2014-1-30 20:42:00 +0800
-categories: [High_school, Others]
-tags: [Family]
+date: 2014-01-30 20:42:00 +0800
+categories: [diaries, experiences]
+tags: [high-school, family, article]
 author: 江山如画丨
 ---
 

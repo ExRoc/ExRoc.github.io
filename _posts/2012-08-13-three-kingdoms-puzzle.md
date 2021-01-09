@@ -1,8 +1,8 @@
 ---
 title: 三国杀难题
 date: 2012-08-13 19:46:00 +0800
-categories: [High_school, Three_kingdoms]
-tags: [Three_kingdoms, Puzzle]
+categories: [three-kingdoms, puzzles]
+tags: [high-school]
 author: 江山如画丨
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Made in Crazy
 date: 2014-05-08 18:55:00 +0800
-categories: [High_school, Poems]
-tags: [Poem]
+categories: [poetry, poems]
+tags: [high-school]
 author: 江山如画丨
 ---
 

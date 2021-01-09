@@ -1,8 +1,8 @@
 ---
 title: 孝志
 date: 2013-04-09 23:42:00 +0800
-categories: [High_school, Classical_Chinese]
-tags: [Classical_Chinese, Article, Family]
+categories: [classical-chinese]
+tags: [high-school, article, family]
 author: 江山如画丨
 ---
 

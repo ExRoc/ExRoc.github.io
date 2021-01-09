@@ -1,8 +1,8 @@
 ---
 title: 蓝花楹下
 date: 2014-5-29 13:08:00 +0800
-categories: [High_school, Poems]
-tags: [Poem]
+categories: [poetry, poems]
+tags: [high-school]
 author: 江山如画丨
 ---
 

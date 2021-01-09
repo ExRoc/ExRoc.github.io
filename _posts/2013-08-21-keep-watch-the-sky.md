@@ -1,8 +1,8 @@
 ---
 title: 守望一方天空【转】
 date: 2013-08-21 12:50:00 +0800
-categories: [High_school, Antiquity]
-tags: [New_Moon]
+categories: [poetry, poems]
+tags: [high-school, antiquity]
 author: 寒月
 image: /assets/img/posts/keep-watch-the-sky/title_page.jpg
 ---
