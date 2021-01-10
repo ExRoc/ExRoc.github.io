@@ -5,6 +5,7 @@ categories:
     diaries: '自己想到的写下来，与生活与自己相关的，就是日记'
     - experiences: '自己的亲身经历的记录'
     - memories: '与回忆相关的记录'
+    - thoughts: '自己的一些感想，思考'
   - poetry: '跟诗词相关的，不论是古代 / 现代诗词，还是跟自己写诗时候有关的感受'
     - poems: '比较严格的古代 / 现代诗词'
     - others: '其他'
@@ -18,3 +19,4 @@ tags:
   - family: '与自己家庭相关的'
   - high-school: '高中时期写的'
   - university: '大学时期写的'
+  - education: '教育相关'

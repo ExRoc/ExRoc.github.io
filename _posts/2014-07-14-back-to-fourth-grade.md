@@ -1,6 +1,6 @@
 ---
 title: 回到四年级
-date: 2014-7-14 22:20:00 +0800
+date: 2014-07-14 22:20:00 +0800
 categories: [diaries, memories]
 tags: [high-school]
 author: 江山如画丨

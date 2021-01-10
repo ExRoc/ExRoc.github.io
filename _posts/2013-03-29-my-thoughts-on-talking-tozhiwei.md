@@ -2,7 +2,7 @@
 title: 志伟言有感
 date: 2013-03-29 20:25:00 +0800
 categories: [classical-chinese]
-tags: [high-school, article]
+tags: [high-school, article, education]
 author: 江山如画丨
 ---
 
