@@ -53,7 +53,7 @@ author: ExRoc
 
 后面的问题开始变得正常了，“了解过我们华硕硕市生吗？我们的主要活动有哪些？”“你加入硕市生的目的是什么”……诸如此类。走出会议室，他已经不记得自己关于这些问题的回答，脑海中只有两个字"完了"。
 
-![](/assets/img/posts/college/MianShi.png)
+![](/assets/img/posts/college/Mianshi.png)
 
 ## 2. 校外联部
 
