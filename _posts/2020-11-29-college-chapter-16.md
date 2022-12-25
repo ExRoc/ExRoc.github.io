@@ -65,4 +65,4 @@ author: ExRoc
 
 [^1]: 通过头像和 Q 号对比发现，他就是在培训时给展鹏留下深刻印象的记者：“始终关注，保持好奇。”
 
-[^2]: 详见“[第十二章 帮忙](/posts/college-chapter-11)”
+[^2]: 详见“[第十二章 帮忙](/posts/college-chapter-12)”
