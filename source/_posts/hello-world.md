@@ -48,6 +48,11 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 $ hexo deploy
 ```
 
+随便写一个分数公式：
+$$
+\frac{1}{2}^2=\frac{1}{4}
+$$
+
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 
 [^1]: 注脚注脚
