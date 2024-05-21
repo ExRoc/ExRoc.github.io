@@ -1,14 +1,15 @@
 ---
-title: Hello World
-date: 2024-05-20 01:44:21
-index_img: /img/default.png
-author: 
+title: HelloWorld2
 category_bar: true
-categories: ["分类 A"]
+categories:
+  - 分类 A
+date: 2024-05-22 01:44:21
+tags:
+index_img:
+author:
 ---
 
-
-test
+test2
 
 
 
@@ -40,8 +41,6 @@ $ hexo generate
 
 More info: [Generating](https://hexo.io/docs/generating.html)
 
-我在这里放一个注脚[^1]没意见吧。
-
 ### Deploy to remote sites
 
 ``` bash
@@ -49,5 +48,3 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
-
-[^1]: 注脚注脚
