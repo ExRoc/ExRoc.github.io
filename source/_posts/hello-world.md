@@ -5,6 +5,7 @@ index_img: /img/default.png
 author: 
 category_bar: true
 categories: ["分类 A"]
+mathjax: true
 ---
 
 
@@ -52,6 +53,8 @@ $ hexo deploy
 $$
 \frac{1}{2}^2=\frac{1}{4}
 $$
+
+再来一个行内的：$2^2=4$.
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 
