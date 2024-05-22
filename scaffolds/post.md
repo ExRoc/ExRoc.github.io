@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+updated: {{ date }}
 index_img: # 文章列表页展示图
 author: # 不填默认为 ExRoc
 category_bar: true
