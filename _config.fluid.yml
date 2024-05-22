@@ -614,11 +614,11 @@ post:
     # 文章的排序字段，前面带减号是倒序，不带减号是正序
     # Sort field for posts, with a minus sign is reverse order
     # Options: date | title | or other field of front-matter
-    post_order_by: "date"
+    post_order_by: "-date"
 
     # 单个分类中折叠展示文章数的最大值，超过限制会显示 More，0 则不限制
     # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
-    post_limit: 10
+    post_limit: 5
 
   # 侧边栏展示文章目录
   # Table of contents (TOC) in the sidebar
@@ -720,11 +720,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: utterances
 
 
 #---------------------------
@@ -740,7 +740,7 @@ post:
 # Based on GitHub Issues
 # See: https://utteranc.es
 utterances:
-  repo:
+  repo: ExRoc/ExRoc.github.io
   issue_term: pathname
   label: utterances
   theme: github-light
@@ -891,7 +891,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -902,18 +902,18 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
   # 分类的排序字段，前面带减号是倒序，不带减号是正序
   # Sort field for categories, with a minus sign is reverse order
   # Options: length | name
-  order_by: "-length"
+  order_by: "name"
 
   # 层级的折叠深度，0 是全部折叠，大于 0 后如果存在子分类则默认展开
   # Collapse depth. If 0, all posts collapsed. If greater than 0, it will be expanded by default if there are subcategories
-  collapse_depth: 0
+  collapse_depth: 1
 
   # 文章的排序字段，前面带减号是倒序，不带减号是正序
   # Sort field for posts, with a minus sign is reverse order
@@ -922,7 +922,7 @@ category:
 
   # 单个分类中折叠展示文章数的最大值，超过限制会显示 More，0 则不限制
   # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
-  post_limit: 10
+  post_limit: 5
 
 
 #---------------------------
@@ -931,7 +931,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -948,18 +948,18 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png
-  name: "Fluid"
-  intro: "An elegant theme for Hexo"
+  name: "ExRoc"
+  intro: "欲问苍天借看破，知世事因果"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/ExRoc", tip: "GitHub" }
+    - { class: "iconfont icon-codeforces", link: "https://codeforces.com/profile/ExRoc", tip: "CodeForces" }
+    - { class: "iconfont icon-wechat-fill", qrcode: "/img/qrcode.jpg" }
 
 
 #---------------------------
@@ -970,7 +970,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -981,7 +981,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -995,7 +995,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项

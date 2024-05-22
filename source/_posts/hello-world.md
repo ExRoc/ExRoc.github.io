@@ -5,6 +5,7 @@ index_img: /img/default.png
 author: 
 category_bar: true
 categories: ["分类 A"] # 这里也来一个
+tags: ["测试 tags1"]
 mathjax: true   # 这里写个注释看看有没有用
 ---
 

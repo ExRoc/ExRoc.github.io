@@ -4,7 +4,7 @@ category_bar: true
 categories:
   - 分类 A
 date: 2024-05-22 01:44:21
-tags:
+tags: ["tags2"]
 index_img:
 author:
 ---
