@@ -7,7 +7,7 @@ updated: 2024-06-09 01:47:07
 index_img: /img/cover/从快速幂到-dp-优化：矩阵快速幂.jpg
 author: ExRoc
 categories: ["博文"]
-tags: ["算法"]
+tags: ["算法", "ACM"]
 description: 
 ---
 
