@@ -8,7 +8,7 @@ index_img: /img/cover/从快速幂到-dp-优化：矩阵快速幂.jpg
 author: ExRoc
 categories: ["博文"]
 tags: ["算法", "ACM"]
-description: 
+description: 由浅入深学习矩阵快速幂
 ---
 
 ## 幂运算
