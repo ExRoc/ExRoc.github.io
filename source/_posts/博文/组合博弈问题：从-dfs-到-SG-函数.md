@@ -7,7 +7,7 @@ updated: 2024-06-15 00:38:05
 index_img:
 author: ExRoc
 categories: ["博文"]
-tags: ["ACM"]
+tags: ["ACM", "算法"]
 description: 博弈入门
 ---
 
