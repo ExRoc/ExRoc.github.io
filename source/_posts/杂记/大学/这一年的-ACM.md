@@ -4,7 +4,7 @@ category_bar: true
 mathjax: true
 date: 2017-11-12 00:00:00
 updated: 2024-06-08 01:06:27
-index_img: /img/cover/这一年的 ACM.jpg
+index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["杂记", "大学"]
 tags: ["回忆", "ACM"]

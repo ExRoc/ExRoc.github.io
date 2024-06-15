@@ -4,7 +4,7 @@ category_bar: true
 mathjax: true
 date: 2020-08-24 23:42:00
 updated: 2024-06-14 02:47:47
-index_img: 
+index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["博文"]
 tags: ["ACM"]
