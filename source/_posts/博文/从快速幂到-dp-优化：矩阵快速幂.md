@@ -94,11 +94,12 @@ using namespace std;
 
 typedef long long LL;
 const LL MOD = 1000000007;
+LL n;
 
 LL fastPow(LL res, LL n) {
     LL ans;
-    for(ans = 1; n != 0; n >>= 1) {
-        if(n % 2 == 1) {
+    for (ans = 1; n != 0; n >>= 1) {
+        if (n % 2 == 1) {
             ans = (ans * res) % MOD;
         }
         res = (res * res) % MOD;
@@ -114,7 +115,6 @@ int main() {
 #endif // ExRoc
     ios::sync_with_stdio(false);
 
-    LL n;
     cin >> n;
     cout << "2^" << n << " = " << fastPow(2, n) << endl;
 
@@ -144,15 +144,18 @@ int main() {
 
 ```C++
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 typedef long long LL;
 const LL MOD = 1000000007;
+LL Z, M, N;
+LL ans, a, b;
 
 LL fastPow(LL res, LL n, LL MOD) {
     LL ans;
-    for(ans = 1; n != 0; n >>= 1) {
-        if(n % 2 == 1) {
+    for (ans = 1; n != 0; n >>= 1) {
+        if (n % 2 == 1) {
             ans = (ans * res) % MOD;
         }
         res = (res * res) % MOD;
@@ -166,14 +169,11 @@ int main() {
 #endif // ExRoc
     ios::sync_with_stdio(false);
 
-    LL Z, M, N;
-    LL ans, a, b;
-
     cin >> Z;
-    while(Z--) {
+    while (Z--) {
         ans = 0;
         cin >> M >> N;
-        for(int i = 0; i < N; ++i) {
+        for (int i = 0; i < N; ++i) {
             cin >> a >> b;
             ans = (ans + fastPow(a, b, M)) % M;
         }
@@ -236,10 +236,10 @@ int main() {
 
     fib[0] = 0;
     fib[1] = 1;
-    for(int i = 2; i <= 70; ++i) {
+    for (int i = 2; i <= 70; ++i) {
         fib[i] = fib[i - 1] + fib[i - 2];
     }
-    while(cin >> n) {
+    while (cin >> n) {
         cout << fib[n] << endl;
     }
 
@@ -288,7 +288,7 @@ const int MOD = 1000000009;
 
 int add(int a, int b) {
     a += b;
-    if(a >= MOD) {
+    if (a >= MOD) {
         return a - MOD;
     }
     return a;
@@ -299,13 +299,13 @@ struct Matrix {
     int num[matrix_size][matrix_size];
 
     void operator=(const Matrix &m) {
-        for(int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) {
             memcpy(num[i], m.num[i], sizeof(int) * size);
         }
     }
 
     void Init() {
-        for(int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) {
             memset(num[i], 0, sizeof(int) * size);
             num[i][i] = 1;
         }
@@ -320,10 +320,10 @@ struct Matrix {
     void operator*=(const Matrix &m) {
         static Matrix ans;
         ans.size = size;
-        for(int i = 0; i < size; ++i) {
-            for(int j = 0; j < size; ++j) {
+        for (int i = 0; i < size; ++i) {
+            for (int j = 0; j < size; ++j) {
                 ans.num[i][j] = 0;
-                for(int k = 0; k < size; ++k) {
+                for (int k = 0; k < size; ++k) {
                     ans.num[i][j] = add(ans.num[i][j], (LL)num[i][k] * m.num[k][j] % MOD);
                 }
             }
@@ -334,8 +334,8 @@ struct Matrix {
     void fast_pow(LL n) {
         static Matrix ans;
         ans.size = size;
-        for(ans.Init(); n != 0; n >>= 1) {
-            if((n & 1) == 1) {
+        for (ans.Init(); n != 0; n >>= 1) {
+            if ((n & 1) == 1) {
                 ans *= (*this);
             }
             (*this) *= (*this);
@@ -413,7 +413,7 @@ const int MOD = 1000000007;
 
 int add(int a, int b) {
     a += b;
-    if(a >= MOD) {
+    if (a >= MOD) {
         return a - MOD;
     }
     return a;
@@ -424,13 +424,13 @@ struct Matrix {
     int num[matrix_size][matrix_size];
 
     void operator=(const Matrix &m) {
-        for(int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) {
             memcpy(num[i], m.num[i], sizeof(int) * size);
         }
     }
 
     void Init() {
-        for(int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) {
             memset(num[i], 0, sizeof(int) * size);
             num[i][i] = 1;
         }
@@ -439,8 +439,8 @@ struct Matrix {
     void Set(int s) {
         size = s;
         memset(num, 0, sizeof(num));
-        for(int i = 0; i < s; ++i) {
-            for(int j = i - 1; j <= i + 1; ++j) {
+        for (int i = 0; i < s; ++i) {
+            for (int j = i - 1; j <= i + 1; ++j) {
                 if(j >= 0 && j < s) {
                     num[i][j] = 1;
                 }
@@ -451,10 +451,10 @@ struct Matrix {
     void operator*=(const Matrix &m) {
         static Matrix ans;
         ans.size = size;
-        for(int i = 0; i < size; ++i) {
-            for(int j = 0; j < size; ++j) {
+        for (int i = 0; i < size; ++i) {
+            for (int j = 0; j < size; ++j) {
                 ans.num[i][j] = 0;
-                for(int k = 0; k < size; ++k) {
+                for (int k = 0; k < size; ++k) {
                     ans.num[i][j] = add(ans.num[i][j], (LL)num[i][k] * m.num[k][j] % MOD);
                 }
             }
@@ -465,8 +465,8 @@ struct Matrix {
     void fast_pow(LL n) {
         static Matrix ans;
         ans.size = size;
-        for(ans.Init(); n != 0; n >>= 1) {
-            if((n & 1) == 1) {
+        for (ans.Init(); n != 0; n >>= 1) {
+            if ((n & 1) == 1) {
                 ans *= (*this);
             }
             (*this) *= (*this);
@@ -479,7 +479,7 @@ LL N, K, a, b, c, Ans[2][maxn], now;
 Matrix matrix;
 
 void setZero(LL *num, int n) {
-    for(int i = n + 1; i < maxn; ++i) {
+    for (int i = n + 1; i < maxn; ++i) {
         num[i] = 0;
     }
 }
@@ -492,18 +492,18 @@ int main() {
 
     Ans[now][0] = 1;
     cin >> N >> K;
-    while(N--) {
+    while (N--) {
         cin >> a >> b >> c;
-        if(a < K) {
-            if(b > K) {
+        if (a < K) {
+            if (b > K) {
                 b = K;
             }
             setZero(Ans[now], c);
             matrix.Set(c + 1);
             matrix.fast_pow(b - a);
-            for(int i = 0; i <= c; ++i) {
+            for (int i = 0; i <= c; ++i) {
                 Ans[!now][i] = 0;
-                for(int j = 0; j <= c; ++j) {
+                for (int j = 0; j <= c; ++j) {
                     Ans[!now][i] = (Ans[!now][i] + matrix.num[i][j] * Ans[now][j] % MOD) % MOD;
                 }
             }

@@ -33,11 +33,11 @@ description: 博弈入门
 
 ```c++
 bool dfs(/*当前状态*/) {
-    if(/*当前状态已知为必胜/败态*/) {
+    if (/*当前状态已知为必胜/败态*/) {
         return true; / return false;
     }
-    for(/*遍历所有后继状态*/) {
-        if(dfs(/*后继状态*/) == false) {
+    for (/*遍历所有后继状态*/) {
+        if (dfs(/*后继状态*/) == false) {
             return true;
         }
     }
@@ -53,14 +53,14 @@ bool dfs(/*当前状态*/) {
 
 ```c++
 int dfs(/*当前状态*/) {
-    if(/*当前状态已知为必胜/败态*/) {
+    if (/*当前状态已知为必胜/败态*/) {
         return true; / return false;
     }
-    if(mp[/*当前状态*/] != -1) {
+    if (mp[/*当前状态*/] != -1) {
         return mp[/*当前状态*/];
     }
-    for(/*遍历所有后继状态*/) {
-        if(dfs(/*后继状态*/) == 0) {
+    for (/*遍历所有后继状态*/) {
+        if (dfs(/*后继状态*/) == 0) {
             mp[/*当前状态*/] = 1;
             return 1;
         }
@@ -95,33 +95,19 @@ int dfs(/*当前状态*/) {
 #### 过题代码
 
 ```c++
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <cstring>
-#include <string>
-#include <vector>
-#include <list>
-#include <queue>
-#include <stack>
-#include <map>
-#include <set>
-#include <bitset>
-#include <algorithm>
-#include <functional>
-#include <iomanip>
+#include <bits/stdc++.h>
 using namespace std;
 
-#define LL long long
+typedef long long LL;
 const int maxn = 100;
 struct Point {
     int x, y;
 };
+
 struct Node {
     int x, y;
     int flag;
+
     // 0 为双方没有使用过对称，1 为先手使用过对称，2 为后手使用过对称，3 为双方都使用过对称
     Node() {}
     Node(int xx, int yy, int f) {
@@ -130,22 +116,24 @@ struct Node {
         flag = f;
     }
 };
+
 bool operator<(const Node &a, const Node &b) {
-    if(a.flag == b.flag) {
-        if(a.x == b.x) {
+    if (a.flag == b.flag) {
+        if (a.x == b.x) {
             return a.y < b.y;
         }
         return a.x < b.x;
     }
     return a.flag < b.flag;
 }
+
 int n, d, x, y;
 Point point[maxn];
 map<Node, int> mp;  // 0 为未定义，1 为必胜态，2 为必败态
 
 int op_flag(int flag) {
     // 将双方使用过对称的状态交换
-    if(flag == 0 || flag == 3) {
+    if (flag == 0 || flag == 3) {
         return flag;
     } else {
         return 3 - flag;
@@ -154,22 +142,22 @@ int op_flag(int flag) {
 
 int dfs(int x, int y, int flag) {
     int &ret = mp[Node(x, y, flag)];
-    if(ret != 0) {
+    if (ret != 0) {
         return ret;
     }
-    if(x * x + y * y > d * d) {
+    if (x * x + y * y > d * d) {
         return 1;
     }
     // 如果不进行对称
-    for(int i = 0; i < n; ++i) {
-        if(dfs(x + point[i].x, y + point[i].y, op_flag(flag)) == 2) {
+    for (int i = 0; i < n; ++i) {
+        if (dfs(x + point[i].x, y + point[i].y, op_flag(flag)) == 2) {
             ret = 1;
             return ret;
         }
     }
-    if((flag & 1) == 0) {
+    if ((flag & 1) == 0) {
         // 如果可以使用对称
-        if(dfs(y, x, op_flag(flag | 1)) == 2) {
+        if (dfs(y, x, op_flag(flag | 1)) == 2) {
             ret = 1;
             return ret;
         }
@@ -179,17 +167,16 @@ int dfs(int x, int y, int flag) {
 }
 
 int main() {
-    #ifdef LOCAL
+#ifdef ExRoc
     freopen("test.txt", "r", stdin);
-//    freopen("out.txt", "w", stdout);
-    #endif // LOCAL
+#endif // ExRoc
     ios::sync_with_stdio(false);
 
     scanf("%d%d%d%d", &x, &y, &n, &d);
-    for(int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         scanf("%d%d", &point[i].x, &point[i].y);
     }
-    if(dfs(x, y, 0) == 1) {
+    if (dfs(x, y, 0) == 1) {
         printf("Anton\n");
     } else {
         printf("Dasha\n");
@@ -199,7 +186,7 @@ int main() {
 }
 ```
 
-注意程序的第 $68$ 与 $75$ 行，都是对后继状态的遍历，只是转移到后继状态的操作不同，不能写在一个 $for$ 循环当中罢了。
+注意程序的第 $56$ 与 $63$ 行，都是对后继状态的遍历，只是转移到后继状态的操作不同，不能写在一个 $for$ 循环当中罢了。
 
 实际上不必记录双方关于“对称”的使用情况，因为如果先手认为“对称”操作对自己是有利的，则后手必然会在接下来的一步中使用“对称”回到原来的状态，因此对于双方而言，“对称”操作是无效的，读者可以将代码中关于 $flag$ 标记的部分去掉，提交一下看结论是否正确。
 
@@ -245,52 +232,34 @@ $Nim$ 博弈是一个经典的博弈游戏，我将从 $Nim$ 博弈引入到 $SG
 #### 过题代码
 
 ```c++
-#include <iostream>
 #include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
-#include <cstring>
-#include <string>
-#include <vector>
-#include <list>
-#include <queue>
-#include <stack>
-#include <map>
-#include <set>
-#include <bitset>
-#include <algorithm>
-#include <functional>
-#include <iomanip>
 using namespace std;
 
-#define LL long long
+typedef long long LL;
 const int maxn = 200;
 int n, k, dig, ans;
 int num[maxn];
 
 int main() {
-    #ifdef LOCAL
+#ifdef ExRoc
     freopen("test.txt", "r", stdin);
-//    freopen("out.txt", "w", stdout);
-    #endif // LOCAL
-    ios::sync_with_stdio(false);
+#endif // ExRoc
 
-    while(scanf("%d", &n), n != 0) {
+    while (scanf("%d", &n), n != 0) {
         k = 0;
-        for(int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i) {
             scanf("%d", &num[i]);
             k ^= num[i];
         }
         int tmp = k;
         dig = 0;
-        while(tmp != 0) {
+        while (tmp != 0) {
             tmp >>= 1;
             ++dig;
         }
         --dig;
         ans = 0;
-        for(int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i) {
             ans += (num[i] >> dig) & 1;
         }
         printf("%d\n", ans);
@@ -336,14 +305,14 @@ bool visit[maxn];
 
 void get_SG() {
     SG[0] = 0;
-    for(int i = 1; i <= 10000; ++i) {
+    for (int i = 1; i <= 10000; ++i) {
         memset(visit, 0, sizeof(visit));
-        for(int j = 0; j < k; ++j) {
+        for (int j = 0; j < k; ++j) {
             if(i >= Array[j]) {
                 visit[SG[i - Array[j]]] = true;
             }
         }
-        for(int j = 0; j <= 10000; ++j) {
+        for (int j = 0; j <= 10000; ++j) {
             if(!visit[j]) {
                 SG[i] = j;
                 break;
@@ -374,26 +343,12 @@ void get_SG() {
 #### 过题代码
 
 ```c++
-#include <iostream>
 #include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
 #include <cstring>
-#include <string>
-#include <vector>
-#include <list>
-#include <queue>
-#include <stack>
-#include <map>
-#include <set>
-#include <bitset>
 #include <algorithm>
-#include <functional>
-#include <iomanip>
 using namespace std;
 
-#define LL long long
+typedef long long LL;
 const int maxk = 200;
 const int maxn = 10000 + 100;
 int k, m, l, num;
@@ -403,15 +358,15 @@ bool visit[maxn];
 
 void get_SG() {
     SG[0] = 0;
-    for(int i = 1; i <= 10000; ++i) {
+    for (int i = 1; i <= 10000; ++i) {
         memset(visit, 0, sizeof(visit));
-        for(int j = 0; j < k; ++j) {
-            if(i >= Array[j]) {
+        for (int j = 0; j < k; ++j) {
+            if (i >= Array[j]) {
                 visit[SG[i - Array[j]]] = true;
             }
         }
-        for(int j = 0; j <= 10000; ++j) {
-            if(!visit[j]) {
+        for (int j = 0; j <= 10000; ++j) {
+            if (!visit[j]) {
                 SG[i] = j;
                 break;
             }
@@ -420,27 +375,25 @@ void get_SG() {
 }
 
 int main() {
-    #ifdef LOCAL
+#ifdef ExRoc
     freopen("test.txt", "r", stdin);
-//    freopen("out.txt", "w", stdout);
-    #endif // LOCAL
-    ios::sync_with_stdio(false);
+#endif // ExRoc
 
-    while(scanf("%d", &k), k != 0) {
-        for(int i = 0; i < k; ++i) {
+    while (scanf("%d", &k), k != 0) {
+        for (int i = 0; i < k; ++i) {
             scanf("%d", &Array[i]);
         }
         sort(Array, Array + k);
         get_SG();
         scanf("%d", &m);
-        for(int i = 0; i < m; ++i) {
+        for (int i = 0; i < m; ++i) {
             int ans = 0;
             scanf("%d", &l);
-            for(int i = 0; i < l; ++i) {
+            for (int i = 0; i < l; ++i) {
                 scanf("%d", &num);
                 ans ^= SG[num];
             }
-            if(ans == 0) {
+            if (ans == 0) {
                 printf("L");
             } else {
                 printf("W");

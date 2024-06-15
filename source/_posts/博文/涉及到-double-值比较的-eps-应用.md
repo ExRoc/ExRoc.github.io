@@ -60,9 +60,9 @@ inline bool equal(const double &x, const double &y) {
 }
 
 int main() {
-    #ifdef ExRoc
+#ifdef ExRoc
     freopen("test.txt", "r", stdin);
-    #endif // ExRoc
+#endif // ExRoc
     ios::sync_with_stdio(false);
 
     int N;
@@ -71,19 +71,19 @@ int main() {
     cin >> N;
     sq = sqrt(N);
 
-    for(int i = 0; i < sq; ++i) {
+    for (int i = 0; i < sq; ++i) {
         double j = sqrt(N - i * i);
-        if(equal(j, floor(j))) {
+        if (equal(j, floor(j))) {
             int Min = min(i, (int)j);
             int Max = max(i, (int)j);
             ans.insert(make_pair(Min, Max));
         }
     }
-    if(ans.size() == 0) {
+    if (ans.size() == 0) {
         cout << "No Solution" << endl;
     } else {
         set<pair<int, int> >::iterator it;
-        for(it = ans.begin(); it != ans.end(); ++it) {
+        for (it = ans.begin(); it != ans.end(); ++it) {
             cout << it->first << " " << it->second << endl;
         }
     }
