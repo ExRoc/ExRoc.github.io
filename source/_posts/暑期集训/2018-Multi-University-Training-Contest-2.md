@@ -280,9 +280,9 @@ int main() {
 
 > 关于构造方法的证明思路，不会，详见大佬给出的证明（也可以直接跳过证明看构造的方法）：
 >
-> ![证明 1](img/2018-Multi-University-Training-Contest-2/Hack-It-证明-1.jpg)
+> ![证明 1](img/2018-Multi-University-Training-Contest/Hack-It-证明-1.jpg)
 >
-> ![证明 2](img/2018-Multi-University-Training-Contest-2/Hack-It-证明-2.jpg)
+> ![证明 2](img/2018-Multi-University-Training-Contest/Hack-It-证明-2.jpg)
 >
 > 文字描述构造方案比较麻烦，直接看图找规律比较好些，构造方案如下（$n\times n=256$ 的情况下）：
 >
