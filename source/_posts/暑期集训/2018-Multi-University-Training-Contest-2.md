@@ -2,7 +2,7 @@
 title: 2018 Multi-University Training Contest 2
 category_bar: true
 mathjax: true
-date: 2020-12-15 23:32
+date: 2018-08-10 21:10:00
 updated: 2024-06-18 01:32:40
 index_img: /img/cover/ACM.jpg
 author: ExRoc
