@@ -11,7 +11,7 @@ tags: ["ACM", "题解", "HDU"]
 description: 2018 第一场多校题解
 ---
 
-链接：[2018 Multi-University Training Contest 1](http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+1&source=1&searchmode=source)
+链接：[2018 Multi-University Training Contest 1](https://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+1&source=1&searchmode=source)
 
 过题数：6
 
@@ -19,7 +19,7 @@ description: 2018 第一场多校题解
 
 成员：官展鹏，冯彦博，孙昊哲
 
-## A. [Maximum Multiple](http://acm.hdu.edu.cn/showproblem.php?pid=6298)
+## A. [Maximum Multiple](https://acm.hdu.edu.cn/showproblem.php?pid=6298)
 
 ### 题意
 
@@ -75,7 +75,7 @@ int main() {
 
 
 
-## B. [Balanced Sequence](http://acm.hdu.edu.cn/showproblem.php?pid=6299)
+## B. [Balanced Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6299)
 
 ### 题意
 
@@ -179,7 +179,7 @@ int main() {
 }
 ```
 
-## C. [Triangle Partition](http://acm.hdu.edu.cn/showproblem.php?pid=6300)
+## C. [Triangle Partition](https://acm.hdu.edu.cn/showproblem.php?pid=6300)
 
 ### 题意
 
@@ -245,7 +245,7 @@ int main() {
 }
 ```
 
-## D. [Distinct Values](http://acm.hdu.edu.cn/showproblem.php?pid=6301)
+## D. [Distinct Values](https://acm.hdu.edu.cn/showproblem.php?pid=6301)
 
 ### 题意
 
@@ -339,7 +339,7 @@ int main() {
 }
 ```
 
-## G. [Chiaki Sequence Revisited](http://acm.hdu.edu.cn/showproblem.php?pid=6304)
+## G. [Chiaki Sequence Revisited](https://acm.hdu.edu.cn/showproblem.php?pid=6304)
 
 ### 题意
 
@@ -446,7 +446,7 @@ int main() {
 }
 ```
 
-## H. [RMQ Similar Sequence](http://acm.hdu.edu.cn/showproblem.php?pid=6305)
+## H. [RMQ Similar Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6305)
 
 ### 题意
 
@@ -558,7 +558,7 @@ int main() {
 }
 ```
 
-## K. [Time Zone](http://acm.hdu.edu.cn/showproblem.php?pid=6308)
+## K. [Time Zone](https://acm.hdu.edu.cn/showproblem.php?pid=6308)
 
 ### 题意
 

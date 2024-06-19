@@ -11,7 +11,7 @@ tags: ["ACM", "题解", "HDU"]
 description: 2018 第二场多校题解
 ---
 
-链接：[2018 Multi-University Training Contest 2](http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+2&source=1&searchmode=source)
+链接：[2018 Multi-University Training Contest 2](https://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+2&source=1&searchmode=source)
 
 过题数：3
 
@@ -19,7 +19,7 @@ description: 2018 第二场多校题解
 
 成员：官展鹏，冯彦博，孙昊哲
 
-## C. [Cover](http://acm.hdu.edu.cn/showproblem.php?pid=6311)
+## C. [Cover](https://acm.hdu.edu.cn/showproblem.php?pid=6311)
 
 ### 题意
 
@@ -221,7 +221,7 @@ int main() {
 }
 ```
 
-## D. [Game](http://acm.hdu.edu.cn/showproblem.php?pid=6312)
+## D. [Game](https://acm.hdu.edu.cn/showproblem.php?pid=6312)
 
 ### 题意
 
@@ -263,7 +263,7 @@ int main() {
 }
 ```
 
-## E. [Hack It](http://acm.hdu.edu.cn/showproblem.php?pid=6313)
+## E. [Hack It](https://acm.hdu.edu.cn/showproblem.php?pid=6313)
 
 ### 题意
 
@@ -352,7 +352,7 @@ int main() {
 }
 ```
 
-## F. [Matrix](http://acm.hdu.edu.cn/showproblem.php?pid=6314)
+## F. [Matrix](https://acm.hdu.edu.cn/showproblem.php?pid=6314)
 
 ### 题意
 
@@ -446,7 +446,7 @@ int main() {
 }
 ```
 
-## G. [Naive Operations](http://acm.hdu.edu.cn/showproblem.php?pid=6315)
+## G. [Naive Operations](https://acm.hdu.edu.cn/showproblem.php?pid=6315)
 
 ### 题意
 
@@ -593,7 +593,7 @@ int main() {
 }
 ```
 
-## J. [Swaps and Inversions](http://acm.hdu.edu.cn/showproblem.php?pid=6318)
+## J. [Swaps and Inversions](https://acm.hdu.edu.cn/showproblem.php?pid=6318)
 
 ### 题意
 

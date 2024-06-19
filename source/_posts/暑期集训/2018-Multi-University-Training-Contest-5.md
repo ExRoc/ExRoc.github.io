@@ -11,7 +11,7 @@ tags: ["ACM", "题解", "HDU"]
 description: 2018 第五场多校题解
 ---
 
-链接：[2018 Multi-University Training Contest 5](http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+5&source=1&searchmode=source)
+链接：[2018 Multi-University Training Contest 5](https://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+5&source=1&searchmode=source)
 
 过题数：1
 
@@ -19,7 +19,7 @@ description: 2018 第五场多校题解
 
 成员：官展鹏，冯彦博，孙昊哲
 
-## B. [Beautiful Now](http://acm.hdu.edu.cn/showproblem.php?pid=6351)
+## B. [Beautiful Now](https://acm.hdu.edu.cn/showproblem.php?pid=6351)
 
 ### 题意
 
@@ -159,7 +159,7 @@ int main() {
 }
 ```
 
-## E. [Everything Has Changed](http://acm.hdu.edu.cn/showproblem.php?pid=6354)
+## E. [Everything Has Changed](https://acm.hdu.edu.cn/showproblem.php?pid=6354)
 
 ### 题意
 
@@ -282,7 +282,7 @@ int main() {
 }
 ```
 
-## G. [Glad You Came](http://acm.hdu.edu.cn/showproblem.php?pid=6356)
+## G. [Glad You Came](https://acm.hdu.edu.cn/showproblem.php?pid=6356)
 
 ### 题意
 
@@ -386,7 +386,7 @@ int main() {
 }
 ```
 
-## H. [Hills And Valleys](http://acm.hdu.edu.cn/showproblem.php?pid=6357)
+## H. [Hills And Valleys](https://acm.hdu.edu.cn/showproblem.php?pid=6357)
 
 ### 题意
 

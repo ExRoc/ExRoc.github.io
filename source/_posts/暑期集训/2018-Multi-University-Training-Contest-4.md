@@ -11,7 +11,7 @@ tags: ["ACM", "题解", "HDU"]
 description: 2018 第四场多校题解
 ---
 
-链接：[2018 Multi-University Training Contest 4](http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+4&source=1&searchmode=source)
+链接：[2018 Multi-University Training Contest 4](https://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+4&source=1&searchmode=source)
 
 过题数：3
 
@@ -19,7 +19,7 @@ description: 2018 第四场多校题解
 
 成员：官展鹏，冯彦博，孙昊哲
 
-## B. [Harvest of Apples](http://acm.hdu.edu.cn/showproblem.php?pid=6333)
+## B. [Harvest of Apples](https://acm.hdu.edu.cn/showproblem.php?pid=6333)
 
 ### 题意
 
@@ -167,7 +167,7 @@ int main() {
 }
 ```
 
-## D. [Nothing is Impossible](http://acm.hdu.edu.cn/showproblem.php?pid=6335)
+## D. [Nothing is Impossible](https://acm.hdu.edu.cn/showproblem.php?pid=6335)
 
 ### 题意
 
@@ -232,7 +232,7 @@ int main() {
 }
 ```
 
-## E. [Matrix from Arrays](http://acm.hdu.edu.cn/showproblem.php?pid=6336)
+## E. [Matrix from Arrays](https://acm.hdu.edu.cn/showproblem.php?pid=6336)
 
 ### 题意
 
@@ -340,7 +340,7 @@ int main() {
 }
 ```
 
-## J. [Let Sudoku Rotate](http://acm.hdu.edu.cn/showproblem.php?pid=6341)
+## J. [Let Sudoku Rotate](https://acm.hdu.edu.cn/showproblem.php?pid=6341)
 
 ### 题意
 
@@ -456,7 +456,7 @@ int main() {
 }
 ```
 
-## K. [Expression in Memories](http://acm.hdu.edu.cn/showproblem.php?pid=6342)
+## K. [Expression in Memories](https://acm.hdu.edu.cn/showproblem.php?pid=6342)
 
 ### 题意
 
@@ -549,7 +549,7 @@ int main() {
 }
 ```
 
-## L. [Graph Theory Homework](http://acm.hdu.edu.cn/showproblem.php?pid=6343)
+## L. [Graph Theory Homework](https://acm.hdu.edu.cn/showproblem.php?pid=6343)
 
 ### 题意
 

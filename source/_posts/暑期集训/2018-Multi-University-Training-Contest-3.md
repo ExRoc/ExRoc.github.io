@@ -11,7 +11,7 @@ tags: ["ACM", "题解", "HDU"]
 description: 2018 第三场多校题解
 ---
 
-链接：[2018 Multi-University Training Contest 3](http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+3&source=1&searchmode=source)
+链接：[2018 Multi-University Training Contest 3](https://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+3&source=1&searchmode=source)
 
 过题数：5
 
@@ -19,7 +19,7 @@ description: 2018 第三场多校题解
 
 成员：官展鹏，冯彦博，孙昊哲
 
-## A. [Ascending Rating](http://acm.hdu.edu.cn/showproblem.php?pid=6319)
+## A. [Ascending Rating](https://acm.hdu.edu.cn/showproblem.php?pid=6319)
 
 ### 题意
 
@@ -112,7 +112,7 @@ int main() {
 }
 ```
 
-## C. [Dynamic Graph Matching](http://acm.hdu.edu.cn/showproblem.php?pid=6321)
+## C. [Dynamic Graph Matching](https://acm.hdu.edu.cn/showproblem.php?pid=6321)
 
 ### 题意
 
@@ -214,7 +214,7 @@ int main() {
 }
 ```
 
-## D. [Euler Function](http://acm.hdu.edu.cn/showproblem.php?pid=6322)
+## D. [Euler Function](https://acm.hdu.edu.cn/showproblem.php?pid=6322)
 
 ### 题意
 
@@ -260,7 +260,7 @@ int main() {
 }
 ```
 
-## F. [Grab The Tree](http://acm.hdu.edu.cn/showproblem.php?pid=6324)
+## F. [Grab The Tree](https://acm.hdu.edu.cn/showproblem.php?pid=6324)
 
 ### 题意
 
@@ -314,7 +314,7 @@ int main() {
 }
 ```
 
-## G. [Interstellar Travel](http://acm.hdu.edu.cn/showproblem.php?pid=6325)
+## G. [Interstellar Travel](https://acm.hdu.edu.cn/showproblem.php?pid=6325)
 
 ### 题意
 
@@ -432,7 +432,7 @@ int main() {
 }
 ```
 
-## H. [Monster Hunter](http://acm.hdu.edu.cn/showproblem.php?pid=6326)
+## H. [Monster Hunter](https://acm.hdu.edu.cn/showproblem.php?pid=6326)
 
 ### 题意
 
@@ -568,7 +568,7 @@ int main() {
 }
 ```
 
-## I. [Random Sequence](http://acm.hdu.edu.cn/showproblem.php?pid=6327)
+## I. [Random Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6327)
 
 ### 题意
 
@@ -739,7 +739,7 @@ int main() {
 }
 ```
 
-## L. [Visual Cube](http://acm.hdu.edu.cn/showproblem.php?pid=6330)
+## L. [Visual Cube](https://acm.hdu.edu.cn/showproblem.php?pid=6330)
 
 ### 题意
 
@@ -822,7 +822,7 @@ int main() {
 }
 ```
 
-## M. [Walking Plan](http://acm.hdu.edu.cn/showproblem.php?pid=6331)
+## M. [Walking Plan](https://acm.hdu.edu.cn/showproblem.php?pid=6331)
 
 ### 题意
 
