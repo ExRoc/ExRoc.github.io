@@ -191,7 +191,7 @@ int main() {
 }
 ```
 
-## B. [Rikka with Stone-Paper-Scissors](https://acm.hdu.edu.cn/showproblem.php?pid=6418)
+## D. [Rikka with Stone-Paper-Scissors](https://acm.hdu.edu.cn/showproblem.php?pid=6418)
 
 ### 题意
 
