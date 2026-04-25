@@ -1,32 +1,32 @@
 name: 'English'
 
 home:
-  menu: '首页'
-  title: '首页'
+  menu: 'Home'
+  title: 'Home'
 
 archive:
-  menu: '归档'
-  title: '归档'
-  subtitle: '归档'
-  post_total: '共计 %d 篇文章'
+  menu: 'Archive'
+  title: 'Archive'
+  subtitle: 'Archive'
+  post_total: 'Total %d articles'
 
 category:
-  menu: '分类'
-  title: '分类'
-  subtitle: '分类'
-  post_total: '共计 %d 篇文章'
+  menu: 'Category'
+  title: 'Category'
+  subtitle: 'Category'
+  post_total: 'Total %d articles'
   more: 'More...'
 
 tag:
-  menu: '标签'
-  title: '标签'
-  subtitle: '标签'
-  post_total: '共计 %d 篇文章'
+  menu: 'Tag'
+  title: 'Tag'
+  subtitle: 'Tag'
+  post_total: 'Total %d articles'
 
 about:
-  menu: '关于'
-  title: '关于'
-  subtitle: '关于'
+  menu: 'About'
+  title: 'About'
+  subtitle: 'About'
 
 links:
   menu: 'Links'
