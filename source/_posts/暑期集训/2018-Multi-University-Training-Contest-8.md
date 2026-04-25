@@ -2,8 +2,8 @@
 title: 2018 Multi-University Training Contest 8
 category_bar: true
 mathjax: true
-date: 2018-08-16 21:10:00
-updated: 2024-06-29 01:05:46
+date: 2018-11-19 19:45:13
+updated: 2018-11-20 15:34:31
 index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["暑期集训"]

@@ -2,8 +2,8 @@
 title: 2018 Multi-University Training Contest 9
 category_bar: true
 mathjax: true
-date: 2018-08-21 21:10:00
-updated: 2024-07-16 01:35:47
+date: 2018-08-21 08:51:49
+updated: 2026-03-05 19:49:48
 index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["暑期集训"]
@@ -258,6 +258,219 @@ int main() {
             continue;
         }
         cout << fenzi << "/" << fenmu << endl;
+    }
+
+    return 0;
+}
+```
+
+## J. [Rikka with Stone-Paper-Scissors](https://acm.hdu.edu.cn/showproblem.php?pid=6424)
+
+### 题意
+
+> 定义函数 $f_a(n) = \underbrace{\log \cdots \log}_{a\ 个 \log}\ n$，其中 $\log$ 以 $2$ 为底。
+>
+> 对于正整数数组 $A$，定义函数
+> $$
+> g_A(n) = \begin{cases}
+>             f_{A_1}(n) & |A| = 1 \\
+>             f_{A_1}(n) ^ {g_B(n)} & |A| > 1
+>          \end{cases}
+> $$
+> 其中 $B$ 为数组 $A$ 的长度为 $|A| - 1$ 的后缀子数组。
+>
+> 例如：$g_{[1, 2]}(n) = (\log n) ^ {(\log \log n)}$，$g_{[3, 1, 2]}(n) = (\log \log \log n)^{\left((\log n) ^ {\log \log n}\right)}$。
+>
+> 现在给定数组 $A$ 和 $B$，判断 $ k = \lim_{n \to +\infty} \frac{g_A(n)}{g_B(n)}$ 与 $0, +\infty$ 的大小关系。
+
+### 输入
+
+> 第一行为一个正整数 $T\ (1 \leq T \leq 10^5)$，接下去有 $T$ 组数据；每组数据第一行为两个正整数 $a, b\ (1 \leq a, b \leq 3)$，分别表示数组 $A$ 与 $B$ 的长度；第二行为 $a$ 个整数 $A_i$，第三行为 $b$ 个整数 $B_i\ (1 \leq A_i, B_i \leq 10^9)$，分别表示数组 $A$ 与 $B$ 中的数字。
+
+### 输出
+
+> 对于每组数据，若 $k = 0$ 则输出 $-1$，若 $k$ 趋于 $+\infty$ 则输出 $1$，否则输出 $0$。
+
+### 题解
+
+> 先考虑数组长度为 $3$ 时的一般情况，再考虑长度为 $1, 2$ 时如何兼容。
+>
+> 对 $g_A(n)$ 函数取 $\log$ 不影响其相对大小关系，而且还可以把指数项移到系数项，构造出 $f_A(n)$ 函数相加 / 相乘的形式：
+> $$
+> \begin{align*}
+>     g_A(n) = & f_{A_1}(n) ^ {\left(f_{A_2}(n) ^ {f_{A_3}(n)}\right)} \\
+>     \log(g_A(n)) = & \log\left(f_{A_1}(n) ^ {\left(f_{A_2}(n) ^ {f_{A_3}(n)}\right)}\right) \\
+>                     = & f_{A_2}(n) ^ {f_{A_3}(n)} \times \log(f_{A_1}(n)) \\
+>                     = & f_{A_2}(n) ^ {f_{A_3}(n)} \times f_{A_1 + 1}(n) \\
+>     \log(\log(g_A(n))) = & \log\left(f_{A_2}(n) ^ {f_{A_3}(n)} \times f_{A_1 + 1}(n)\right) \\
+>                         = & \log\left(f_{A_2}(n) ^ {f_{A_3}(n)}\right) + \log(f_{A_1 + 1}(n)) \\
+>                         = & f_{A_3}(n) \times \log(f_{A_2}(n)) + f_{A_1 + 2}(n) \\
+>                         = & f_{A_3}(n) \times f_{A_2 + 1}(n) + f_{A_1 + 2}(n)
+> \end{align*}
+> $$
+> 当底数为 $2$ 时，取对数次数越多，结果越小，因此 $\lim_{n \to +\infty} \frac{f_{a + 1}(n)}{f_a(n)} = 0$，在大小比较中取决定作用的是 $a$ 小的那一项，对于有不同项的乘积相加不容易比较，我们利用 $\lim_{n \to +\infty, a \to +\infty} f_a(n) = 1$，给以上的 $f_{A_1 + 2}(n)$ 项配上系数 $f_{+\infty}(n)$ 不影响结果大小，因此当数组长度为 $3$ 时，我们可以比较以下公式中取 $\log$ 次数较小的项
+> $$
+> \begin{align*}
+>     \log(\log(g_A(n))) = & f_{A_3}(n) \times f_{A_2 + 1}(n) + f_{A_1 + 2}(n) \times f_{+\infty}(n)
+> \end{align*}
+> $$
+> **注意**：取 $\log$ 次数较少项在大小比较中起决定性作用，即使与之相乘的另一项次数更多，也不影响比较结果。
+>
+> 比较方式为：定义数组 $X_1 = [A_1 + 2, +\infty], X_2 = [\min(A_2 + 1, A_3), \max(A_2 + 1, A_3)], Y = [\min(X_1, X_2), \max(X_1, X_2)]$（其中 $X$ 数组使用字典序规则比较），比较由题给 $A, B$ 数组生成的 $Y_A$ 与 $Y_B$ 数组的字典序大小，小的则结果更大。
+>
+> 最后考虑数组长度为 $2$ 和 $1$ 的情况，发现上式若将 $A_3$ 使用 $+\infty$ 替换后 $\lim_{n \to +\infty} g_A(n)$ 结果与 $A = [A_1, A_2]$ 相同，$A_2$ 使用 $+\infty$ 替换也不影响比较结果，因此当数组长度小于 $3$ 时，可使用 $+\infty$ 填充数组长度到 $3$ 之后再用以上规则进行比较。
+
+### 过题代码
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+
+typedef long long LL;
+const int maxn = 200000 + 100;
+int T, a, b, x;
+vector<vector<int>> A, B;
+vector<int> vct;
+
+vector<vector<int>> convert(const vector<int> &vct) {
+        vector<vector<int>> p;
+        if (vct.size() == 1) {
+            p = {{vct[0] + 2, INT_MAX}, {INT_MAX, INT_MAX}};
+        } else if (vct.size() == 2) {
+            p  = {{vct[0] + 2, INT_MAX}, {vct[1] + 1, INT_MAX}};
+        } else {
+            p = {{vct[0] + 2, INT_MAX}, {vct[1] + 1, vct[2]}};
+        }
+        sort(p[0].begin(), p[0].end());
+        sort(p[1].begin(), p[1].end());
+        sort(p.begin(), p.end());
+        return p;
+}
+
+int main() {
+#ifdef ExRoc
+    freopen("test.txt", "r", stdin);
+#endif // ExRoc
+    ios::sync_with_stdio(false);
+
+    cin >> T;
+    while (T--) {
+        cin >> a >> b;
+        vct.clear();
+        for (int i = 0; i < a; ++i) {
+            cin >> x;
+            vct.push_back(x);
+        }
+        A = convert(vct);
+        vct.clear();
+        for (int i = 0; i < b; ++i) {
+            cin >> x;
+            vct.push_back(x);
+        }
+        B = convert(vct);
+        if (A < B) {
+            cout << 1 << endl;
+        } else if (A > B) {
+            cout << -1 << endl;
+        } else {
+            cout << 0 << endl;
+        }
+    }
+
+    return 0;
+}
+```
+
+## K. [Rikka with Badminton](https://acm.hdu.edu.cn/showproblem.php?pid=6425)
+
+### 题意
+
+> $n$ 个学生，有 $a$ 个学生没球（羽毛球）没拍（羽毛球拍），有 $b$ 个同学有一个拍但没球，有 $c$ 个同学有一个球但没拍，有 $d$ 个同学有一个球和一个拍，其中 $a + b + c + d = n$。
+>
+> 若要举办一场羽毛球赛，参加的同学拥有的球拍数总和至少为 $2$，羽毛球数至少为 $1$，所有同学均有可能参加或者不参加，共 $2^n$ 种可能，问所有可能中，有多少种可能无法举办比赛。
+
+### 输入
+
+> 第一行为一个整数 $T\ (1 \leq T \leq 10^3)$，表示有 $T$ 组数据，每组数据一行四个整数 $a, b, c, d\ (0 \leq a, b, c, d \leq 10^7, a + b + c + d \geq 1)$，含义如题。
+
+### 输出
+
+> 每组数据输出一行整数，为所求答案对 $998244353$ 取模的结果。
+
+### 题解
+
+> 穷举所有可能情况的方案数相加：
+>
+> | 没球没拍（$a$ 人） | 有拍没球（$b$ 人） | 有球没拍（$c$ 人） | 有球有拍（$d$ 人） |                    方案数                    |
+> | :----------------: | :----------------: | :----------------: | :----------------: | :------------------------------------------: |
+> |        不选        |        不选        |        不选        |        不选        |                     $1$                      |
+> |     至少 1 人      |        不选        |        不选        |        不选        |                  $2^a - 1$                   |
+> |     至少 1 人      |     至少 1 人      |        不选        |        不选        |      $(2^{a+b}-1) - (2^a-1) - (2^b-1)$       |
+> |     至少 1 人      |        不选        |     至少 1 人      |        不选        |      $(2^{a+c}-1) - (2^a-1) - (2^c-1)$       |
+> |     至少 1 人      |        不选        |        不选        |     恰好 1 人      |              $(2^a-1) \times d$              |
+> |     至少 1 人      |     恰好 1 人      |     至少 1 人      |        不选        | $b \times [(2^{a+c}-1) - (2^a-1) - (2^c-1)]$ |
+> |     至少 1 人      |        不选        |     至少 1 人      |     恰好 1 人      | $d \times [(2^{a+c}-1) - (2^a-1) - (2^c-1)]$ |
+> |        不选        |     至少 1 人      |        不选        |        不选        |                  $2^b - 1$                   |
+> |        不选        |     恰好 1 人      |     至少 1 人      |        不选        |             $b \times (2^c - 1)$             |
+> |        不选        |        不选        |     至少 1 人      |        不选        |                  $2^c - 1$                   |
+> |        不选        |        不选        |     至少 1 人      |     恰好 1 人      |             $d \times (2^c - 1)$             |
+> |        不选        |        不选        |        不选        |     恰好 1 人      |                     $d$                      |
+>
+> 
+
+### 过题代码
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+
+typedef long long LL;
+const int maxn = 200000 + 100;
+const LL MOD = 998244353;
+int T;
+LL a, b, c, d;
+
+LL fastPow(LL res, LL n) {
+    LL ans;
+    for (ans = 1; n != 0; n >>= 1) {
+        if ((n & 1) != 0) {
+            ans = ans * res % MOD;
+        }
+        res = res * res % MOD;
+    }
+    return ans;
+}
+
+LL two(LL n) {
+    return fastPow(2, n);
+}
+
+int main() {
+#ifdef ExRoc
+    freopen("test.txt", "r", stdin);
+#endif // ExRoc
+    ios::sync_with_stdio(false);
+
+    cin >> T;
+    while (T--) {
+        cin >> a >> b >> c >> d;
+        LL ans = 1
+            + two(a) - 1
+            + two(a + b) - 1 - (two(a) - 1) - (two(b) - 1)
+            + two(a + c) - 1 - (two(a) - 1) - (two(c) - 1)
+            + (two(a) - 1) * d % MOD
+            + b * (two(a + c) - 1 - (two(a) - 1 ) - (two(c) - 1)) % MOD
+            + d * (two(a + c) - 1 - (two(a) - 1) - (two(c) - 1)) % MOD
+            + two(b) - 1
+            + b * (two(c) - 1) % MOD
+            + two(c) - 1
+            + d * (two(c) - 1) % MOD
+            + d;
+        cout << (ans % MOD + MOD) % MOD << endl;
     }
 
     return 0;
