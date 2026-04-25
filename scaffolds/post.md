@@ -9,4 +9,5 @@ categories: # 类型：数组，有层级关系
 tags: # 类型：数组，并列关系
 mathjax: false # 需要渲染 latex 公式时打开
 description: # 这里是摘要
+hide: false # 是否需要隐藏，隐藏后只能通过链接访问
 ---
