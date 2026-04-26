@@ -102,3 +102,10 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+pandoc:
+  # 将超时时间设置为 30 秒 (30000 毫秒)，可根据需要调整
+  timeout: 30000
+  # 可选：推荐添加 --mathjax 参数以获得最佳公式渲染效果
+  args:
+    - '--mathjax'
