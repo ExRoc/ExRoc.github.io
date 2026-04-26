@@ -37,7 +37,7 @@ description: 2018 第五场多校题解
 
 > 由于每次交换可以选择 $1\leq i\leq j\leq m$，其中 $i$ 可以等于 $j$，因此答案可以从任意小于等于 $k$ 次的合法交换中取最小值得到，题目要求在交换过程中不允许出现前导零，可以证明，如果交换的结果不含有前导零，就一定存在一种方式在不出现前导零的情况下从原数字得到结果数字。最后就是暴力枚举所有交换次数小于等于 $k$ 的全排列，每次 $O(n)$ 生成全排列会超时，可以预处理 $9$ 以内的全排列（如果长度达到 $10$ 就只有一种答案），全排列的交换次数可以用并查集找环计算。如果 $k$ 大于等于 $m-1$ 直接生成不含前导零的最小字典序和最大字典序作为答案。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -159,6 +159,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## E. [Everything Has Changed](https://acm.hdu.edu.cn/showproblem.php?pid=6354)
 
 ### 题意
@@ -196,7 +198,7 @@ int main() {
 >
 > 最后还需要减掉圆 $O_1$ 在圆 $O_2$ 内部的圆弧长度，计算方式与第一种情况相同。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -282,6 +284,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## G. [Glad You Came](https://acm.hdu.edu.cn/showproblem.php?pid=6356)
 
 ### 题意
@@ -310,7 +314,7 @@ int main() {
 
 > 反向用 $ST$ 表 $O(1)$ 地标记最大值更新，最后从大到小将最大值标记往下打，就可以得到答案，时间复杂度为 $O(m+n\log n)$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -386,6 +390,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## H. [Hills And Valleys](https://acm.hdu.edu.cn/showproblem.php?pid=6357)
 
 ### 题意
@@ -408,7 +414,7 @@ int main() {
 >
 > 最后输出翻转的区间，只要将翻转区间跟着 $dp$ 一起更新即可，用 $dp_l$ 和 $dp_r$ 表示 $dp$ 取得最大值时翻转的区间，其中 $dp_l$ 在多个 $dp$ 取最大值时应取最靠前的位置，$dp_r$ 只要跟着更新，就可以得到最后一个翻转的位置。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -489,3 +495,4 @@ int main() {
 }
 ```
 
+{% endfold %}

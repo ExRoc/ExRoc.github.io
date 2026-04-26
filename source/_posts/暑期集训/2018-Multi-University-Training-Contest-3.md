@@ -49,7 +49,7 @@ description: 2018 第三场多校题解
 
 > 从后往前维护一个单调队列，维护到第 $i$ 个区间时队列的大小即 $count_i$，队列中的最大值就是 $maxrating_i$，扫一遍只需要 $O(n)$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -112,6 +112,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## C. [Dynamic Graph Matching](https://acm.hdu.edu.cn/showproblem.php?pid=6321)
 
 ### 题意
@@ -139,7 +141,7 @@ int main() {
 >
 > 初始状态 $dp[0]=1$，用 $ans[i]$ 记录在匹配边的数量为 $i$ 时的总方案数，设 $bit_i$ 为数字 $i$ 的二进制位中 $1$ 的数量，则 $ans[j]=\sum_{i=0}^{2^n}dp[i]$，其中 $j=\frac{bit_i}{2}$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -214,6 +216,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Euler Function](https://acm.hdu.edu.cn/showproblem.php?pid=6322)
 
 ### 题意
@@ -232,7 +236,7 @@ int main() {
 
 > 通过打表找规律可以发现，除了 $k=1$ 时答案为 $5$ 外，其他答案都为 $k+5$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -260,6 +264,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## F. [Grab The Tree](https://acm.hdu.edu.cn/showproblem.php?pid=6324)
 
 ### 题意
@@ -278,7 +284,7 @@ int main() {
 
 > 如果树上所有点的异或值为 $0$，无论小 $Q$ 如何选点，小 $T$ 的分数都会和小 $Q$ 的分数相等，如果树上所有点的异或值非 $0$，则小 $Q$ 只需要选择最大值，就可以让树上所有其他点异或值的最高位小于小 $Q$ 选择的点的权值，小 $Q$ 必胜。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -314,6 +320,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## G. [Interstellar Travel](https://acm.hdu.edu.cn/showproblem.php?pid=6325)
 
 ### 题意
@@ -334,7 +342,7 @@ int main() {
 >
 > 首先对所有点去重，然后构造凸壳，构造过程中保留凸壳上的共线点，所有拐点必然是要作为答案的，但是共线点上可能存在比下一个拐点编号更小的点，为使答案的字典序最小，必须选择这些共线点上编号小于下一个拐点的一系列点，且这一系列点的字典序也要最小，在这些共线点中可以用单调栈来维护需要选择的字典序最小的点的编号。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -432,6 +440,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## H. [Monster Hunter](https://acm.hdu.edu.cn/showproblem.php?pid=6326)
 
 ### 题意
@@ -458,7 +468,7 @@ int main() {
 >
 > 然后将所有 $a_i$ 的子节点的父节点改为 $f$，更新父节点并快速排序的过程可以用堆来维护，更改父节点的操作可以用并查集来维护。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -568,6 +578,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## I. [Random Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6327)
 
 ### 题意
@@ -610,7 +622,7 @@ int main() {
 >
 > 最后将 $\sum_{x,y,z\in[1,m],z|y,y|x}dp[n][x][y][z]$ 乘上总方案数对 $10^9+7$ 的逆元就是答案，总方案数为 $m^{cnt}$，其中 $cnt$ 为 $a$ 序列中 $0$ 的个数。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -739,6 +751,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## L. [Visual Cube](https://acm.hdu.edu.cn/showproblem.php?pid=6330)
 
 ### 题意
@@ -757,7 +771,7 @@ int main() {
 
 > 由于前面覆盖后面，上面覆盖下面，右边覆盖左边，所以可以依次从后往前，从下往上，从左往右输出网格。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -822,6 +836,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## M. [Walking Plan](https://acm.hdu.edu.cn/showproblem.php?pid=6331)
 
 ### 题意
@@ -855,7 +871,8 @@ int main() {
 >
 > $$B[k][i][j]=\min(dis[k][i][u],G[u][j]),u\in[1,n]$$
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```c++
 #include <cstdio>
 #include <cstring>
@@ -961,3 +978,5 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}

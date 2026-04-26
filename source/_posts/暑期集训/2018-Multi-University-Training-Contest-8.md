@@ -45,7 +45,7 @@ description: 2018 第八场多校题解
 > $$
 > 
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -99,6 +99,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Parentheses Matrix](https://acm.hdu.edu.cn/showproblem.php?pid=6400)
 
 ### 题意
@@ -148,7 +150,7 @@ int main() {
 > ))))))))))
 > ```
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```cpp
 #include <bits/stdc++.h>
@@ -255,6 +257,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## E. [Magic Square](https://acm.hdu.edu.cn/showproblem.php?pid=6401)
 
 ### 题意
@@ -275,7 +279,7 @@ int main() {
 
 > 按题意模拟。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```cpp
 #include <bits/stdc++.h>
@@ -320,6 +324,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## J. [Taotao Picks Apples](https://acm.hdu.edu.cn/showproblem.php?pid=6406)
 
 ### 题意
@@ -343,7 +349,7 @@ int main() {
 > - 若 $q$ 大于 $preMax_{p-1}$（即前缀最大值），则答案为 $pre_{p-1}+1+suffix$（其中 $suffix$ 为查询到的后缀合法取苹果数）；
 > - 若 $q$ 小于等于 $preMax_{p-1}$，则令 $q=preMax_{p-1}$ 后，再查询 $suffix$，答案为 $pre_{p-1}+suffix$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```cpp
 #include <bits/stdc++.h>
@@ -426,6 +432,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## K. [Pop the Balloons](https://acm.hdu.edu.cn/showproblem.php?pid=6407)
 
 ### 题意
@@ -455,7 +463,7 @@ int main() {
 >
 > 最后加上一些状态转移优化，以及答案爆 `long long`，可通过该题。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```cpp
 #include <bits/stdc++.h>
@@ -570,3 +578,4 @@ int main() {
 }
 ```
 
+{% endfold %}

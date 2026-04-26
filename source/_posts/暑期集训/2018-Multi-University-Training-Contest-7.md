@@ -37,7 +37,7 @@ description: 2018 第七场多校题解
 
 > 用一个 `set` 保存从节点 $1$ 到当前节点所有代价最小的路径中的前置边权值集合，到遍历节点的下一条边时，从集合中寻找是否已经有匹配的边，如果有则按照迪杰斯特拉进行最短路的更新。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -156,6 +156,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## E. [GuGuFishtion](https://acm.hdu.edu.cn/showproblem.php?pid=6390)
 
 ### 题意
@@ -199,7 +201,7 @@ int main() {
 >
 > 题目保证质数比 $n$ 与 $m$ 大，故直接求逆元最后乘起来即可。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -278,6 +280,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## J. [Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6395)
 
 ### 题意
@@ -306,7 +310,7 @@ int main() {
 > $\lfloor\frac{P}{i}\rfloor$ 不同的取值在 $\sqrt{P}$ 级别，然后按此分段用矩乘快速幂递推,注意 $P$ 和 $n$ 的大小。
 > 
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -434,6 +438,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## K. [Swordsman](https://acm.hdu.edu.cn/showproblem.php?pid=6396)
 
 ### 题意
@@ -456,7 +462,7 @@ int main() {
 
 > 以每个属性为关键字从小到大排序，然后使用 $k$ 个指针从小到大扫描，是否能打败对应的怪物，最多扫描 $nk$ 次。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -558,3 +564,4 @@ int main() {
 }
 ```
 
+{% endfold %}

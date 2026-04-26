@@ -46,7 +46,7 @@ inline bool larger(const double &x, const double &y) {
 
 > $i$ 从 $0$ 到 $\sqrt N$ 跑，计算 $\sqrt{N-i^2}$ 的值，如果为整数，按大小放到 `set<pair<int,int>>` 里面，再依次输出。
 
-## 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <bits/stdc++.h>
@@ -91,3 +91,5 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}

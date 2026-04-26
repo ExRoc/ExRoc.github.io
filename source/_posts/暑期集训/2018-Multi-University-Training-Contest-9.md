@@ -52,7 +52,7 @@ description: 2018 第九场多校题解
 > dp[i][j][k]=dp[i-1][j-1][k]\times(n-j+1)\times k+dp[i-1][j][k-1]\times(m-k+1)\times j+dp[i-1][j][k]\times(j*k-i+1)
 > $$
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <bits/stdc++.h>
@@ -95,6 +95,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## B. [Rikka with Seam](https://acm.hdu.edu.cn/showproblem.php?pid=6416)
 
 ### 题意
@@ -129,7 +131,7 @@ int main() {
 > $$
 > 
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <bits/stdc++.h>
@@ -191,6 +193,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Rikka with Stone-Paper-Scissors](https://acm.hdu.edu.cn/showproblem.php?pid=6418)
 
 ### 题意
@@ -213,7 +217,7 @@ int main() {
 > $$
 > 
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <bits/stdc++.h>
@@ -263,6 +267,8 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}
 
 ## J. [Rikka with Stone-Paper-Scissors](https://acm.hdu.edu.cn/showproblem.php?pid=6424)
 
@@ -320,7 +326,7 @@ int main() {
 >
 > 最后考虑数组长度为 $2$ 和 $1$ 的情况，发现上式若将 $A_3$ 使用 $+\infty$ 替换后 $\lim_{n \to +\infty} g_A(n)$ 结果与 $A = [A_1, A_2]$ 相同，$A_2$ 使用 $+\infty$ 替换也不影响比较结果，因此当数组长度小于 $3$ 时，可使用 $+\infty$ 填充数组长度到 $3$ 之后再用以上规则进行比较。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -383,6 +389,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## K. [Rikka with Badminton](https://acm.hdu.edu.cn/showproblem.php?pid=6425)
 
 ### 题意
@@ -420,7 +428,7 @@ int main() {
 >
 > 
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -477,3 +485,4 @@ int main() {
 }
 ```
 
+{% endfold %}

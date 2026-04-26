@@ -37,7 +37,7 @@ description: 2018 第二场多校题解
 
 > 对每个连通块分开处理，如果某个连通块内只有一个点，则不需要笔画，否则统计这个连通块内度为奇数的点的数量 $cnt$，则需要的最少笔画数量为 $\max(\frac{cnt}{2},1)$（欧拉路径性质），求和就是整张图的最少笔画数。然后对于每个连通块内度为奇数的点（点的个数一定为偶数），两两加边，这样就能使得所有点的度都为偶数，在新图上跑出欧拉路径，再将这个路径上之前加上去的边从环上删掉，就可以得到 $\max(\frac{cnt}{2},1)$ 条路径。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -221,6 +221,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Game](https://acm.hdu.edu.cn/showproblem.php?pid=6312)
 
 ### 题意
@@ -241,7 +243,7 @@ int main() {
 > 
 > 假设初始集合中只有 $2$ 到 $n$ 个整数，若 $Alice$ 选择了数字 $x$ 可以获胜，那么对于 $1$ 到 $n$ 的集合选择 $x$ 之后剩下的数字与初始集合为 $2$ 到 $n$ 的下一个状态完全相同，都是必败态，若 $Alice$ 初始集合 $2$ 到 $n$ 是一种必败态，那么 $Alice$ 只要选择数字 $1$ 就可以将必败态转移给 $Bob$，所以无论如何 $Alice$ 都将获胜。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -263,6 +265,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## E. [Hack It](https://acm.hdu.edu.cn/showproblem.php?pid=6313)
 
 ### 题意
@@ -280,9 +284,9 @@ int main() {
 
 > 关于构造方法的证明思路，不会，详见大佬给出的证明（也可以直接跳过证明看构造的方法）：
 >
-> ![证明 1](img/2018-Multi-University-Training-Contest/Hack-It-证明-1.jpg)
+> ![证明 1](/img/2018-Multi-University-Training-Contest/Hack-It-证明-1.jpg)
 >
-> ![证明 2](img/2018-Multi-University-Training-Contest/Hack-It-证明-2.jpg)
+> ![证明 2](/img/2018-Multi-University-Training-Contest/Hack-It-证明-2.jpg)
 >
 > 文字描述构造方案比较麻烦，直接看图找规律比较好些，构造方案如下（$n\times n=256$ 的情况下）：
 >
@@ -310,7 +314,7 @@ int main() {
 >
 > 于是对于 $2000\times2000$ 的情况，找到子矩阵大小为 $47\times47$ 的就可以满足条件，将多出 $2000$ 的部分截断即可。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -352,6 +356,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## F. [Matrix](https://acm.hdu.edu.cn/showproblem.php?pid=6314)
 
 ### 题意
@@ -370,7 +376,7 @@ int main() {
 
 > 根据容斥原理可以知道，至少 $A$ 行 $B$ 列为黑色的方案数为 $\sum_{i=A}^nf_{ai}C_n^i\sum_{j=B}^mf_{bj}C_m^j$，如果 $i$ 和 $j$ 是从 $1$ 开始的，那么 $f_{ai}f_{bj}$ 的值就为 $(-1)^{i+j}$，然而 $i$ 和 $j$ 不是从 $1$ 开始的，而是从某个数字开始的，于是该系数就为 $f_{ai}=1-\sum_{k=A}^iC_i^kf_{ak},~f_{bj}=1-\sum_{k=B}^jC_j^kf_{bk}$。系数 $f_{ai}$ 具体的推导可以根据在 $k\in[A,i)$ 容斥的加减计算过程中，至少为 $i$ 行的状态被重复计算的次数来得到。最后对 $f_{ai}$ 和 $f_{bj}$ 进行 $O(n^2+m^2)$ 次预处理，再 $O(nm)$ 地计算容斥公式，就可以得到答案。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -446,6 +452,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## G. [Naive Operations](https://acm.hdu.edu.cn/showproblem.php?pid=6315)
 
 ### 题意
@@ -466,7 +474,7 @@ int main() {
 
 > 由于每次操作都只对区间 $+1$，最坏情况下，如果每次操作都对整个区间 $+1$，那么 $q$ 次操作后区间的和为 $\frac{q}{1}+\frac{q}{2}+\cdots+\frac{q}{n}\approx q\ln n\approx10^6$，因此对于每次 $\lfloor\frac{a_i}{b_i}\rfloor$ 增加 $1$ 时都更新一次（用树状数组更新复杂度为 $O(q\ln n\log n)\approx2\times10^7$），这样区间更新就用区间增减区间最小值的线段树维护，线段树上每个数初始为 $b_i$，每次操作 $1$ 就将区间 $[l,r]$ 内的数字都 $-1$，每当区间最小值为 $0$ 时就单点更新这个最小值，并将这个值赋值为 $b_i$，总的时间复杂度约为 $O(2q\ln n\log n)$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -593,6 +601,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## J. [Swaps and Inversions](https://acm.hdu.edu.cn/showproblem.php?pid=6318)
 
 ### 题意
@@ -611,7 +621,7 @@ int main() {
 
 > 由于每次代价为 $y$ 的操作最多能减少一个逆序对，所以代价为 $y$ 的操作次数与最终序列中剩下的逆序对的数量和，等于初始序列的逆序对数，因此答案就是总的逆序对数乘上 $\min(x,y)$。对整个序列离散化然后用树状数组求逆序对。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -690,3 +700,5 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}

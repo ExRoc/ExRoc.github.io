@@ -31,7 +31,8 @@ Contests 链接：[Codeforces Round #454 (Div.2)](http://codeforces.com/contest/
 
 > 对 $V_m$ 分几种情况讨论一下就行了，情况比较多，所以 $if\cdots else\cdots$ 语句比较多。要注意 $Masha$ 只喜欢小车的条件。
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -72,6 +73,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## B. Tic-Tac-Toe
 
 ### 题意
@@ -86,7 +89,8 @@ int main() {
 
 > 按照题意模拟就行了。
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -157,6 +161,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## C. Shockers
 
 ### 题意
@@ -171,7 +177,8 @@ int main() {
 
 > 用两个集合 $ans$ 和 $Not$ 来维护，先把 $ans$ 初始化，把 $a$ 到 $z$ 的小写字符全都放进去，对于后面每一次被 $Shock$ 的提问，都取当前单词和 $ans$ 里的字符的交集，对于每一次没有被 $Shock$ 的提问，都把当前的单词记录到 $Not$ 集合里，每次都从 $ans$ 集合里删去 $Not$ 集合里的字符。当 $ans$ 集合的大小为 $1$ 时，就可以得到答案，对于后面的提问，就按照题意来模拟就行了。
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -239,3 +246,5 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}

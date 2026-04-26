@@ -58,7 +58,7 @@ description: 2018 第四场多校题解
 >
 > 方程中的每一项都可以 $O(1)$ 求得，因此总的时间复杂度为 $O(n\sqrt n)$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -167,6 +167,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Nothing is Impossible](https://acm.hdu.edu.cn/showproblem.php?pid=6335)
 
 ### 题意
@@ -185,7 +187,7 @@ int main() {
 
 > 个人认为这题应该加一个“最高分至少能够做对的题数”，即在他们所有人运气都最坏的情况下，能够做对的题数的最大值，最优策略就是让所有人的答案填法按照 $b_i$ 进制一个一个地填上去，如果能够达到第 $i$ 位，则说明第 $i$ 位以下的所有情况都已经填上去，也就至少能够保证做对 $i-1$ 道题，为了让位数增长最快，应该让 $b_i$ 值小的作为低位。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -232,6 +234,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## E. [Matrix from Arrays](https://acm.hdu.edu.cn/showproblem.php?pid=6336)
 
 ### 题意
@@ -264,7 +268,8 @@ for (int i = 0; ; ++i) {
 >
 > 注意 $x_0,y_0$ 取得 $0$ 的情况。
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```c++
 #include <cstdio>
 using namespace std;
@@ -340,6 +345,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## J. [Let Sudoku Rotate](https://acm.hdu.edu.cn/showproblem.php?pid=6341)
 
 ### 题意
@@ -358,7 +365,8 @@ int main() {
 
 > 将每个 $4\times4$ 格子顺时针旋转，每次旋转检查是否与当前格子左上方的所有格子冲突，若冲突则剪枝，否则继续往下搜索，“由于数独限制较强，剪枝效果良好。”
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```c++
 #include <cstdio>
 #include <algorithm>
@@ -456,6 +464,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## K. [Expression in Memories](https://acm.hdu.edu.cn/showproblem.php?pid=6342)
 
 ### 题意
@@ -474,7 +484,7 @@ int main() {
 
 > 首先如果有 `?` 在一个单独的零（零前无字符，或者是加号与乘号）后面，就将 `?` 替换为 `+`，否则将 `?` 替换为 `1`，替换结束后检查字符串格式是否为一个合法的表达式，如果是则输出字符串，否则输出 `IMPOSSIBLE`。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -549,6 +559,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## L. [Graph Theory Homework](https://acm.hdu.edu.cn/showproblem.php?pid=6343)
 
 ### 题意
@@ -567,7 +579,7 @@ int main() {
 
 > 从节点 $1$ 到节点 $n$ 之间，经历的中间节点越多，$1$ 到 $n$ 的距离越长，最短距离就是从节点 $1$ 到 $n$ 的边权。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -596,3 +608,5 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}

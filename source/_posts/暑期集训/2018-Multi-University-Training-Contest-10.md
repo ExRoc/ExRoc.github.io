@@ -39,7 +39,7 @@ description: 2018 第十场多校题解
 >
 > 最后使用启发式合并可将时间复杂度降低至 $O(n \log n)$，注意：使用集合合并完成后，需要删除小的集合，否则会 MLE。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -104,6 +104,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## G. [Cyclic](https://acm.hdu.edu.cn/showproblem.php?pid=6432)
 
 ### 题意
@@ -143,7 +145,7 @@ int main() {
 > ans = \sum_{k = 0} ^ {n - 1} (-1)^k C_n^k (n - k - 1)! + (-1)^n
 > $$
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -201,6 +203,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## H. [Pow](https://acm.hdu.edu.cn/showproblem.php?pid=6433)
 
 ### 题意
@@ -219,7 +223,7 @@ int main() {
 
 > 所有子集内数字的和相当于所有三进制数中，每一位为 $0$ 或者为 $1$ 的情况，总共有 $n$ 位，这些数字的值一定都不相等，所以答案为 $2^n$，用大数乘法加快速幂可 AC。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -294,6 +298,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## I. [Count](https://acm.hdu.edu.cn/showproblem.php?pid=6434)
 
 ### 题意
@@ -341,7 +347,7 @@ int main() {
 >         \end{cases}
 > $$
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -400,6 +406,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## J. [CSGO](https://acm.hdu.edu.cn/showproblem.php?pid=6435)
 
 ### 题意
@@ -445,7 +453,7 @@ int main() {
 > $$
 > 
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -502,6 +510,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## L. [Videos](https://acm.hdu.edu.cn/showproblem.php?pid=6437)
 
 ### 题意
@@ -532,7 +542,7 @@ int main() {
 >
 > 最后跑一遍最小费用最大流，最小费用的相反数即答案。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include<bits/stdc++.h>
@@ -685,3 +695,4 @@ int main() {
 }
 ```
 
+{% endfold %}

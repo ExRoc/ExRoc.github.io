@@ -50,7 +50,7 @@ description: 2018 第六场多校题解
 >
 > 因此 $l=2b^2+\pi ab$，$ans=\frac{l}{b}=2b+\pi a$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -78,6 +78,8 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}
 
 ## B. [bookshelf](https://acm.hdu.edu.cn/showproblem.php?pid=6363)
 
@@ -107,9 +109,11 @@ int main() {
 >
 > 由斐波那契数列性质可得：$\gcd(beauty_i,beauty_j)=2^{f[\gcd(cnt_i,cnt_j)]}-1$，因此只要统计每一个可能的 $\gcd$ 值及对应的方案数相乘即可。将 $n$ 本书放到书架上所有 $\gcd$ 的可能值为 $n$ 的所有约数，对于某一个 $\gcd$ 的值，其方案数如果直接用 $C_{\frac{n}{\gcd}+k-1}^{\frac{n}{\gcd}}$ 来算的话，会将 $\gcd$ 的所有倍数重复计算（若每一层的 $cnt_i$ 都是 $k\times\gcd\ (k>1)$，则该方案数会在统计 $\gcd$ 时被计算一次，在统计 $k\times\gcd$ 时又被统计一次），为减去重复的统计，应该用容斥将所有是 $n$ 的约数且又是 $\gcd$ 倍数 $p$ 的方案数除去，方案数为 $C_{\frac{n}{p}+k-1}^{\frac{n}{p}}$，系数为莫比乌斯函数 $mu[\frac{p}{\gcd}]$，因此答案为：
 >
-> $$ans=\frac{\left(\sum_{\gcd|n}\left(2^{f[\gcd]}-1\right)\sum_{\gcd|p\\&p|n}C_{\frac{n}{p}+k-1}^{\frac{n}{p}}mu[\frac{p}{\gcd}]\right)}{C_{n+k-1}^n}$$
+> $$
+> ans=\frac{\left(\sum_{\gcd|n}\left(2^{f[\gcd]}-1\right)\sum_{\gcd|p\&p|n}C_{\frac{n}{p}+k-1}^{\frac{n}{p}}mu[\frac{p}{\gcd}]\right)}{C_{n+k-1}^n}
+> $$
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -254,6 +258,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Shoot Game](https://acm.hdu.edu.cn/showproblem.php?pid=6365)
 
 ### 题意
@@ -276,7 +282,8 @@ int main() {
 >
 > 其中 $W_{max}$ 为从端点 $i$ 到端点 $j$ 之间所有线段中需要的最大能量。
 
-### 过题代码
+{% fold info @过题代码 %}
+
 ```c++
 #include <cstdio>
 #include <cstring>
@@ -366,6 +373,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## I. [Werewolf](https://acm.hdu.edu.cn/showproblem.php?pid=6370)
 
 ### 题意
@@ -384,7 +393,7 @@ int main() {
 
 > 不论什么情况下，所有人都有可能为狼人，因此一定为村民的玩家数量等于 $0$，现在分析一定为狼人的玩家数量。如果 $a$ 指认 $b$ 为村民，则从 $a$ 向 $b$ 连一条有向的村民边，如果 $a$ 指认 $b$ 为狼人，则从 $a$ 向 $b$ 连一条有向的狼人边，将所有以村民边相连的加入到同一个连通块内，如果是一个 $6$ 字形的连通块，则连通块内所有玩家都有可能是村民。如果是一棵树（若 $a$ 有一条村民边指向 $b$，则将 $b$ 作为 $a$ 的父节点），则狼人边一定是从树根连出的（因为所有点的出度都为 $1$，只有树根的出度为 $0$），假设树根为狼人，则所有指向树根的节点都是狼人，以此类推则整棵树都是狼人，假设树根为村民，则树根指向的节点是狼人，则以该节点为父节点的整颗子树上的节点都是狼人，因此两种假设下，一定为狼人的节点就是树根指向的节点所代表的子树。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -473,6 +482,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## L. [Pinball](https://acm.hdu.edu.cn/showproblem.php?pid=6373)
 
 ### 题意
@@ -497,7 +508,7 @@ int main() {
 >
 > 可以先计算出小球在沿平行于斜面方向上运动的时间 $tx$，第一次接触斜面之前的时间 $t_{y1}$ 与上抛运动的周期 $t_{y2}$，则小球与斜面碰撞的次数为：$ans=\lfloor\frac{t_x-t_{y1}}{t_{y2}}\rfloor+1$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -536,3 +547,4 @@ int main() {
 }
 ```
 
+{% endfold %}

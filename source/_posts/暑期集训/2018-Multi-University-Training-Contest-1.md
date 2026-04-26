@@ -37,7 +37,7 @@ description: 2018 第一场多校题解
 
 > 暴力打表找规律，可以发现如果 $n$ 是 $3$ 的倍数，那么 $x,y,z$ 的值一定都是 $\frac{n}{3}$，如果 $n$ 是 $4$ 的倍数，那么 $x,y,z$ 其中一个数是 $\frac{n}{2}$，另外两个数是 $\frac{n}{4}$，其他情况都输出 $-1$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -73,7 +73,7 @@ int main() {
 }
 ```
 
-
+{% endfold %}
 
 ## B. [Balanced Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6299)
 
@@ -95,7 +95,7 @@ int main() {
 >
 > 如果字符串 $a$ 有 $a_l$ 个 `)` 和 $a_r$ 个 `(`，字符串 $b$ 有 $b_l$ 个 `)` 和 $b_r$ 个 `(`，将 $a$ 放在 $b$ 的前面（不必相邻），则会产生 $x=\min(a_r,b_l)$ 对新的括号匹配子序列，将 $b$ 放在 $a$ 的前面，则会产生 $y=\min(b_r,a_l)$ 对新的括号匹配子序列，现在贪心地对所有字符串进行排序，如果 $x>y$，则把 $a$ 排在 $b$ 的前面，如果 $x<y$ 大，则把 $b$ 排在 $a$ 的前面，如果 $x=y$，则把含有 `(` 个数多的放在前面，最后扫一遍整个排序拼接后的字符串，就可以计得到答案。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -179,6 +179,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## C. [Triangle Partition](https://acm.hdu.edu.cn/showproblem.php?pid=6300)
 
 ### 题意
@@ -197,7 +199,7 @@ int main() {
 
 > 将所有点按横坐标从小到大排序，选取连续的三个点，就能构成合法的三角形。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -245,6 +247,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## D. [Distinct Values](https://acm.hdu.edu.cn/showproblem.php?pid=6301)
 
 ### 题意
@@ -263,7 +267,7 @@ int main() {
 
 > 将所有区间按 $l_i$ 为主关键字，$r_i$ 为次关键字排序，然后 $O(n)$ 预处理出每个数字对应的最靠前的左区间下标 $head_i$，如果某个点不在任何一个区间内，则 $head_i=i$，然后先把 $1$ 到 $n$ 所有数字放到小顶堆内，从前往后扫，每次取出堆顶的值放入当前位置，如果出现 $head_i\neq head_{i+1}$，就先将区间 $[head_i,head_{i+1})$ 内的所有放下去的数字收回到小顶堆，就可以得到答案。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -339,6 +343,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## G. [Chiaki Sequence Revisited](https://acm.hdu.edu.cn/showproblem.php?pid=6304)
 
 ### 题意
@@ -372,7 +378,7 @@ int main() {
 >
 > 最后注意答案会乘爆 `long long`，所以在乘法之前应该先取模一次。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -446,6 +452,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## H. [RMQ Similar Sequence](https://acm.hdu.edu.cn/showproblem.php?pid=6305)
 
 ### 题意
@@ -464,7 +472,7 @@ int main() {
 
 > 根据题意建立一棵序列 $A$ 的笛卡尔树，题目即求笛卡尔树与数列 $A$ 同构的序列 $B$ 的序列和的期望，由于 $B$ 内每个数字都是实数，所以任意两个数字相等的概率趋近于 $0$，对于每一个节点对应的区间，节点的数字大于该区间内所有数字的概率为 $\frac{1}{son_i}$，其中 $son_i$ 为节点 $i$ 对应子树的节点数，将所有节点的满足条件的概率相乘，再乘上序列求和的期望值 $\frac{n}{2}$，就是答案。最后要求期望对 $10^9+7$ 的取模的结果，就是将结果 $\frac{p}{q}$ 转化成 $p\times q^{-1}\mod10^9+7$。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -558,6 +566,8 @@ int main() {
 }
 ```
 
+{% endfold %}
+
 ## K. [Time Zone](https://acm.hdu.edu.cn/showproblem.php?pid=6308)
 
 ### 题意
@@ -576,7 +586,7 @@ int main() {
 
 > 将所有数字都转化为分钟后按照题意模拟，注意精度误差，不要读入小数。
 
-### 过题代码
+{% fold info @过题代码 %}
 
 ```c++
 #include <cstdio>
@@ -611,3 +621,5 @@ int main() {
     return 0;
 }
 ```
+
+{% endfold %}
