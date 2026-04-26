@@ -3,7 +3,6 @@ title: Made in Crazy
 category_bar: true
 mathjax: false
 date: 2014-05-08 19:03:00
-updated: 2024-06-02 02:49:05
 index_img: /img/cover/Made_in_Crazy.jpg
 author: 江山如画丨
 categories: ["杂记", "高中"]

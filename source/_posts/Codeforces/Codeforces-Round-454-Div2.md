@@ -3,7 +3,6 @@ title: 'Codeforces Round #454 (Div.2)'
 category_bar: true
 mathjax: true
 date: 2017-12-24 00:00:00
-updated: 2024-06-09 03:50:04
 index_img: /img/cover/Codeforces.jpg
 author: ExRoc
 categories: ["Codeforces"]

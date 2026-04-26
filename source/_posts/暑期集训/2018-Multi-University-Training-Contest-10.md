@@ -3,7 +3,6 @@ title: 2018 Multi-University Training Contest 10
 category_bar: true
 mathjax: true
 date: 2018-11-20 20:15:55
-updated: 2026-03-08 22:22:12
 index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["暑期集训"]

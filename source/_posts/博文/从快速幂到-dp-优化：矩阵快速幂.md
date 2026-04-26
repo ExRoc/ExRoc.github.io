@@ -3,7 +3,6 @@ title: 从快速幂到 dp 优化：矩阵快速幂
 category_bar: true
 mathjax: true
 date: 2020-08-24 23:42:00
-updated: 2024-06-09 01:47:07
 index_img: /img/cover/从快速幂到-dp-优化：矩阵快速幂.jpg
 author: ExRoc
 categories: ["博文"]

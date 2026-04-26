@@ -3,7 +3,6 @@ title: 组合博弈问题：从 dfs 到 SG 函数
 category_bar: true
 mathjax: true
 date: 2020-08-24 23:44:00
-updated: 2024-06-15 00:38:05
 index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["博文"]

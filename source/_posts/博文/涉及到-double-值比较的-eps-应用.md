@@ -3,7 +3,6 @@ title: 涉及到 double 值比较的 eps 应用
 category_bar: true
 mathjax: true
 date: 2020-08-24 23:42:00
-updated: 2024-06-14 02:47:47
 index_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["博文"]
