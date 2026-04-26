@@ -1,0 +1,1026 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ExRoc">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>分类 - ExRoc</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"exroc.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ExRoc 的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpeg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="分类"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Codeforces"
+        id="heading-9ad966936f3cbc623358a144bae803e9" role="tab" data-toggle="collapse" href="#collapse-9ad966936f3cbc623358a144bae803e9"
+        aria-expanded="false"
+      >
+        Codeforces
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Codeforces/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-9ad966936f3cbc623358a144bae803e9"
+           role="tabpanel" aria-labelledby="heading-9ad966936f3cbc623358a144bae803e9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/Codeforces/Codeforces-Round-454-Div2/" title="Codeforces Round #454 (Div.2)"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Codeforces Round #454 (Div.2)</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hello World"
+        id="heading-b10a8db164e0754105b7a99be72e3fe5" role="tab" data-toggle="collapse" href="#collapse-b10a8db164e0754105b7a99be72e3fe5"
+        aria-expanded="false"
+      >
+        Hello World
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Hello-World/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-b10a8db164e0754105b7a99be72e3fe5"
+           role="tabpanel" aria-labelledby="heading-b10a8db164e0754105b7a99be72e3fe5">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/Hello-World/%E6%B5%85%E8%B0%88%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="浅谈动态规划"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">浅谈动态规划</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="其他"
+        id="heading-0d98c74797e49d00bcc4c17c9d557a2b" role="tab" data-toggle="collapse" href="#collapse-0d98c74797e49d00bcc4c17c9d557a2b"
+        aria-expanded="false"
+      >
+        其他
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E5%85%B6%E4%BB%96/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-0d98c74797e49d00bcc4c17c9d557a2b"
+           role="tabpanel" aria-labelledby="heading-0d98c74797e49d00bcc4c17c9d557a2b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81/" title="我的作品"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">我的作品</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博文"
+        id="heading-52881964cc0fe4e28bb2b6550be5d77e" role="tab" data-toggle="collapse" href="#collapse-52881964cc0fe4e28bb2b6550be5d77e"
+        aria-expanded="false"
+      >
+        博文
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E5%8D%9A%E6%96%87/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>9</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-52881964cc0fe4e28bb2b6550be5d77e"
+           role="tabpanel" aria-labelledby="heading-52881964cc0fe4e28bb2b6550be5d77e">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/" title="浅谈数据压缩算法"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">浅谈数据压缩算法</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E3%80%8AClean-Code%E3%80%8B%E9%9A%8F%E8%AE%B0/" title="《Clean Code》随记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">《Clean Code》随记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" title="观察者模式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">观察者模式</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E7%BB%84%E5%90%88%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98%EF%BC%9A%E4%BB%8E-dfs-%E5%88%B0-SG-%E5%87%BD%E6%95%B0/" title="组合博弈问题：从 dfs 到 SG 函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">组合博弈问题：从 dfs 到 SG 函数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89-%E5%A0%86%E4%BC%98%E5%8C%96/" title="迪杰斯特拉 &amp; 堆优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">迪杰斯特拉 &amp; 堆优化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E5%8D%9A%E6%96%87/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="暑期集训"
+        id="heading-c01422d9455308c80bad53b1afbe1836" role="tab" data-toggle="collapse" href="#collapse-c01422d9455308c80bad53b1afbe1836"
+        aria-expanded="false"
+      >
+        暑期集训
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>13</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-c01422d9455308c80bad53b1afbe1836"
+           role="tabpanel" aria-labelledby="heading-c01422d9455308c80bad53b1afbe1836">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-10/" title="2018 Multi-University Training Contest 10"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 Multi-University Training Contest 10</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-8/" title="2018 Multi-University Training Contest 8"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 Multi-University Training Contest 8</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-7/" title="2018 Multi-University Training Contest 7"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 Multi-University Training Contest 7</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-ACM-%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD%E6%AF%8F%E5%91%A8%E5%B0%8F%E7%BB%93/" title="2018 ACM 暑期集训每周小结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 ACM 暑期集训每周小结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-ACM-%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" title="2018 ACM 暑期集训"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 ACM 暑期集训</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="杂记"
+        id="heading-3b3c163282e6c6a71c885c601e60f92a" role="tab" data-toggle="collapse" href="#collapse-3b3c163282e6c6a71c885c601e60f92a"
+        aria-expanded="true"
+      >
+        杂记
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>47</span>
+        </a>
+      
+      <div class="category-collapse collapse show" id="collapse-3b3c163282e6c6a71c885c601e60f92a"
+           role="tabpanel" aria-labelledby="heading-3b3c163282e6c6a71c885c601e60f92a">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="大学"
+        id="heading-572a6791c3978e41713bb5f0d1622e8d" role="tab" data-toggle="collapse" href="#collapse-572a6791c3978e41713bb5f0d1622e8d"
+        aria-expanded="false"
+      >
+        大学
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>12</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-572a6791c3978e41713bb5f0d1622e8d"
+           role="tabpanel" aria-labelledby="heading-572a6791c3978e41713bb5f0d1622e8d">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84%E7%A7%8B%E6%8B%9B/" title="我的秋招"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">我的秋招</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" title="胡思乱想"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">胡思乱想</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%BD%E8%B5%9B%E6%80%BB%E7%BB%93/" title="蓝桥杯国赛总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">蓝桥杯国赛总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%80%BB%E7%BB%93/" title="蓝桥杯总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">蓝桥杯总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/2017-12-26-%E8%AE%B0/" title="2017.12.26 记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2017.12.26 记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="小学"
+        id="heading-79898d25cb24be8a2b3e556ad1afb5a9" role="tab" data-toggle="collapse" href="#collapse-79898d25cb24be8a2b3e556ad1afb5a9"
+        aria-expanded="false"
+      >
+        小学
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E5%B0%8F%E5%AD%A6/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-79898d25cb24be8a2b3e556ad1afb5a9"
+           role="tabpanel" aria-labelledby="heading-79898d25cb24be8a2b3e556ad1afb5a9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B0%8F%E5%AD%A6/%E5%90%B4%E7%81%B5%E7%8F%8A/" title="吴灵珊"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">吴灵珊</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B0%8F%E5%AD%A6/%E5%9B%9E%E5%88%B0%E5%9B%9B%E5%B9%B4%E7%BA%A7/" title="回到四年级"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">回到四年级</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="工作"
+        id="heading-9a018b21ab114a51dd7b5979198a941b" role="tab" data-toggle="collapse" href="#collapse-9a018b21ab114a51dd7b5979198a941b"
+        aria-expanded="false"
+      >
+        工作
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>3</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-9a018b21ab114a51dd7b5979198a941b"
+           role="tabpanel" aria-labelledby="heading-9a018b21ab114a51dd7b5979198a941b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/2024_%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" title="2024 年度总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2024 年度总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/%E8%81%8C%E5%9C%BA-pua/" title="职场 pua"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">职场 pua</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/%E6%97%A0%E9%A2%98/" title="无题"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">无题</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="生活"
+        id="heading-aefcbfca08c840aeb8bd72dc1c8ff7f9" role="tab" data-toggle="collapse" href="#collapse-aefcbfca08c840aeb8bd72dc1c8ff7f9"
+        aria-expanded="false"
+      >
+        生活
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E7%94%9F%E6%B4%BB/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-aefcbfca08c840aeb8bd72dc1c8ff7f9"
+           role="tabpanel" aria-labelledby="heading-aefcbfca08c840aeb8bd72dc1c8ff7f9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E9%9A%8F%E6%83%B3/" title="五一随想"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">五一随想</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E7%94%9F%E6%B4%BB/%E9%98%85%E8%AF%BB%E9%A9%AC%E6%8B%89%E6%9D%BE-%E3%80%8A%E5%85%AB%E5%8D%81%E5%A4%A9%E7%8E%AF%E6%B8%B8%E5%9C%B0%E7%90%83%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%88%E4%B9%A6%E8%AF%84%EF%BC%89/" title="阅读马拉松——《八十天环游地球》读后感（书评）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">阅读马拉松——《八十天环游地球》读后感（书评）</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="高中"
+        id="heading-fefa7c8483548820022dd0066bdadacc" role="tab" data-toggle="collapse" href="#collapse-fefa7c8483548820022dd0066bdadacc"
+        aria-expanded="false"
+      >
+        高中
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>28</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-fefa7c8483548820022dd0066bdadacc"
+           role="tabpanel" aria-labelledby="heading-fefa7c8483548820022dd0066bdadacc">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E9%AB%98%E4%B8%AD%E7%9F%AB%E6%83%85%E6%96%87%E5%AD%A6/" title="高中矫情文学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">高中矫情文学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E9%AB%98%E4%B8%AD%E8%80%81%E5%B8%88-%E5%8D%B0%E8%B1%A1/" title="高中老师 • 印象"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">高中老师 • 印象</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E5%A4%8F%E4%BB%A4%E8%90%A5/" title="夏令营"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">夏令营</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E6%AF%95%E4%B8%9A%E5%AD%A3/" title="毕业季"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">毕业季</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/Made-in-Crazy/" title="Made in Crazy"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Made in Crazy</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

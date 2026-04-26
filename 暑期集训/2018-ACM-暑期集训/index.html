@@ -1,0 +1,1164 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ExRoc">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="有的人打着打着，就没了。">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>2018 ACM 暑期集训 - ExRoc</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"exroc.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ExRoc 的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/cover/ACM.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2018 ACM 暑期集训"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2018-08-28 16:27" pubdate>
+          2018年8月28日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          24 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="暑期集训"
+        id="heading-c01422d9455308c80bad53b1afbe1836" role="tab" data-toggle="collapse" href="#collapse-c01422d9455308c80bad53b1afbe1836"
+        aria-expanded="true"
+      >
+        暑期集训
+        <span class="list-group-count">(13)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-c01422d9455308c80bad53b1afbe1836"
+           role="tabpanel" aria-labelledby="heading-c01422d9455308c80bad53b1afbe1836">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-10/" title="2018 Multi-University Training Contest 10"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 Multi-University Training Contest 10</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-8/" title="2018 Multi-University Training Contest 8"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 Multi-University Training Contest 8</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-7/" title="2018 Multi-University Training Contest 7"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 Multi-University Training Contest 7</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-ACM-%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD%E6%AF%8F%E5%91%A8%E5%B0%8F%E7%BB%93/" title="2018 ACM 暑期集训每周小结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2018 ACM 暑期集训每周小结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-ACM-%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" title="2018 ACM 暑期集训"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">2018 ACM 暑期集训</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">2018 ACM 暑期集训</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="round-1">Round 1</h2>
+<p>成员：冯彦博、官展鹏、孙昊哲</p>
+<h3 id="情况">情况</h3>
+<p>排名：75</p>
+<p>解题数：6 题（共 11 题）</p>
+<h3 id="解出题号通过数-总提交数">解出题号（通过数 / 总提交数）</h3>
+<p>1001 (926 / 3985)：签到题，打表找规律</p>
+<p>过题人：官展鹏打表找规律并写代码通过</p>
+<p>通过时间：00:17:55</p>
+<p>提交情况：一次通过</p>
+<p>1002 (155 / 1469)：流水线调度贪心</p>
+<p>过题人：官展鹏和冯彦博最初猜想到一个错误的贪心方式，多次提交没有通过，最终发现是流水线调度贪心，官展鹏写代码通过</p>
+<p>通过时间：04:58:10</p>
+<p>提交情况：五次通过</p>
+<p>1003 (925 / 2140)：构造排序</p>
+<p>过题人：官展鹏构造通过。</p>
+<p>通过时间：00:37:37</p>
+<p>提交情况：一次通过</p>
+<p>1004 (523 / 3336)：贪心</p>
+<p>过题人：官展鹏贪心构造，用优先队列维护通过。</p>
+<p>通过时间：01:15:44</p>
+<p>提交情况：一次通过</p>
+<p>1007 (171 / 1099)：数列找规律</p>
+<p>过题人：官展鹏打表，冯彦博和官展鹏共同找规律，官展鹏写代码没有发现乘法爆
+<code>long long</code> 提交失败多次，最终通过。</p>
+<p>通过时间：04:39:06</p>
+<p>提交情况：六次通过</p>
+<p>1011 (878 / 5204)：时区计算，签到题</p>
+<p>过题人：冯彦博写代码通过。</p>
+<p>通过时间：00:54:21</p>
+<p>提交情况：四次通过</p>
+<h2 id="round-2">Round 2</h2>
+<p>成员：冯彦博、孙昊哲、官展鹏</p>
+<h3 id="情况-1">情况</h3>
+<p>排名：139</p>
+<p>解题数：3 题（共 10 题）</p>
+<h3 id="解出题号通过数-总提交数-1">解出题号（通过数 / 总提交数）</h3>
+<p>1004 (1089 / 1770)：打表找规律，直接输出 Yes</p>
+<p>过题人：冯彦博打表找规律并写代码通过。</p>
+<p>通过时间：00:30:19</p>
+<p>提交情况：一次通过</p>
+<p>1007 (258 / 1899)：线段树维护区间增减区间最值</p>
+<p>过题人：孙昊哲与冯彦博讨论出做法，冯彦博写代码通过。</p>
+<p>通过时间：02:05:16</p>
+<p>提交情况：三次通过</p>
+<p>1010 (976 / 3588)：树状数组逆序对</p>
+<p>过题人：孙昊哲想出思路写代码通过。</p>
+<p>通过时间：00:53:09</p>
+<p>提交情况：一次通过</p>
+<h3 id="尝试未通过通过数-总提交数">尝试未通过（通过数 / 总提交数）</h3>
+<p>1005 (76 / 2028)：构造</p>
+<p>情况：孙昊哲提出多种构造方案，但都有反例，孙昊哲用随机化交了两次未通过，最后官展鹏参与讨论，仍然没有很好的构造方案。三人赛后都补题通过。</p>
+<p>1006 (24 / 212)：容斥原理</p>
+<p>情况：官展鹏先给出容斥公式，代码写完发现无法通过样例，又推了两个多小时公式，得到容斥原理系数计算方式（不完全正确），最终没有提交。赛后看题解后写代码通过。</p>
+<h2 id="round-3">Round 3</h2>
+<p>成员：冯彦博、孙昊哲、官展鹏</p>
+<h3 id="情况-2">情况</h3>
+<p>排名：146</p>
+<p>解题数：5 题（共 13 题）</p>
+<h3 id="解出题号通过数-总提交数-2">解出题号（通过数 / 总提交数）</h3>
+<p>1001 (296 / 2702)：单调队列</p>
+<p>过题人：官展鹏和冯彦博讨论做法，做法不是正解，官展鹏多次提交，代码超时，最后发现只要维护一个单调队列，终于通过。</p>
+<p>通过时间：02:42:12</p>
+<p>提交情况：六次通过</p>
+<p>1003 (193 / 1047)：dp 计算贡献</p>
+<p>过题人：冯彦博与孙昊哲讨论出 dp
+做法，但是复杂度比较高，讨论出做法超时了几次，后来想出 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></span>
+的做法，写的常数比较大，多次优化，终于通过。</p>
+<p>通过时间：04:43:47</p>
+<p>提交情况：五次通过</p>
+<p>1004 (1062 / 1474)：打表找规律</p>
+<p>过题人：官展鹏打表找规律，代码通过</p>
+<p>通过时间：00:29:38</p>
+<p>提交情况：一次通过</p>
+<p>1006 (911 / 2004)：博弈</p>
+<p>过题人：官展鹏和孙昊哲讨论解法，孙昊哲代码通过。</p>
+<p>通过时间：00:24:47</p>
+<p>提交情况：一次通过</p>
+<p>1012 (984 / 2127)：模拟</p>
+<p>过题人：冯彦博代码通过</p>
+<p>通过时间：00:41:22</p>
+<p>提交情况：一次通过</p>
+<h3 id="尝试未通过通过数-总提交数-1">尝试未通过（通过数 /
+总提交数）</h3>
+<p>1007 (83 / 946)：凸包</p>
+<p>情况：冯彦博在写 1003 的时候官展鹏开了
+1007，觉得可以做，由于看错一个条件，写完提交一发 wrong answer，由于 1003
+的提交也超时了，所以官展鹏和冯彦博一起 debug，最后没有讨论 1007
+的解法。</p>
+<h2 id="round-4">Round 4</h2>
+<p>成员：冯彦博、孙昊哲、官展鹏</p>
+<h3 id="情况-3">情况</h3>
+<p>排名：333</p>
+<p>解题数：3 题（共 12 题）</p>
+<h3 id="解出题号通过数-总提交数-3">解出题号（通过数 / 总提交数）</h3>
+<p>1004 (1132 / 3446)：贪心</p>
+<p>过题人：官展鹏和冯彦博讨论解法，最初思路不严谨，后来反复推敲，冯彦博代码通过。</p>
+<p>通过时间：00:37:12</p>
+<p>提交情况：一次通过</p>
+<p>1011 (864 / 4072)：贪心，模拟</p>
+<p>过题人：冯彦博与孙昊哲讨论出做法，孙昊哲代码通过。</p>
+<p>通过时间：01:51:40</p>
+<p>提交情况：二次通过</p>
+<p>1012 (1054 / 2408)：贪心</p>
+<p>过题人：官展鹏代码通过。</p>
+<p>通过时间：00:17:37</p>
+<p>提交情况：二次通过</p>
+<h3 id="尝试未通过通过数-总提交数-2">尝试未通过（通过数 /
+总提交数）</h3>
+<p>1005 (233 / 761)：二维前缀和</p>
+<p>情况：官展鹏打表出错，后来虽然发现是上三角，但仍然以为存在分界线，最后五十分钟让冯彦博分类讨论分界线与矩形交点，看错题意导致分类讨论情况太多，没有提交代码。</p>
+<h2 id="round-5">Round 5</h2>
+<p>成员：孙昊哲、官展鹏、冯彦博</p>
+<h3 id="情况-4">情况</h3>
+<p>排名：470</p>
+<p>解题数：1 题（共 12 题）</p>
+<h3 id="解出题号通过数-总提交数-4">解出题号（通过数 / 总提交数）</h3>
+<p>1005 (909 / 3444)：计算几何</p>
+<p>过题人：官展鹏</p>
+<p>通过时间：01:25:54</p>
+<p>提交情况：一次通过</p>
+<h3 id="尝试未通过通过数-总提交数-3">尝试未通过（通过数 /
+总提交数）</h3>
+<p>1002 (457 / 4513)：预处理 + 暴力</p>
+<p>情况：最初以为是贪心，写出程序后发现贪心可以通过大部分随机生成的测试数据，误以为思路正确，以为是细节错误，于是转而调试程序细节，浪费了大量的时间，后来增加随机数据的范围，改变随机数据的生成顺序，找到了贪心做法的反例，但是剩余的时间已经不足了。赛后已补题。</p>
+<p>1007 (194 / 1720)：ST 表动态更新</p>
+<p>情况：没有见过 ST 表动态更新的做法，官展鹏想了一个使用
+<code>map</code> / <code>unordered_map</code> 的 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="10.476ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 4630.3 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(1918.7,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(3196.7,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(3363.3,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(4241.3,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></span> 离线做法，与标算 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="14.599ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 6452.8 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(2252.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(3252.4,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(4019.1,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(5297.1,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(5463.8,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(6063.8,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></span> 的复杂度差异不大，但是题目的
+<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container></span> 和 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container></span>
+差了一个数量级，因此与标算的实际执行时间相差很大，没有通过。赛后已补题。</p>
+<h2 id="round-6">Round 6</h2>
+<p>成员：孙昊哲、官展鹏、冯彦博</p>
+<h3 id="情况-5">情况</h3>
+<p>排名：135</p>
+<p>解题数：3 题（共 12 题）</p>
+<h3 id="解出题号通过数-总提交数-5">解出题号（通过数 / 总提交数）</h3>
+<p>1001 (872 / 5507)：概率统计 + 不定积分</p>
+<p>过题人：官展鹏查了积分表得到不定积分的计算方法，手算出结果</p>
+<p>通过时间：00:33:21</p>
+<p>提交情况：三次通过</p>
+<p>1009 (314 / 2984)：逻辑推理 + 图论搜索</p>
+<p>过题人：所有人各读了一遍题，都没有能弄清题意，猜测到了一个最简单的情况，提交了一次发现做法不对。于是全体队员一边看比赛主办方声明，一边根据题面猜测题意，一边讨论做法。官展鹏首先发现了能确定题目答案的特殊样例，冯彦博写了搜索程序后通过。</p>
+<p>通过时间：03:16:44</p>
+<p>提交情况：两次通过</p>
+<p>1012 (681 / 2852)：高中物理弹性碰撞问题模拟</p>
+<p>过题人：官展鹏根据能量守恒推导了一组物理公式并写了模拟程序，冯彦博帮助调试了坐标系转换的公式</p>
+<p>通过时间：02:12:42</p>
+<p>提交情况：一次通过</p>
+<h3 id="尝试未通过通过数-总提交数-4">尝试未通过（通过数 /
+总提交数）</h3>
+<p>1002 (114 / 490)：数论 + 组合数学计数问题 + 常见结论</p>
+<p>情况：官展鹏和孙昊哲讨论此题目时猜想了一个数论结论，并基于此结论建立了思路，但是写出程序后发现无法通过样例。赛后才发现结论的形式不正确，在更大范围的数据中不能正确地简化计算。赛后已补题。</p>
+<h2 id="round-7">Round 7</h2>
+<p>成员：孙昊哲、官展鹏、冯彦博</p>
+<h3 id="情况-6">情况</h3>
+<p>排名：87</p>
+<p>解题数：4 题（共 11 题）</p>
+<h3 id="解出题号通过数-总提交数-6">解出题号（通过数 / 总提交数）</h3>
+<p>1001 (430 / 4523)：dij 单源最短路</p>
+<p>过题人：官展鹏给出思路冯彦博确认思路，官展鹏代码通过。</p>
+<p>通过时间：01:15:20</p>
+<p>提交情况：一次通过</p>
+<p>1005 (175 / 1008)：莫比乌斯反演</p>
+<p>过题人：官展鹏与孙昊哲最开始得出正确解法但算错时间复杂度，思考了很久仍然没有得出更好的解法，最后意识到时间复杂度计算错误，最后官展鹏代码通过。</p>
+<p>通过时间：04:51:23</p>
+<p>提交情况：两次通过</p>
+<p>1010 (377 / 1782)：分块，二分，矩阵快速幂</p>
+<p>过题人：孙昊哲得出分块思路，官展鹏与孙少讨论实现细节，官展鹏代码通过。</p>
+<p>通过时间：01:55:59</p>
+<p>提交情况：一次通过</p>
+<p>1011 (157 / 1280)：贪心</p>
+<p>过题人：冯彦博提出贪心思路，实现代码通过。</p>
+<p>通过时间：01:49:08</p>
+<p>提交情况：三次通过</p>
+<h2 id="round-8">Round 8</h2>
+<p>成员：孙昊哲、官展鹏、葛沛鑫</p>
+<h3 id="情况-7">情况</h3>
+<p>排名：243</p>
+<p>解题数：3 题（共 12 题）</p>
+<h3 id="解出题号通过数-总提交数-7">解出题号（通过数 / 总提交数）</h3>
+<p>1004 (277 / 2249)：构造</p>
+<p>过题人：葛沛鑫构造，代码通过。</p>
+<p>通过时间：03:27:19</p>
+<p>提交情况：二次通过</p>
+<p>1005 (1047 / 1376)：模拟</p>
+<p>过题人：葛沛鑫代码通过</p>
+<p>通过时间：00:48:33</p>
+<p>提交情况：一次通过</p>
+<p>1010 (344 / 2307)：离线，单调栈</p>
+<p>过题人：官展鹏最初提出一个错误思路，没有发现思路错误，代码实现提交未通过，与孙昊哲讨论出正确思路，孙昊哲提供暴力对拍程序，写完修改基础细节后通过。</p>
+<p>通过时间：03:42:37</p>
+<p>提交情况：三次通过</p>
+<h2 id="round-9">Round 9</h2>
+<p>成员：孙昊哲、官展鹏</p>
+<h3 id="情况-8">情况</h3>
+<p>排名：222 解题数：3 题（共 11 题）</p>
+<h3 id="解出题号通过数-总提交数-8">解出题号（通过数 / 总提交数）</h3>
+<p>1001 (336 / 706)：dp</p>
+<p>过题人：官展鹏提出构造方案，想打表找规律，打完表没有发现规律，后来提出
+dp 状态定义并给出递推方程，官展鹏代码通过。</p>
+<p>通过时间：04:01:34</p>
+<p>提交情况：三次通过</p>
+<p>1004 (684 / 1494)：推公式</p>
+<p>过题人：最初官展鹏和孙昊哲认为可能存在最优策略，后来无法得到最优策略，尝试直接计算期望得到答案，验证公式能够得到第三组数据后，官展鹏代码实现。</p>
+<p>通过时间：01:21:31</p>
+<p>提交情况：一次通过</p>
+<p>1011 (932 / 1942)：推公式</p>
+<p>过题人：官展鹏与孙昊哲一起推出公式，官展鹏代码实现通过。</p>
+<p>通过时间：00:46:06</p>
+<p>提交情况：一次通过</p>
+<h2 id="round-10">Round 10</h2>
+<p>成员：孙昊哲、官展鹏</p>
+<h3 id="情况-9">情况</h3>
+<p>排名：232</p>
+<p>解题数：4 题（共 12 题）</p>
+<h3 id="解出题号通过数-总提交数-9">解出题号（通过数 / 总提交数）</h3>
+<p>1007 (732 / 1310)：容斥</p>
+<p>过题人：孙昊哲推出容斥公式，官展鹏代码实现通过。</p>
+<p>通过时间：00:59:17</p>
+<p>提交情况：一次通过</p>
+<p>1008 (968 / 1544)：找规律，大数</p>
+<p>过题人：官展鹏代码实现通过。</p>
+<p>通过时间：12:14:56</p>
+<p>提交情况：一次通过</p>
+<p>1009 (598 / 1702)：找规律</p>
+<p>过题人：官展鹏打表找规律，并代码实现通过。</p>
+<p>通过时间：02:45:54</p>
+<p>提交情况：一次通过</p>
+<p>1010 (263 / 785)：最远点对</p>
+<p>过题人：孙昊哲提出最远点对做法，官展鹏代码实现。</p>
+<p>通过时间：04:14:53</p>
+<p>提交情况：一次通过</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" class="category-chain-item">暑期集训</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ACM/" class="print-no-link">#ACM</a>
+      
+        <a href="/tags/%E8%AE%B0%E5%BD%95/" class="print-no-link">#记录</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2018 ACM 暑期集训</div>
+      <div>https://exroc.github.io/暑期集训/2018-ACM-暑期集训/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ExRoc</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2018年8月28日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年4月26日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="ND - 禁止演绎">
+                    <i class="iconfont icon-nd"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-ACM-%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD%E6%AF%8F%E5%91%A8%E5%B0%8F%E7%BB%93/" title="2018 ACM 暑期集训每周小结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2018 ACM 暑期集训每周小结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2018-Multi-University-Training-Contest-9/" title="2018 Multi-University Training Contest 9">
+                        <span class="hidden-mobile">2018 Multi-University Training Contest 9</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'ExRoc/ExRoc.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

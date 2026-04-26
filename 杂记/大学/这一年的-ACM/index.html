@@ -1,0 +1,1250 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ExRoc">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2016 ~ 2017 ACM 回忆总结">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>这一年的 ACM - ExRoc</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"exroc.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ExRoc 的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/cover/ACM.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="这一年的 ACM"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2017-11-12 00:00" pubdate>
+          2017年11月12日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="杂记"
+        id="heading-3b3c163282e6c6a71c885c601e60f92a" role="tab" data-toggle="collapse" href="#collapse-3b3c163282e6c6a71c885c601e60f92a"
+        aria-expanded="true"
+      >
+        杂记
+        <span class="list-group-count">(47)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-3b3c163282e6c6a71c885c601e60f92a"
+           role="tabpanel" aria-labelledby="heading-3b3c163282e6c6a71c885c601e60f92a">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="大学"
+        id="heading-572a6791c3978e41713bb5f0d1622e8d" role="tab" data-toggle="collapse" href="#collapse-572a6791c3978e41713bb5f0d1622e8d"
+        aria-expanded="true"
+      >
+        大学
+        <span class="list-group-count">(12)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-572a6791c3978e41713bb5f0d1622e8d"
+           role="tabpanel" aria-labelledby="heading-572a6791c3978e41713bb5f0d1622e8d">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84%E7%A7%8B%E6%8B%9B/" title="我的秋招"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">我的秋招</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" title="胡思乱想"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">胡思乱想</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%BD%E8%B5%9B%E6%80%BB%E7%BB%93/" title="蓝桥杯国赛总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">蓝桥杯国赛总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%80%BB%E7%BB%93/" title="蓝桥杯总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">蓝桥杯总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/2017-12-26-%E8%AE%B0/" title="2017.12.26 记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2017.12.26 记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="小学"
+        id="heading-79898d25cb24be8a2b3e556ad1afb5a9" role="tab" data-toggle="collapse" href="#collapse-79898d25cb24be8a2b3e556ad1afb5a9"
+        aria-expanded="false"
+      >
+        小学
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-79898d25cb24be8a2b3e556ad1afb5a9"
+           role="tabpanel" aria-labelledby="heading-79898d25cb24be8a2b3e556ad1afb5a9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B0%8F%E5%AD%A6/%E5%90%B4%E7%81%B5%E7%8F%8A/" title="吴灵珊"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">吴灵珊</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B0%8F%E5%AD%A6/%E5%9B%9E%E5%88%B0%E5%9B%9B%E5%B9%B4%E7%BA%A7/" title="回到四年级"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">回到四年级</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="工作"
+        id="heading-9a018b21ab114a51dd7b5979198a941b" role="tab" data-toggle="collapse" href="#collapse-9a018b21ab114a51dd7b5979198a941b"
+        aria-expanded="false"
+      >
+        工作
+        <span class="list-group-count">(3)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-9a018b21ab114a51dd7b5979198a941b"
+           role="tabpanel" aria-labelledby="heading-9a018b21ab114a51dd7b5979198a941b">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/2024_%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" title="2024 年度总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2024 年度总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/%E8%81%8C%E5%9C%BA-pua/" title="职场 pua"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">职场 pua</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E5%B7%A5%E4%BD%9C/%E6%97%A0%E9%A2%98/" title="无题"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">无题</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="生活"
+        id="heading-aefcbfca08c840aeb8bd72dc1c8ff7f9" role="tab" data-toggle="collapse" href="#collapse-aefcbfca08c840aeb8bd72dc1c8ff7f9"
+        aria-expanded="false"
+      >
+        生活
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-aefcbfca08c840aeb8bd72dc1c8ff7f9"
+           role="tabpanel" aria-labelledby="heading-aefcbfca08c840aeb8bd72dc1c8ff7f9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E9%9A%8F%E6%83%B3/" title="五一随想"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">五一随想</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E7%94%9F%E6%B4%BB/%E9%98%85%E8%AF%BB%E9%A9%AC%E6%8B%89%E6%9D%BE-%E3%80%8A%E5%85%AB%E5%8D%81%E5%A4%A9%E7%8E%AF%E6%B8%B8%E5%9C%B0%E7%90%83%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%88%E4%B9%A6%E8%AF%84%EF%BC%89/" title="阅读马拉松——《八十天环游地球》读后感（书评）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">阅读马拉松——《八十天环游地球》读后感（书评）</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="高中"
+        id="heading-fefa7c8483548820022dd0066bdadacc" role="tab" data-toggle="collapse" href="#collapse-fefa7c8483548820022dd0066bdadacc"
+        aria-expanded="false"
+      >
+        高中
+        <span class="list-group-count">(28)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-fefa7c8483548820022dd0066bdadacc"
+           role="tabpanel" aria-labelledby="heading-fefa7c8483548820022dd0066bdadacc">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E9%AB%98%E4%B8%AD%E7%9F%AB%E6%83%85%E6%96%87%E5%AD%A6/" title="高中矫情文学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">高中矫情文学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E9%AB%98%E4%B8%AD%E8%80%81%E5%B8%88-%E5%8D%B0%E8%B1%A1/" title="高中老师 • 印象"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">高中老师 • 印象</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E5%A4%8F%E4%BB%A4%E8%90%A5/" title="夏令营"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">夏令营</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/%E6%AF%95%E4%B8%9A%E5%AD%A3/" title="毕业季"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">毕业季</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/Made-in-Crazy/" title="Made in Crazy"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Made in Crazy</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E6%9D%82%E8%AE%B0/%E9%AB%98%E4%B8%AD/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">这一年的 ACM</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>距离进实验室快一周年了，最近看了几个人的日记，突然也很想把这一年里的事情写下来。</p>
+<p>大二上的 C++
+课，和王轩老师混了个脸熟，他知道我转去物院了，快结课的时候跟我说，如果感兴趣的话，可以去上一下计算机学院的课，我就去上了。上了大概一个学期，第三学期选计算机学院的课，碰到了卿爷。课上看到卿爷在写一道几何题，是我们都不知道的一个结论，卿爷简单跟我说了一下他的做法，我也说了一下我的想法（貌似没听全题意，显然是错的），最后发现是一道结论题。</p>
+<p>那时候我也在刷 HihoCoder
+的题，第一次问卿爷是一道字典树题，是我写挫了，自己找了半天结果卿爷很快就找到了
+bug。后来做一道区间内与 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.179ex" height="1.595ex" role="img" focusable="false" viewBox="0 -694 521 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g></g></svg></mjx-container></span>
+差值绝对值的最小值的<a target="_blank" rel="noopener" href="http://hihocoder.com/problemset/problem/1169">问题</a>，我不知道什么是时间复杂度，上去就是暴力了几个
+T，再问卿爷，给我介绍了一种归并树的做法。后来他说那时候也不知道我会什么，就问我会不会归并排序，然后就给我讲这种做法了。回想一下，突然佩服自己那时候能把归并树的建树和查询写出来，那时候告诉我什么算法就写什么，就是写得很慢，代码比现在要灵活得多，然而现在，线段树的板子都不会改……</p>
+<p>这一定是个大佬，于是我实验课就坐卿爷旁边，慢慢地和卿爷熟络了。他给我介绍了
+ACM 的暑期集训，那时候一边心火一边
+ACM，前面简单的题目还可以晚上去补（什么贪心什么预处理乱七八糟的），到
+dfs 的时候，彻底懵逼了，题目不会做，后面也跟不上了，计划着下学期再和 16
+级一起加 ACM 吧。</p>
+<p>加 ACM 后，前面几周的培训就教教语法，判断循环函数什么的。</p>
+<p>那时候也去面试了木犀，我觉得被刷主要是，大二想要加到安卓组至少要自己有能力做一个项目（然而那时候我连
+Java 都不会）。木犀被刷，越发觉得自己老了，在学校学了两年，除了
+C/C++，其他的什么都没学到。16 年加 ACM 的好像只有我一个是 14
+级，那时候还为这个事情烦恼了很久，和大家格格不入的感觉。</p>
+<p>新生赛，我不是新生，但是想参加，和其他 15
+级的一起，带榜。看到榜上自己的名字前面写着 2014
+的时候，感觉……烦（最后还是 16 级的 fyb 大佬带的榜）。</p>
+<p>后来卿爷给我发消息，让我去实验室找个位置。啊~ 我进实验室啦~
+一定是我新生赛的时候表现得好，一定是我在平时挂的题目上刷题比较多！我开心了好久<sub></sub>~然而，我不知道我在实验室里做什么，占了个位置，也很少去，慢慢地，myk
+就把书包和其他乱七八糟的杂物放在我位置上了。后来实验室大扫除，我重新选了个位置。</p>
+<p>再后来卿爷组织起了个人赛和组队赛，每周五晚上两个小时和周六下午五个小时，随机组队的感觉不太好，但也是为了找合适的队友，然后把自己想组的两个队友发给卿爷，他来确定队伍。我选了孙少和
+myk，被分配到了 nws 和
+lrh。几场新生赛个人赛后，各个学校的邀请赛也算是正式的组队赛了吧，我们这个“风紧扯呼”队，打了几场，感觉都比较凉，有时候的成绩就是我们集训队里的倒一，有一段时间我们仨一度十分缺乏自信，我几乎场场抱着打铁的心态去的。上学期的最后两场，一次是
+lrh 换 ycl（那次拿奖的感觉就是：我们居然也有奖），一次是 nws 换
+myk（那次拿奖的感觉就是：武大那些强队没来，侥幸拿奖，不过第一次过这么多题，还是很爽的）。</p>
+<p>“风紧扯呼”队本来我负责图论，结果我学的那些个图论算法，lrh
+暑假集训的时候都写过了（记不清），结果我在图论题上发挥的作用不大，也就写写水题，只记得一次模拟赛写了个
+LCA 还有点用。</p>
+<p>又一次暑假集训（2017
+年），原先的队伍打乱，重新组队。打乱几次后确定组队是和 myk、ldy，后来
+ldy 去学英语了， ldy 换 zwg，由于 myk
+长期处于早上学车下午的多校先睡一觉醒来再打一两个小时，我和 zwg
+前期就只有两个人，又和 wlf、py 组了个队（zwg 和 lrh、nws
+组队），至少前面三小时能凑够三个人来打。好像到最后，如果 ldy
+回来和我们组队，女队就没法去比赛了，我们的队伍最终确定了下来——退役选手玮哥加入了我们队，玮哥是一个思维
++
+线段树选手，除了线段树的题目，她几乎不敲代码，但大多数题目都是她提供思路，可以说是一个强力的外援。</p>
+<p>第一次和玮哥组队（卿爷说先试着打一场，如果觉得可以的话就让玮哥和我们组队），我们很紧张，因为去年
+14
+级女队的多校成绩比我们今年（除了一队）都好。那一场打到后面心态崩了，三小时还是四小时后我们跑路去吃饭了……</p>
+<p>后来和玮哥打了几场模拟赛，感觉不错，以玮哥的智商，区域赛应该可以稳铜冲银了。玮哥让我去学字符串那些个
+kmp, ac 自动机，后缀自动机，让 myk
+去学网络流，觉得银牌题很可能出这些题，我们都乖乖去学了，两场比赛，我还是抱着比较大的拿银的希望的，结果秦皇岛由于策略上的失误，两道银牌题，我们刚其中一道，贪心思路出错，又花费太多精力在这题上，最后无力开另一题，真·稳铜，赛后我和
+myk
+两人各想了一种方法，很快就把另一道银牌题给过了。青岛——拿银也不会多开心，银不是实力银，铜也不是实力铜。</p>
+<p>玮哥安慰我们说，拿银牌不是最重要的，重要的是我们在其中学到的东西，我们进步了多少，我们只要知道我们有银牌的实力，就够了，我们就是银牌选手，只是这我们的运气不太好。但是在毕业之前，没拿到个银，还是感觉很遗憾，很想明年再打，又怕明年我训练还不如
+16
+级的努力，实力不如他们还占一个参赛名额，也很不好意思，就让卿爷搞一些积分之类的按积分分配参赛名额，不多说。</p>
+<p>今年拿不到银，我怕就算明年再和 16
+级组队去打，拿银的机会可能也没有今年的大了，我感觉，现在的队友，是和自己同水平里，最好的队友了，感觉明年再打，也碰不上这么强力的队友了……</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E8%AE%B0/" class="category-chain-item">杂记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9D%82%E8%AE%B0/%E5%A4%A7%E5%AD%A6/" class="category-chain-item">大学</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ACM/" class="print-no-link">#ACM</a>
+      
+        <a href="/tags/%E5%9B%9E%E5%BF%86/" class="print-no-link">#回忆</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>这一年的 ACM</div>
+      <div>https://exroc.github.io/杂记/大学/这一年的-ACM/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ExRoc</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2017年11月12日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年4月26日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="ND - 禁止演绎">
+                    <i class="iconfont icon-nd"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Codeforces/Codeforces-Round-454-Div2/" title="Codeforces Round #454 (Div.2)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Codeforces Round #454 (Div.2)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/2017-ACM-%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" title="2017 ACM 暑期集训">
+                        <span class="hidden-mobile">2017 ACM 暑期集训</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'ExRoc/ExRoc.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
