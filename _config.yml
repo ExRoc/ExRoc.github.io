@@ -101,7 +101,9 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/ExRoc/ExRoc.github.io.git
+  branch: gh-pages
 
 pandoc:
   # 将超时时间设置为 30 秒 (30000 毫秒)，可根据需要调整
