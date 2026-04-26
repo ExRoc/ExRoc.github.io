@@ -4,6 +4,7 @@ category_bar: true
 mathjax: true
 date: 2020-08-24 23:44:00
 index_img: /img/cover/ACM.jpg
+banner_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["博文"]
 tags: ["ACM", "算法"]

@@ -4,6 +4,7 @@ category_bar: true
 mathjax: true
 date: 2021-03-02 08:21:00
 index_img: /img/cover/CleanCode随记.jpg
+banner_img: /img/cover/CleanCode随记.jpg
 author: ExRoc
 categories: ["博文"]
 tags: ["读书笔记", "字节跳动", "技术分享"]

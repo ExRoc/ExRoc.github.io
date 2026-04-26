@@ -4,6 +4,7 @@ category_bar: true
 mathjax: false
 date: 2020-10-24 22:22:00
 index_img: /img/cover/职场_pua.jpg
+banner_img: /img/cover/职场_pua.jpg
 author: ExRoc
 categories: ["杂记", "工作"]
 tags: ["思考"]

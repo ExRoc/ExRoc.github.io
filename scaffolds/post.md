@@ -2,6 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 index_img: # 文章列表页展示图
+banner_img: # 文章顶部大图，建议与 index_img 相同
 author: # 不填默认为 ExRoc
 category_bar: true
 categories: # 类型：数组，有层级关系

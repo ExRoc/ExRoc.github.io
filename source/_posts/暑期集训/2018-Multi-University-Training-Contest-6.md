@@ -4,6 +4,7 @@ category_bar: true
 mathjax: true
 date: 2018-08-09 17:23:56
 index_img: /img/cover/ACM.jpg
+banner_img: /img/cover/ACM.jpg
 author: ExRoc
 categories: ["暑期集训"]
 tags: ["ACM", "题解", "HDU"]

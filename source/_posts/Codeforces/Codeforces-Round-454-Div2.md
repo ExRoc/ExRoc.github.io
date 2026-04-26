@@ -4,6 +4,7 @@ category_bar: true
 mathjax: true
 date: 2017-12-24 00:00:00
 index_img: /img/cover/Codeforces.jpg
+banner_img: /img/cover/Codeforces.jpg
 author: ExRoc
 categories: ["Codeforces"]
 tags: ["算法", "ACM", "Codeforces"]

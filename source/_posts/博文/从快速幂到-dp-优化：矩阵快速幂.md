@@ -4,6 +4,7 @@ category_bar: true
 mathjax: true
 date: 2020-08-24 23:42:00
 index_img: /img/cover/从快速幂到-dp-优化：矩阵快速幂.jpg
+banner_img: /img/cover/从快速幂到-dp-优化：矩阵快速幂.jpg
 author: ExRoc
 categories: ["博文"]
 tags: ["算法", "ACM"]
