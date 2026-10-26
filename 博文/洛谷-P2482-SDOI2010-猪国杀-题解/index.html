@@ -1,0 +1,1090 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="/css/bilicard.css">
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ExRoc">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="挑战最面向对象的猪国杀。">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>洛谷 P2482 [SDOI2010] 猪国杀 题解 - ExRoc</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"exroc.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ExRoc 的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/cover/%E6%B4%9B%E8%B0%B7-P2482-SDOI2010-%E7%8C%AA%E5%9B%BD%E6%9D%80-%E9%A2%98%E8%A7%A3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="洛谷 P2482 [SDOI2010] 猪国杀 题解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-10-26 17:37" pubdate>
+          2026年10月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博文"
+        id="heading-52881964cc0fe4e28bb2b6550be5d77e" role="tab" data-toggle="collapse" href="#collapse-52881964cc0fe4e28bb2b6550be5d77e"
+        aria-expanded="true"
+      >
+        博文
+        <span class="list-group-count">(10)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-52881964cc0fe4e28bb2b6550be5d77e"
+           role="tabpanel" aria-labelledby="heading-52881964cc0fe4e28bb2b6550be5d77e">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E6%B4%9B%E8%B0%B7-P2482-SDOI2010-%E7%8C%AA%E5%9B%BD%E6%9D%80-%E9%A2%98%E8%A7%A3/" title="洛谷 P2482 [SDOI2010] 猪国杀 题解"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">洛谷 P2482 [SDOI2010] 猪国杀 题解</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E6%B5%85%E8%B0%88%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/" title="浅谈数据压缩算法"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">浅谈数据压缩算法</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E3%80%8AClean-Code%E3%80%8B%E9%9A%8F%E8%AE%B0/" title="《Clean Code》随记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">《Clean Code》随记</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" title="观察者模式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">观察者模式</span>
+        </a>
+      
+    
+      
+      
+        <a href="/%E5%8D%9A%E6%96%87/%E7%BB%84%E5%90%88%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98%EF%BC%9A%E4%BB%8E-dfs-%E5%88%B0-SG-%E5%87%BD%E6%95%B0/" title="组合博弈问题：从 dfs 到 SG 函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">组合博弈问题：从 dfs 到 SG 函数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/%E5%8D%9A%E6%96%87/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">洛谷 P2482 [SDOI2010] 猪国杀 题解</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="题目链接">题目链接</h2>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2482">P2482 [SDOI2010]
+猪国杀</a></p>
+<h2 id="思路">思路</h2>
+<h3 id="实体类确定">实体类确定</h3>
+<p>本题非常适合使用面向对象思路编写代码，根据题意可先确定以下几个对象与负责模块：</p>
+<ul>
+<li><code>Card</code>：枚举类，表示单张卡牌</li>
+<li><code>Deck</code>：牌堆类，用于控制摸牌</li>
+<li><code>Role</code>：枚举类，表示玩家身份</li>
+<li><code>Player</code>：玩家基类，主要负责以下逻辑：
+<ul>
+<li>摸牌阶段摸牌、杀死反猪奖励摸牌、主杀忠惩罚弃牌</li>
+<li>角色的出牌决策，配合玩家身份确定</li>
+<li>确定打出、响应【杀】【决斗】【南蛮】【万箭】【无懈】等卡牌</li>
+<li>吃【桃】与濒死自救</li>
+</ul></li>
+<li><code>ZhuZhu</code>、<code>ZhongZhu</code>、<code>FanZhu</code>：<code>Player</code>
+的三个子类，根据当前玩家与目标角色表现出来的身份进行决策，如：忠不对主决斗、对什么角色献殷勤、表敌意、决斗等</li>
+<li><code>ZhuGuoSha</code>：进行游戏流程的控制，负责回合流转、伤害结算、AOE、决斗无懈询问与角色响应的询问，游戏胜负判断与结果输出</li>
+</ul>
+<h3 id="辅助类型">辅助类型</h3>
+<ul>
+<li><p><code>Action</code>：一次出牌动作类，记录当前出牌与出牌目标列表，由
+<code>ZhuGuoSha</code>
+流程控制类询问玩家，玩家根据自身手牌、身份判断做出动作，将
+<code>Action</code> 对象返回，<code>ZhuGuoSha</code>
+类再根据玩家动作执行后续流程</p></li>
+<li><p><code>Intent</code>：枚举类，表示玩家意向，献殷勤或表敌意</p></li>
+<li><p><code>PlayerFactory</code>：玩家实体工厂，使用工厂模式创建玩家对象，创建后返回<code>Player</code>基类指针，用于实现多态</p></li>
+</ul>
+<h3 id="类图">类图</h3>
+<p>以下仅展示私有数据成员与公有函数，私有函数涉及内部逻辑，属于即用即写代码，不放入类图：</p>
+<figure>
+<img src="/img/洛谷-P2482-SDOI2010-猪国杀-题解/类图.svg" srcset="/img/loading.gif" lazyload alt="类图" />
+<figcaption aria-hidden="true">类图</figcaption>
+</figure>
+<h3 id="类定义关键代码">类定义关键代码</h3>
+<h4 id="card-卡牌枚举类"><code>Card</code> 卡牌枚举类</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">enum class</span> <span class="hljs-title class_">Card</span> &#123; TAO, SHA, SHAN, JUE_DOU, NAN_ZHU_RU_QIN, WAN_JIAN_QI_FA, WU_XIE_KE_JI, ZHU_GE_LIAN_NU &#125;;<br></code></pre></td></tr></table></figure>
+<p>重载输入 <code>&gt;&gt;</code> 与输出 <code>&lt;&lt;</code>
+运算符，简化输入输出：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, Card&amp; card);<br>ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, Card card);<br></code></pre></td></tr></table></figure>
+<h4 id="deck-牌堆类"><code>Deck</code> 牌堆类</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Deck</span> &#123;<br>   <span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> idx;<br>    vector&lt;Card&gt; cards;<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Deck</span>(<span class="hljs-type">const</span> vector&lt;Card&gt;&amp; cards);<br>    <span class="hljs-function">Card <span class="hljs-title">drawACard</span><span class="hljs-params">()</span></span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><code>cards</code> 数据成员存牌堆内所有牌，<code>idx</code>
+表示即将摸到下一张牌在 <code>cards</code> 对象的下标，在
+<code>drawACard</code>
+函数内控制“<strong>若牌堆已空，按照每次抽牌抽到的都是最后一张</strong>”逻辑。</p>
+<h4 id="role-身份枚举类"><code>Role</code> 身份枚举类</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">enum class</span> <span class="hljs-title class_">Role</span> &#123; UNKNOWN, ZHU_ZHU, ZHONG_ZHU, FAN_ZHU, LEI_FAN_ZHU &#125;;<br></code></pre></td></tr></table></figure>
+<p>根据题意，每个玩家有实际身份与表现身份，都统一使用 <code>Role</code>
+枚举，游戏开始时除主猪外，其它玩家的表现身份都是
+<code>UNKNOWN</code>，后续可能由于万箭、南蛮误伤主猪导致被标记为
+<code>LEI_FAN_ZHU</code>（类反猪）。</p>
+<p>同样重载输入输出运算符：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, Role&amp; role);<br>ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, Role role);<br></code></pre></td></tr></table></figure>
+<h4 id="intent-意向枚举类"><code>Intent</code> 意向枚举类</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">enum class</span> <span class="hljs-title class_">Intent</span> &#123; XIAN_YIN_QIN, BIAO_DI_YI &#125;;<br></code></pre></td></tr></table></figure>
+<p>区分献殷勤与表敌意，主要用于根据意向判断是否需要对目标玩家出【无懈】</p>
+<h4 id="action-动作类"><code>Action</code> 动作类</h4>
+<p>表示玩家的一个出牌动作，由 <code>ZhuGuoSha</code>
+流程类询问玩家时产生，流程类再根据动作执行后续操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Action</span> &#123;<br>   <span class="hljs-keyword">private</span>:<br>    optional&lt;Card&gt; card;<br>    vector&lt;Player*&gt; targets;<br><br>    <span class="hljs-type">static</span> <span class="hljs-type">const</span> Action noAction;<br><br>    <span class="hljs-built_in">Action</span>(<span class="hljs-type">const</span> optional&lt;Card&gt;&amp; card, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets);<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">const</span> Action&amp; <span class="hljs-title">empty</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">static</span> Action <span class="hljs-title">playACard</span><span class="hljs-params">(Card card, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">static</span> Action <span class="hljs-title">playAnAOE</span><span class="hljs-params">(Card card, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isPlay</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">play</span><span class="hljs-params">(Card card)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function">Player* <span class="hljs-title">getTarget</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; <span class="hljs-title">getTargets</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>empty()</code> 得到类数据成员 <code>noAction</code>
+的引用，表示一个玩家不出牌的动作，<code>card</code> 类型为
+<code>optional&lt;Card&gt;</code>，当 <code>!card.has_value()</code>
+表示玩家不出牌，不出牌时 <code>targets</code> 列表为空</li>
+<li><code>playACard</code> 表示玩家将对 <code>target</code>
+<strong>单一</strong>目标打出 <code>card</code>
+牌，<code>playAnAOE</code> 表示玩家将对 <code>targets</code>
+<strong>多个</strong>目标打出 <code>card</code>
+牌，均为类函数成员，方便创建 <code>Action</code> 对象</li>
+<li><code>isPlay()</code> 用于判断玩家是否出牌，不暴露
+<code>!card.has_value()</code> 的内部逻辑，<code>play(card)</code>
+用于判断是否打出 <code>card</code> 牌，符合自然语言习惯</li>
+<li><code>getTarget()</code> 与 <code>getTargets()</code>
+仅为方便获取单体、群体目标分别设置的函数，<code>getTarget()</code>
+实际为 <code>targets[0]</code></li>
+</ul>
+<h4 id="player-玩家类"><code>Player</code> 玩家类</h4>
+<p>与 <code>ZhuGuoSha</code>
+同样重要的类，承担玩家出牌策略，以下仅展示核心代码声明及相关设计逻辑，如玩家血量、是否装备【连弩】、本回合是否出【杀】等基础逻辑不展示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;<br>   <span class="hljs-keyword">protected</span>:<br>    <span class="hljs-type">const</span> Role innerRole;<br>    list&lt;Card&gt; hand;<br>    Role outerRole;<br><br>    <span class="hljs-built_in">Player</span>(<span class="hljs-type">int</span> idx, Role innerRole, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand,<br>           Role outerRole = Role::UNKNOWN);<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">is</span><span class="hljs-params">(Role role)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isLike</span><span class="hljs-params">(Role role)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>= <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>= <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> Player* <span class="hljs-title">chooseJueDouTarget</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-function">Action <span class="hljs-title">takeAction</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> Action <span class="hljs-title">respondToJueDou</span><span class="hljs-params">(Player* source)</span></span>;<br>    <span class="hljs-function">Action <span class="hljs-title">respondToWuXieKeJi</span><span class="hljs-params">(Player* target, Intent intent)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">onDamaged</span><span class="hljs-params">(Player* source, Card card)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">onKill</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target, Deck&amp; deck)</span></span>;<br><br>    <span class="hljs-keyword">virtual</span> ~<span class="hljs-built_in">Player</span>() = <span class="hljs-keyword">default</span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>玩家通过 <code>innerRole</code> 与 <code>outerRole</code>
+区分实际身份与表现身份
+<ul>
+<li><code>innerRole</code> 仅可能为
+<code>ZHU_ZHU</code>、<code>ZHONG_ZHU</code>、<code>FAN_ZHU</code></li>
+<li>使用 <code>is(Role role)</code>
+方法判断实际身份，玩家死亡奖励、惩罚、判断游戏是否达成胜利条件时必须使用该方法</li>
+<li>主猪的初始 <code>outerRole</code> 是
+<code>ZHU_ZHU</code>，其它玩家初始值为
+<code>UNKNOWN</code>，如果出现南蛮、万箭误伤主猪且未跳身份，将导致
+<code>outerRole</code> 被标记为 <code>LEI_FAN_ZHU</code>，跳忠后标记为
+<code>ZHONG_ZHU</code>，跳反后标记为 <code>FAN_ZHU</code></li>
+<li>使用 <code>isLike(Role role)</code>
+方法判断表现身份，主要用于判断是否应该对对方献殷勤、表敌意</li>
+<li>代码中使用 <code>is(role)</code> 或者 <code>isLike(role)</code>
+符合自然语言习惯</li>
+</ul></li>
+<li><code>shouldBeFriendlyTo</code> 与 <code>shouldBeHostileTo</code>
+用于判断是否应该对 <code>target</code>
+玩家献殷勤、表敌意，主要根据当前玩家实际身份与 <code>target</code>
+的表现身份确定，所以在基类中只能是虚函数，由子类确定意向，以下给出对应身份的意向：
+<ul>
+<li>主猪：对主猪、忠猪献殷勤，对反猪、类反猪表敌意</li>
+<li>忠猪：对主猪、忠猪献殷勤，对反猪表敌意</li>
+<li>反猪：对反猪献殷勤，对主猪、忠猪表敌意</li>
+<li>对表现身份为 <code>UNKNOWN</code> 的玩家不献殷勤也不表敌意</li>
+</ul></li>
+<li><code>chooseJueDouTarget</code>
+用于确定决斗对象，主猪与忠猪的逻辑一致：对距离自己最近的需要表敌意的玩家决斗，将该逻辑写于
+<code>Player</code> 基类，反猪只会选择主猪决斗，将该逻辑写于
+<code>FanZhu</code> 派生类内</li>
+<li><code>takeAction</code>
+为当前玩家<strong>出牌阶段</strong>，选择“使用最靠左的能够使用的牌”逻辑的实现，返回一个
+<code>Action</code> 表示玩家即将执行的动作，以下为出牌阶段可出牌逻辑：
+<ul>
+<li>【桃】：
+<ul>
+<li>条件：非满血</li>
+<li>目标：当前玩家</li>
+</ul></li>
+<li>【杀】：
+<ul>
+<li>条件：（本回合未使用【杀】 或者
+曾装备【连弩】）且（可对下一位玩家表敌意）</li>
+<li>目标：下一位玩家</li>
+</ul></li>
+<li>【决斗】：
+<ul>
+<li>条件：存在可表敌意的玩家（未跳身份且非类反玩家不可表敌意）</li>
+<li>目标：由 <code>chooseJueDouTarget</code> 决定</li>
+</ul></li>
+<li>【南猪入侵】【万箭齐发】：
+<ul>
+<li>条件：无</li>
+<li>目标：所有其它玩家，从当前玩家开始逆时针方向</li>
+</ul></li>
+<li>【猪哥连弩】：
+<ul>
+<li>条件：无</li>
+<li>目标：当前玩家</li>
+</ul></li>
+</ul></li>
+<li><code>respondToJueDou</code>：对【决斗】的响应，主猪与反猪可直接出【杀】，该逻辑写于
+<code>Player</code>
+基类，忠猪的决斗对象为主猪时不会出【杀】，其它情况都直接出【杀】，该逻辑写于
+<code>ZhongZhu</code> 派生类内</li>
+<li><code>respondToWuXieKeJi</code>：对【无懈可击】的响应，若手上有【无懈】：
+<ul>
+<li>若 <code>intent</code> 为 <code>XIAN_YIN_QIN</code> 且当前玩家可对
+<code>target</code> 献殷勤，则出【无懈】，否则不出</li>
+<li>若 <code>intent</code> 为 <code>BIAO_DI_YI</code> 且当前玩家可对
+<code>target</code> 表敌意，则出【无懈】，否则不出</li>
+</ul></li>
+<li><code>onDamaged</code>：仅主猪需要，受到来自
+<code>isLike(UNKNOWN)</code> 玩家的南蛮、万箭伤害时，需将伤害来源标记为
+<code>LEI_FAN_ZHU</code>，基类默认逻辑为空</li>
+<li><code>onKill</code>：死亡结算，任何玩家杀死反猪从牌堆摸三张牌（基类默认逻辑），主猪杀死忠猪弃所有牌（包括连弩）</li>
+<li><code>~Player()</code>：基类需提供默认析构函数，防止派生类对象销毁时出现未定义行为</li>
+</ul>
+<h4 id="player-玩家身份派生类"><code>Player</code> 玩家身份派生类</h4>
+<p>主猪、忠猪、反猪身份的特化逻辑，根据以上 <code>Player</code>
+类说明可了解相关实现，以下仅展示声明：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ZhuZhu</span> : <span class="hljs-keyword">public</span> Player &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">ZhuZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">onDamaged</span><span class="hljs-params">(Player* source, Card card)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">onKill</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target, Deck&amp; deck)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">discardAllCards</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ZhongZhu</span> : <span class="hljs-keyword">public</span> Player &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">ZhongZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-function">Action <span class="hljs-title">respondToJueDou</span><span class="hljs-params">(Player* source)</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">FanZhu</span> : <span class="hljs-keyword">public</span> Player &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">FanZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function">Player* <span class="hljs-title">chooseJueDouTarget</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> <span class="hljs-type">const</span></span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="playerfactory-玩家工厂类"><code>PlayerFactory</code>
+玩家工厂类</h4>
+<p>使用工厂设计模式创建玩家，创建后返回<code>Player</code>基类指针，用于实现多态：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerFactory</span> &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">static</span> unique_ptr&lt;Player&gt; <span class="hljs-title">createPlayer</span><span class="hljs-params">(<span class="hljs-type">int</span> idx, Role role,</span></span><br><span class="hljs-params"><span class="hljs-function">                                           <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand)</span></span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>仅需注意返回类型为 <code>unique_ptr&lt;Player&gt;</code>，是
+<code>Player</code>
+类型的独占智能指针，仅在游戏开始时创建，游戏结束后自动销毁</li>
+<li>玩家创建完成后交给 <code>ZhuGuoSha</code>
+流程控制类作为数据成员，由于在游戏过程中不再涉及玩家对象的创建与销毁，函数内部实现均使用智能指针的
+<code>get()</code> 方法获取裸指针进行操作，不存在内存泄漏问题</li>
+</ul>
+<h4 id="zhuguosha-流程控制类"><code>ZhuGuoSha</code> 流程控制类</h4>
+<p>最重要的类，以下仅展示核心代码及相关设计逻辑：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ZhuGuoSha</span> &#123;<br>   <span class="hljs-keyword">private</span>:<br>    vector&lt;unique_ptr&lt;Player&gt;&gt; players;<br>    Deck deck;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">runPlayPhase</span><span class="hljs-params">(Player* player)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">playCard</span><span class="hljs-params">(Player* player)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resolveSha</span><span class="hljs-params">(Player* source, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resolveJueDou</span><span class="hljs-params">(Player* source, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resolveAOE</span><span class="hljs-params">(Player* source, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets,</span></span><br><span class="hljs-params"><span class="hljs-function">                    Card sourceCard, Card respondCard)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">resolveWuXieKeJi</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* source, Player* target, Intent intent)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dealDamage</span><span class="hljs-params">(Player* source, Player* target, Card card)</span></span>;<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">int</span> ZHU_ZHU_IDX = <span class="hljs-number">0</span>;<br><br>    <span class="hljs-built_in">ZhuGuoSha</span>(<span class="hljs-type">int</span> n, <span class="hljs-type">const</span> vector&lt;Role&gt;&amp; roles,<br>              <span class="hljs-type">const</span> vector&lt;vector&lt;Card&gt;&gt;&amp; hands, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; deck);<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printFinalState</span><span class="hljs-params">()</span></span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>players</code> 为场上玩家列表，<code>deck</code> 为牌堆</li>
+<li><code>main</code> 函数通过构造函数创建流程控制类，调用
+<code>run()</code> 进行游戏，<code>printFinalState()</code>
+按题目格式要求输出游戏终局</li>
+<li><code>run()</code>
+函数内部从主猪开始，按逆时针顺序依次对<strong>存活</strong>玩家执行
+<code>runPlayPhase(Player* player)</code>（即单个玩家的摸牌、出牌阶段）</li>
+<li><code>runPlayPhase</code>
+函数内部在玩家摸牌后进行出牌询问，只要【当前玩家存活】且【游戏胜利条件未确定】且【玩家选择了出牌】，就需要继续询问玩家是否出牌，注意玩家可能在出牌阶段由于决斗死亡，死亡后不可继续出牌</li>
+<li><code>bool playCard(Player* player)</code>
+即对当前玩家询问出一张牌的执行流程，返回 <code>bool</code>
+值表示是否出牌了，若玩家出牌了且满足以上条件，<code>runPlayPhase</code>
+就要继续询问玩家的下一张出牌</li>
+<li>玩家出牌后若需要其它玩家响应，则执行对应的
+<code>resolveXXX</code></li>
+<li><code>resolveSha</code>：若 <code>target</code>
+出【闪】则无事，未出【闪】认为 <code>source</code> 对
+<code>target</code> 出【杀】造成一点伤害，调用
+<code>dealDamage(source, target, Card::SHA)</code> 结算伤害</li>
+<li><code>resolveJueDou</code>：
+<ul>
+<li>先调用
+<code>resolveWuXieKeJi(source, target, Intent::XIAN_YIN_QIN)</code>
+询问【决斗】是否被无懈，第一次无懈的 <code>intent</code> 必然是对
+<code>target</code> 献殷勤（【南蛮】【万箭】相同）</li>
+<li>若被无懈则结束【决斗】结算</li>
+<li>否则从 <code>target</code> 开始与 <code>source</code>
+轮流出【杀】，没有【杀】的玩家受到来自对方的一点伤害，调用
+<code>dealDamage(winner, loser, Card::JUE_DOU)</code> 结算伤害</li>
+</ul></li>
+<li><code>resolveAOE</code>：【南蛮】【万箭】的 <code>targets</code>
+为除当前玩家外逆时针方向转一圈的其它玩家
+<ul>
+<li>每个玩家都要先从出 AOE 的玩家开始询问【无懈】</li>
+<li>若被无懈，则下一个 <code>target</code> 玩家继续结算</li>
+<li>若未被无懈，则询问 <code>target</code>
+玩家是否出【杀】【闪】响应，出牌响应则下一个玩家继续结算</li>
+<li>否则受到来自 <code>source</code> 玩家的伤害，调用
+<code>dealDamage(source, target, sourceCard)</code> 结算伤害</li>
+<li>注意可能在 AOE 结算到某一位 <code>target</code>
+玩家死亡后，达成游戏胜利条件，则后续玩家不再结算</li>
+</ul></li>
+<li><code>resolveWuXieKeJi</code>：这是一次递归的无懈询问，无懈的锦囊可能是【决斗】【南蛮】【万箭】，也可能是【无懈】
+<ul>
+<li>打出锦囊的玩家即 <code>source</code>，被使用锦囊的玩家即
+<code>target</code>，从 <code>source</code> 开始逆时针询问一圈，是否有对
+<code>target</code> 意向为 <code>intent</code>（献殷勤 / 表敌意）的玩家
+<ul>
+<li>若无人出牌，则当前锦囊生效</li>
+<li>若有 <code>intent</code>
+意向且手牌有【无懈】的玩家则出无懈，结束本轮询问，认为当前锦囊<strong>即将失效</strong>
+<ul>
+<li>递归询问是否有对当前 <code>target</code>
+有<strong>相反</strong>意向的玩家出【无懈】
+<ul>
+<li>若有则刚出的【无懈】被抵消 → 即当前锦囊<strong>生效</strong></li>
+<li>若无则本次【无懈】生效 → 即当前锦囊<strong>失效</strong></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>dealDamage</code>：<code>target</code> 生命值 -
+1，若出现南蛮、万箭误伤主猪，需标记类反猪
+<ul>
+<li><code>target</code> 存活则继续游戏</li>
+<li><code>target</code> 濒死询问是否对自己出桃，出桃则继续游戏，否则
+<code>target</code> 死亡</li>
+<li>死亡后先进行游戏胜利条件判断，若达成条件则直接结束游戏</li>
+<li>若未达成条件，进行死亡奖励、惩罚，杀死反猪 <code>source</code>
+摸三张牌，杀死忠猪的主猪需丢弃所有牌（包括装备区的连弩）</li>
+</ul></li>
+</ul>
+<h3 id="思路-end">思路 end</h3>
+<p>经过以上逻辑梳理，相信读者已能独立实现所有代码，后文为博主 AC
+代码，仅供参考。</p>
+<h2 id="参考代码">参考代码</h2>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-2dc4ba13" role="button" aria-expanded="false" aria-controls="collapse-2dc4ba13">
+        <div class="fold-arrow">▶</div>过题代码
+      </div>
+      <div class="fold-collapse collapse" id="collapse-2dc4ba13">
+        <div class="fold-content">
+          <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br><span class="line">694</span><br><span class="line">695</span><br><span class="line">696</span><br><span class="line">697</span><br><span class="line">698</span><br><span class="line">699</span><br><span class="line">700</span><br><span class="line">701</span><br><span class="line">702</span><br><span class="line">703</span><br><span class="line">704</span><br><span class="line">705</span><br><span class="line">706</span><br><span class="line">707</span><br><span class="line">708</span><br><span class="line">709</span><br><span class="line">710</span><br><span class="line">711</span><br><span class="line">712</span><br><span class="line">713</span><br><span class="line">714</span><br><span class="line">715</span><br><span class="line">716</span><br><span class="line">717</span><br><span class="line">718</span><br><span class="line">719</span><br><span class="line">720</span><br><span class="line">721</span><br><span class="line">722</span><br><span class="line">723</span><br><span class="line">724</span><br><span class="line">725</span><br><span class="line">726</span><br><span class="line">727</span><br><span class="line">728</span><br><span class="line">729</span><br><span class="line">730</span><br><span class="line">731</span><br><span class="line">732</span><br><span class="line">733</span><br><span class="line">734</span><br><span class="line">735</span><br><span class="line">736</span><br><span class="line">737</span><br><span class="line">738</span><br><span class="line">739</span><br><span class="line">740</span><br><span class="line">741</span><br><span class="line">742</span><br><span class="line">743</span><br><span class="line">744</span><br><span class="line">745</span><br><span class="line">746</span><br><span class="line">747</span><br><span class="line">748</span><br><span class="line">749</span><br><span class="line">750</span><br><span class="line">751</span><br><span class="line">752</span><br><span class="line">753</span><br><span class="line">754</span><br><span class="line">755</span><br><span class="line">756</span><br><span class="line">757</span><br><span class="line">758</span><br><span class="line">759</span><br><span class="line">760</span><br><span class="line">761</span><br><span class="line">762</span><br><span class="line">763</span><br><span class="line">764</span><br><span class="line">765</span><br><span class="line">766</span><br><span class="line">767</span><br><span class="line">768</span><br><span class="line">769</span><br><span class="line">770</span><br><span class="line">771</span><br><span class="line">772</span><br><span class="line">773</span><br><span class="line">774</span><br><span class="line">775</span><br><span class="line">776</span><br><span class="line">777</span><br><span class="line">778</span><br><span class="line">779</span><br><span class="line">780</span><br><span class="line">781</span><br><span class="line">782</span><br><span class="line">783</span><br><span class="line">784</span><br><span class="line">785</span><br><span class="line">786</span><br><span class="line">787</span><br><span class="line">788</span><br><span class="line">789</span><br><span class="line">790</span><br><span class="line">791</span><br><span class="line">792</span><br><span class="line">793</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">enum class</span> <span class="hljs-title class_">Intent</span> &#123; XIAN_YIN_QIN, BIAO_DI_YI &#125;;<br><br><span class="hljs-keyword">enum class</span> <span class="hljs-title class_">Card</span> &#123;<br>    TAO,<br>    SHA,<br>    SHAN,<br>    JUE_DOU,<br>    NAN_ZHU_RU_QIN,<br>    WAN_JIAN_QI_FA,<br>    WU_XIE_KE_JI,<br>    ZHU_GE_LIAN_NU<br>&#125;;<br><br>istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, Card&amp; card);<br>ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, Card card);<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Deck</span> &#123;<br>   <span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> idx;<br>    vector&lt;Card&gt; cards;<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Deck</span>(<span class="hljs-type">const</span> vector&lt;Card&gt;&amp; cards);<br><br>    <span class="hljs-function">Card <span class="hljs-title">drawACard</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">enum class</span> <span class="hljs-title class_">Role</span> &#123; UNKNOWN, ZHU_ZHU, ZHONG_ZHU, FAN_ZHU, LEI_FAN_ZHU &#125;;<br><br>istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, Role&amp; role);<br>ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, Role role);<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Action</span> &#123;<br>   <span class="hljs-keyword">private</span>:<br>    optional&lt;Card&gt; card;<br>    vector&lt;Player*&gt; targets;<br><br>    <span class="hljs-type">static</span> <span class="hljs-type">const</span> Action noAction;<br><br>    <span class="hljs-built_in">Action</span>(<span class="hljs-type">const</span> optional&lt;Card&gt;&amp; card, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets);<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">const</span> Action&amp; <span class="hljs-title">empty</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">static</span> Action <span class="hljs-title">playACard</span><span class="hljs-params">(Card card, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">static</span> Action <span class="hljs-title">playAnAOE</span><span class="hljs-params">(Card card, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isPlay</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">play</span><span class="hljs-params">(Card card)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function">Player* <span class="hljs-title">getTarget</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; <span class="hljs-title">getTargets</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;<br>   <span class="hljs-keyword">protected</span>:<br>    <span class="hljs-type">const</span> <span class="hljs-type">int</span> idx;<br>    <span class="hljs-type">const</span> Role innerRole;<br>    <span class="hljs-type">int</span> hp;<br>    <span class="hljs-type">bool</span> hasZhuGeLianNu;<br>    <span class="hljs-type">bool</span> hasPlayedShaThisTurn;<br>    list&lt;Card&gt; hand;<br>    Role outerRole;<br><br>    <span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">int</span> maxHp = <span class="hljs-number">4</span>;<br><br>    <span class="hljs-built_in">Player</span>(<span class="hljs-type">int</span> idx, Role innerRole, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand,<br>           Role outerRole = Role::UNKNOWN);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canPlaySha</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">hasCardInHand</span><span class="hljs-params">(Card card)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">removeCardFromHand</span><span class="hljs-params">(Card card)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">useTao</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">useSha</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">useJueDou</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">equipZhuGeLianNu</span><span class="hljs-params">()</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">revealRole</span><span class="hljs-params">()</span></span>;<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">getIdx</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">is</span><span class="hljs-params">(Role role)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isLike</span><span class="hljs-params">(Role role)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isAlive</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>= <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>= <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> Player* <span class="hljs-title">chooseJueDouTarget</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resetTurnState</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">drawCards</span><span class="hljs-params">(Deck&amp; deck, <span class="hljs-type">int</span> number)</span></span>;<br>    <span class="hljs-function">Action <span class="hljs-title">takeAction</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span></span>;<br>    <span class="hljs-function">Action <span class="hljs-title">tryPlayCard</span><span class="hljs-params">(Card card, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> Action <span class="hljs-title">respondToJueDou</span><span class="hljs-params">(Player* source)</span></span>;<br>    <span class="hljs-function">Action <span class="hljs-title">respondToWuXieKeJi</span><span class="hljs-params">(Player* target, Intent intent)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">trySaveSelf</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">onDamaged</span><span class="hljs-params">(Player* source, Card card)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">onKill</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target, Deck&amp; deck)</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">decreaseHp</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">markAsLeiFanZhu</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">outputHand</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-keyword">virtual</span> ~<span class="hljs-built_in">Player</span>() = <span class="hljs-keyword">default</span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ZhuZhu</span> : <span class="hljs-keyword">public</span> Player &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">ZhuZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">onDamaged</span><span class="hljs-params">(Player* source, Card card)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">onKill</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target, Deck&amp; deck)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">discardAllCards</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ZhongZhu</span> : <span class="hljs-keyword">public</span> Player &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">ZhongZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br><br>    <span class="hljs-function">Action <span class="hljs-title">respondToJueDou</span><span class="hljs-params">(Player* source)</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">FanZhu</span> : <span class="hljs-keyword">public</span> Player &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">FanZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand);<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span></span>;<br>    <span class="hljs-function">Player* <span class="hljs-title">chooseJueDouTarget</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> <span class="hljs-type">const</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerFactory</span> &#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">static</span> unique_ptr&lt;Player&gt; <span class="hljs-title">createPlayer</span><span class="hljs-params">(<span class="hljs-type">int</span> idx, Role role,</span></span><br><span class="hljs-params"><span class="hljs-function">                                           <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand)</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ZhuGuoSha</span> &#123;<br>   <span class="hljs-keyword">private</span>:<br>    vector&lt;unique_ptr&lt;Player&gt;&gt; players;<br>    Deck deck;<br>    Role winner;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">runPlayPhase</span><span class="hljs-params">(Player* player)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">playCard</span><span class="hljs-params">(Player* player)</span></span>;<br>    <span class="hljs-function">vector&lt;Player*&gt; <span class="hljs-title">alivePlayersAfter</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* player, <span class="hljs-type">bool</span> includeSelf)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resolveSha</span><span class="hljs-params">(Player* source, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resolveJueDou</span><span class="hljs-params">(Player* source, Player* target)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">resolveAOE</span><span class="hljs-params">(Player* source, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets,</span></span><br><span class="hljs-params"><span class="hljs-function">                    Card sourceCard, Card respondCard)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">resolveWuXieKeJi</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* source, Player* target, Intent intent)</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dealDamage</span><span class="hljs-params">(Player* source, Player* target, Card card)</span></span>;<br>    <span class="hljs-function">Role <span class="hljs-title">determineWinner</span><span class="hljs-params">()</span></span>;<br><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">int</span> ZHU_ZHU_IDX = <span class="hljs-number">0</span>;<br><br>    <span class="hljs-built_in">ZhuGuoSha</span>(<span class="hljs-type">int</span> n, <span class="hljs-type">const</span> vector&lt;Role&gt;&amp; roles,<br>              <span class="hljs-type">const</span> vector&lt;vector&lt;Card&gt;&gt;&amp; hands, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; deck);<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printFinalState</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    cin.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br><br>    <span class="hljs-type">const</span> <span class="hljs-type">int</span> initHandNumber = <span class="hljs-number">4</span>;<br>    <span class="hljs-type">int</span> n, m;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-function">vector&lt;Role&gt; <span class="hljs-title">roles</span><span class="hljs-params">(n)</span></span>;<br>    vector&lt;vector&lt;Card&gt;&gt; <span class="hljs-built_in">hands</span>(n, <span class="hljs-built_in">vector</span>&lt;Card&gt;(initHandNumber));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        cin &gt;&gt; roles[i];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; initHandNumber; ++j) &#123;<br>            cin &gt;&gt; hands[i][j];<br>        &#125;<br>    &#125;<br>    <span class="hljs-function">vector&lt;Card&gt; <span class="hljs-title">deck</span><span class="hljs-params">(m)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; ++i) &#123;<br>        cin &gt;&gt; deck[i];<br>    &#125;<br><br>    <span class="hljs-function">ZhuGuoSha <span class="hljs-title">game</span><span class="hljs-params">(n, roles, hands, deck)</span></span>;<br>    game.<span class="hljs-built_in">run</span>();<br>    game.<span class="hljs-built_in">printFinalState</span>();<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* enum class Card */</span><br><br>istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, Card&amp; card) &#123;<br>    <span class="hljs-type">char</span> ch;<br>    in &gt;&gt; ch;<br>    <span class="hljs-keyword">switch</span> (ch) &#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;P&#x27;</span>:<br>            card = Card::TAO;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;K&#x27;</span>:<br>            card = Card::SHA;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;D&#x27;</span>:<br>            card = Card::SHAN;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;F&#x27;</span>:<br>            card = Card::JUE_DOU;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;N&#x27;</span>:<br>            card = Card::NAN_ZHU_RU_QIN;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;W&#x27;</span>:<br>            card = Card::WAN_JIAN_QI_FA;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;J&#x27;</span>:<br>            card = Card::WU_XIE_KE_JI;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;Z&#x27;</span>:<br>            card = Card::ZHU_GE_LIAN_NU;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">default</span>:<br>            in.<span class="hljs-built_in">setstate</span>(ios::failbit);<br>    &#125;<br>    <span class="hljs-keyword">return</span> in;<br>&#125;<br><br>ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, Card card) &#123;<br>    <span class="hljs-keyword">switch</span> (card) &#123;<br>        <span class="hljs-keyword">case</span> Card::TAO:<br>            out &lt;&lt; <span class="hljs-string">&#x27;P&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::SHA:<br>            out &lt;&lt; <span class="hljs-string">&#x27;K&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::SHAN:<br>            out &lt;&lt; <span class="hljs-string">&#x27;D&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::JUE_DOU:<br>            out &lt;&lt; <span class="hljs-string">&#x27;F&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::NAN_ZHU_RU_QIN:<br>            out &lt;&lt; <span class="hljs-string">&#x27;N&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::WAN_JIAN_QI_FA:<br>            out &lt;&lt; <span class="hljs-string">&#x27;W&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::WU_XIE_KE_JI:<br>            out &lt;&lt; <span class="hljs-string">&#x27;J&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Card::ZHU_GE_LIAN_NU:<br>            out &lt;&lt; <span class="hljs-string">&#x27;Z&#x27;</span>;<br>            <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> out;<br>&#125;<br><br><span class="hljs-comment">/* class Deck */</span><br><br>Deck::<span class="hljs-built_in">Deck</span>(<span class="hljs-type">const</span> vector&lt;Card&gt;&amp; cards) : <span class="hljs-built_in">idx</span>(<span class="hljs-number">0</span>), <span class="hljs-built_in">cards</span>(cards) &#123;<br>    <span class="hljs-built_in">assert</span>(!cards.<span class="hljs-built_in">empty</span>());<br>&#125;<br><br><span class="hljs-function">Card <span class="hljs-title">Deck::drawACard</span><span class="hljs-params">()</span> </span>&#123;<br>    idx = <span class="hljs-built_in">min</span>(idx, (<span class="hljs-type">int</span>)cards.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">return</span> cards[idx++];<br>&#125;<br><br><span class="hljs-comment">/* enum class Role */</span><br><br>istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, Role&amp; role) &#123;<br>    string str;<br>    in &gt;&gt; str;<br>    <span class="hljs-keyword">if</span> (str == <span class="hljs-string">&quot;MP&quot;</span>) &#123;<br>        role = Role::ZHU_ZHU;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str == <span class="hljs-string">&quot;ZP&quot;</span>) &#123;<br>        role = Role::ZHONG_ZHU;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (str == <span class="hljs-string">&quot;FP&quot;</span>) &#123;<br>        role = Role::FAN_ZHU;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        in.<span class="hljs-built_in">setstate</span>(ios::failbit);<br>    &#125;<br>    <span class="hljs-keyword">return</span> in;<br>&#125;<br><br>ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, Role role) &#123;<br>    <span class="hljs-keyword">switch</span> (role) &#123;<br>        <span class="hljs-keyword">case</span> Role::UNKNOWN:<br>            out &lt;&lt; <span class="hljs-string">&quot;UP&quot;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Role::ZHU_ZHU:<br>            out &lt;&lt; <span class="hljs-string">&quot;MP&quot;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Role::ZHONG_ZHU:<br>            out &lt;&lt; <span class="hljs-string">&quot;ZP&quot;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Role::FAN_ZHU:<br>            out &lt;&lt; <span class="hljs-string">&quot;FP&quot;</span>;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> Role::LEI_FAN_ZHU:<br>            out &lt;&lt; <span class="hljs-string">&quot;LFP&quot;</span>;<br>            <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> out;<br>&#125;<br><br><span class="hljs-comment">/* class Action */</span><br><br><span class="hljs-function"><span class="hljs-type">const</span> Action <span class="hljs-title">Action::noAction</span><span class="hljs-params">(<span class="hljs-literal">nullopt</span>, vector&lt;Player*&gt;())</span></span>;<br><br>Action::<span class="hljs-built_in">Action</span>(<span class="hljs-type">const</span> optional&lt;Card&gt;&amp; card, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)<br>    : <span class="hljs-built_in">card</span>(card), <span class="hljs-built_in">targets</span>(targets) &#123;&#125;<br><br><span class="hljs-function"><span class="hljs-type">const</span> Action&amp; <span class="hljs-title">Action::empty</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-keyword">return</span> noAction; &#125;<br><br><span class="hljs-function">Action <span class="hljs-title">Action::playACard</span><span class="hljs-params">(Card card, Player* target)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Action</span>(card, vector&lt;Player*&gt;&#123;target&#125;);<br>&#125;<br><br><span class="hljs-function">Action <span class="hljs-title">Action::playAnAOE</span><span class="hljs-params">(Card card, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Action</span>(card, targets);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Action::isPlay</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123; <span class="hljs-keyword">return</span> card.<span class="hljs-built_in">has_value</span>(); &#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Action::play</span><span class="hljs-params">(Card card)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>-&gt;card).<span class="hljs-built_in">has_value</span>() &amp;&amp; (<span class="hljs-keyword">this</span>-&gt;card).<span class="hljs-built_in">value</span>() == card;<br>&#125;<br><br><span class="hljs-function">Player* <span class="hljs-title">Action::getTarget</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-built_in">assert</span>(!targets.<span class="hljs-built_in">empty</span>());<br>    <span class="hljs-keyword">return</span> targets[<span class="hljs-number">0</span>];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; <span class="hljs-title">Action::getTargets</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123; <span class="hljs-keyword">return</span> targets; &#125;<br><br><span class="hljs-comment">/* class Player */</span><br><br>Player::<span class="hljs-built_in">Player</span>(<span class="hljs-type">int</span> idx, Role innerRole, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand,<br>               Role outerRole)<br>    : <span class="hljs-built_in">idx</span>(idx),<br>      <span class="hljs-built_in">innerRole</span>(innerRole),<br>      <span class="hljs-built_in">hp</span>(maxHp),<br>      <span class="hljs-built_in">hasZhuGeLianNu</span>(<span class="hljs-literal">false</span>),<br>      <span class="hljs-built_in">hand</span>(hand.<span class="hljs-built_in">begin</span>(), hand.<span class="hljs-built_in">end</span>()),<br>      <span class="hljs-built_in">outerRole</span>(outerRole) &#123;&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Player::canPlaySha</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> hasZhuGeLianNu || !hasPlayedShaThisTurn;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Player::hasCardInHand</span><span class="hljs-params">(Card card)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (Card cardInHand : hand) &#123;<br>        <span class="hljs-keyword">if</span> (cardInHand == card) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::removeCardFromHand</span><span class="hljs-params">(Card card)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (list&lt;Card&gt;::iterator it = hand.<span class="hljs-built_in">begin</span>(); it != hand.<span class="hljs-built_in">end</span>(); ++it) &#123;<br>        <span class="hljs-keyword">if</span> (*it == card) &#123;<br>            hand.<span class="hljs-built_in">erase</span>(it);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::useTao</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">removeCardFromHand</span>(Card::TAO);<br>    ++hp;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::useSha</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">removeCardFromHand</span>(Card::SHA);<br>    <span class="hljs-built_in">revealRole</span>();<br>    hasPlayedShaThisTurn = <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::useJueDou</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">removeCardFromHand</span>(Card::JUE_DOU);<br>    <span class="hljs-built_in">revealRole</span>();<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::equipZhuGeLianNu</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">removeCardFromHand</span>(Card::ZHU_GE_LIAN_NU);<br>    hasZhuGeLianNu = <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::revealRole</span><span class="hljs-params">()</span> </span>&#123; outerRole = innerRole; &#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Player::getIdx</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123; <span class="hljs-keyword">return</span> idx; &#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Player::is</span><span class="hljs-params">(Role role)</span> <span class="hljs-type">const</span> </span>&#123; <span class="hljs-keyword">return</span> innerRole == role; &#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Player::isLike</span><span class="hljs-params">(Role role)</span> <span class="hljs-type">const</span> </span>&#123; <span class="hljs-keyword">return</span> outerRole == role; &#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Player::isAlive</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123; <span class="hljs-keyword">return</span> hp &gt; <span class="hljs-number">0</span>; &#125;<br><br><span class="hljs-function">Player* <span class="hljs-title">Player::chooseJueDouTarget</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (Player* target : targets) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">shouldBeHostileTo</span>(target)) &#123;<br>            <span class="hljs-keyword">return</span> target;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::resetTurnState</span><span class="hljs-params">()</span> </span>&#123; hasPlayedShaThisTurn = <span class="hljs-literal">false</span>; &#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::drawCards</span><span class="hljs-params">(Deck&amp; deck, <span class="hljs-type">int</span> number)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; number; ++i) &#123;<br>        hand.<span class="hljs-built_in">emplace_back</span>(deck.<span class="hljs-built_in">drawACard</span>());<br>    &#125;<br>&#125;<br><br><span class="hljs-function">Action <span class="hljs-title">Player::takeAction</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> </span>&#123;<br>    <span class="hljs-built_in">assert</span>(!targets.<span class="hljs-built_in">empty</span>());<br>    Player* nextTarget = targets[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">for</span> (Card card : hand) &#123;<br>        <span class="hljs-keyword">if</span> (card == Card::TAO &amp;&amp; hp &lt; maxHp) &#123;<br>            <span class="hljs-built_in">useTao</span>();<br>            <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">playACard</span>(Card::TAO, <span class="hljs-keyword">this</span>);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (card == Card::SHA &amp;&amp; <span class="hljs-built_in">canPlaySha</span>() &amp;&amp;<br>            <span class="hljs-built_in">shouldBeHostileTo</span>(nextTarget)) &#123;<br>            <span class="hljs-built_in">useSha</span>();<br>            <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">playACard</span>(Card::SHA, nextTarget);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (card == Card::JUE_DOU) &#123;<br>            Player* target = <span class="hljs-built_in">chooseJueDouTarget</span>(targets);<br>            <span class="hljs-keyword">if</span> (target != <span class="hljs-literal">nullptr</span>) &#123;<br>                <span class="hljs-built_in">useJueDou</span>();<br>                <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">playACard</span>(Card::JUE_DOU, target);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (card == Card::NAN_ZHU_RU_QIN || card == Card::WAN_JIAN_QI_FA) &#123;<br>            <span class="hljs-built_in">removeCardFromHand</span>(card);<br>            <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">playAnAOE</span>(card, targets);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (card == Card::ZHU_GE_LIAN_NU) &#123;<br>            <span class="hljs-built_in">equipZhuGeLianNu</span>();<br>            <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">playACard</span>(Card::ZHU_GE_LIAN_NU, <span class="hljs-keyword">this</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">empty</span>();<br>&#125;<br><br><span class="hljs-function">Action <span class="hljs-title">Player::tryPlayCard</span><span class="hljs-params">(Card card, Player* target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">hasCardInHand</span>(card)) &#123;<br>        <span class="hljs-built_in">removeCardFromHand</span>(card);<br>        <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">playACard</span>(card, target);<br>    &#125;<br>    <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">empty</span>();<br>&#125;<br><br><span class="hljs-function">Action <span class="hljs-title">Player::respondToJueDou</span><span class="hljs-params">(Player* source)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">tryPlayCard</span>(Card::SHA, source);<br>&#125;<br><br><span class="hljs-function">Action <span class="hljs-title">Player::respondToWuXieKeJi</span><span class="hljs-params">(Player* target, Intent intent)</span> </span>&#123;<br>    <span class="hljs-type">bool</span> shouldPlayWuXieKeJi = <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">if</span> (intent == Intent::XIAN_YIN_QIN &amp;&amp; <span class="hljs-built_in">shouldBeFriendlyTo</span>(target)) &#123;<br>        shouldPlayWuXieKeJi = <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (intent == Intent::BIAO_DI_YI &amp;&amp; <span class="hljs-built_in">shouldBeHostileTo</span>(target)) &#123;<br>        shouldPlayWuXieKeJi = <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (!shouldPlayWuXieKeJi) &#123;<br>        <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">empty</span>();<br>    &#125;<br>    <span class="hljs-type">const</span> Action&amp; action = <span class="hljs-built_in">tryPlayCard</span>(Card::WU_XIE_KE_JI, target);<br>    <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">isPlay</span>()) &#123;<br>        <span class="hljs-built_in">revealRole</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> action;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::trySaveSelf</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">hasCardInHand</span>(Card::TAO)) &#123;<br>        <span class="hljs-built_in">useTao</span>();<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::onDamaged</span><span class="hljs-params">(Player*, Card)</span> </span>&#123;&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::onKill</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target, Deck&amp; deck)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (target-&gt;<span class="hljs-built_in">is</span>(Role::FAN_ZHU)) &#123;<br>        <span class="hljs-built_in">drawCards</span>(deck, <span class="hljs-number">3</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::decreaseHp</span><span class="hljs-params">()</span> </span>&#123; --hp; &#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::markAsLeiFanZhu</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (outerRole == Role::UNKNOWN) &#123;<br>        outerRole = Role::LEI_FAN_ZHU;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Player::outputHand</span><span class="hljs-params">()</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (list&lt;Card&gt;::const_iterator it = hand.<span class="hljs-built_in">begin</span>(); it != hand.<span class="hljs-built_in">end</span>(); ++it) &#123;<br>        <span class="hljs-keyword">if</span> (it != hand.<span class="hljs-built_in">begin</span>()) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        &#125;<br>        cout &lt;&lt; *it;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">/* class ZhuZhu */</span><br><br>ZhuZhu::<span class="hljs-built_in">ZhuZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand)<br>    : <span class="hljs-built_in">Player</span>(idx, Role::ZHU_ZHU, hand, Role::ZHU_ZHU) &#123;&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">ZhuZhu::shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHU_ZHU) || target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHONG_ZHU);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">ZhuZhu::shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> target-&gt;<span class="hljs-built_in">isLike</span>(Role::FAN_ZHU) || target-&gt;<span class="hljs-built_in">isLike</span>(Role::LEI_FAN_ZHU);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuZhu::onDamaged</span><span class="hljs-params">(Player* source, Card card)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (card == Card::NAN_ZHU_RU_QIN || card == Card::WAN_JIAN_QI_FA) &#123;<br>        source-&gt;<span class="hljs-built_in">markAsLeiFanZhu</span>();<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuZhu::onKill</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target, Deck&amp; deck)</span> </span>&#123;<br>    Player::<span class="hljs-built_in">onKill</span>(target, deck);<br>    <span class="hljs-keyword">if</span> (target-&gt;<span class="hljs-built_in">is</span>(Role::ZHONG_ZHU)) &#123;<br>        <span class="hljs-built_in">discardAllCards</span>();<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuZhu::discardAllCards</span><span class="hljs-params">()</span> </span>&#123;<br>    hasZhuGeLianNu = <span class="hljs-literal">false</span>;<br>    hand.<span class="hljs-built_in">clear</span>();<br>&#125;<br><br><span class="hljs-comment">/* class ZhongZhu */</span><br><br>ZhongZhu::<span class="hljs-built_in">ZhongZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand)<br>    : <span class="hljs-built_in">Player</span>(idx, Role::ZHONG_ZHU, hand) &#123;&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">ZhongZhu::shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHU_ZHU) || target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHONG_ZHU);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">ZhongZhu::shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> target-&gt;<span class="hljs-built_in">isLike</span>(Role::FAN_ZHU);<br>&#125;<br><br><span class="hljs-function">Action <span class="hljs-title">ZhongZhu::respondToJueDou</span><span class="hljs-params">(Player* source)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (source-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHU_ZHU)) &#123;<br>        <span class="hljs-keyword">return</span> Action::<span class="hljs-built_in">empty</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> Player::<span class="hljs-built_in">respondToJueDou</span>(source);<br>&#125;<br><br><span class="hljs-comment">/* class FanZhu */</span><br><br>FanZhu::<span class="hljs-built_in">FanZhu</span>(<span class="hljs-type">int</span> idx, <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand)<br>    : <span class="hljs-built_in">Player</span>(idx, Role::FAN_ZHU, hand) &#123;&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">FanZhu::shouldBeFriendlyTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> target-&gt;<span class="hljs-built_in">isLike</span>(Role::FAN_ZHU);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">FanZhu::shouldBeHostileTo</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* target)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHU_ZHU) || target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHONG_ZHU);<br>&#125;<br><br><span class="hljs-function">Player* <span class="hljs-title">FanZhu::chooseJueDouTarget</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets)</span> <span class="hljs-type">const</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (Player* target : targets) &#123;<br>        <span class="hljs-keyword">if</span> (target-&gt;<span class="hljs-built_in">isLike</span>(Role::ZHU_ZHU)) &#123;<br>            <span class="hljs-keyword">return</span> target;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>&#125;<br><br><span class="hljs-comment">/* class PlayerFactory */</span><br><br><span class="hljs-function">unique_ptr&lt;Player&gt; <span class="hljs-title">PlayerFactory::createPlayer</span><span class="hljs-params">(<span class="hljs-type">int</span> idx, Role role,</span></span><br><span class="hljs-params"><span class="hljs-function">                                               <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; hand)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (role == Role::ZHU_ZHU) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">make_unique</span>&lt;ZhuZhu&gt;(idx, hand);<br>    &#125;<br>    <span class="hljs-keyword">if</span> (role == Role::ZHONG_ZHU) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">make_unique</span>&lt;ZhongZhu&gt;(idx, hand);<br>    &#125;<br>    <span class="hljs-keyword">if</span> (role == Role::FAN_ZHU) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">make_unique</span>&lt;FanZhu&gt;(idx, hand);<br>    &#125;<br>    <span class="hljs-comment">// 不可能走到这里</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>&#125;<br><br><span class="hljs-comment">/* ZhuGuoSha */</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::runPlayPhase</span><span class="hljs-params">(Player* player)</span> </span>&#123;<br>    player-&gt;<span class="hljs-built_in">resetTurnState</span>();<br>    player-&gt;<span class="hljs-built_in">drawCards</span>(deck, <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">while</span> (winner == Role::UNKNOWN &amp;&amp; player-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">playCard</span>(player)) &#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">ZhuGuoSha::playCard</span><span class="hljs-params">(Player* player)</span> </span>&#123;<br>    <span class="hljs-type">const</span> Action&amp; action = player-&gt;<span class="hljs-built_in">takeAction</span>(<span class="hljs-built_in">alivePlayersAfter</span>(player, <span class="hljs-literal">false</span>));<br>    <span class="hljs-keyword">if</span> (!action.<span class="hljs-built_in">isPlay</span>()) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">play</span>(Card::SHA)) &#123;<br>        <span class="hljs-built_in">resolveSha</span>(player, action.<span class="hljs-built_in">getTarget</span>());<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">play</span>(Card::JUE_DOU)) &#123;<br>        <span class="hljs-built_in">resolveJueDou</span>(player, action.<span class="hljs-built_in">getTarget</span>());<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">play</span>(Card::NAN_ZHU_RU_QIN)) &#123;<br>        <span class="hljs-built_in">resolveAOE</span>(player, action.<span class="hljs-built_in">getTargets</span>(), Card::NAN_ZHU_RU_QIN,<br>                   Card::SHA);<br>    &#125;<br>    <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">play</span>(Card::WAN_JIAN_QI_FA)) &#123;<br>        <span class="hljs-built_in">resolveAOE</span>(player, action.<span class="hljs-built_in">getTargets</span>(), Card::WAN_JIAN_QI_FA,<br>                   Card::SHAN);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-function">vector&lt;Player*&gt; <span class="hljs-title">ZhuGuoSha::alivePlayersAfter</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* player,</span></span><br><span class="hljs-params"><span class="hljs-function">                                             <span class="hljs-type">bool</span> includeSelf)</span> </span>&#123;<br>    vector&lt;Player*&gt; otherAlivePlayers;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = (includeSelf ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>); i &lt; (<span class="hljs-type">int</span>)players.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>        Player* other = players[(player-&gt;<span class="hljs-built_in">getIdx</span>() + i) % players.<span class="hljs-built_in">size</span>()].<span class="hljs-built_in">get</span>();<br>        <span class="hljs-keyword">if</span> (!other-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        otherAlivePlayers.<span class="hljs-built_in">emplace_back</span>(other);<br>    &#125;<br>    <span class="hljs-keyword">return</span> otherAlivePlayers;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::resolveSha</span><span class="hljs-params">(Player* source, Player* target)</span> </span>&#123;<br>    <span class="hljs-type">const</span> Action&amp; action = target-&gt;<span class="hljs-built_in">tryPlayCard</span>(Card::SHAN, source);<br>    <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">isPlay</span>()) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-built_in">dealDamage</span>(source, target, Card::SHA);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::resolveJueDou</span><span class="hljs-params">(Player* source, Player* target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">resolveWuXieKeJi</span>(source, target, Intent::XIAN_YIN_QIN)) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    Player* winner = <span class="hljs-literal">nullptr</span>;<br>    Player* loser = <span class="hljs-literal">nullptr</span>;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>        <span class="hljs-type">const</span> Action&amp; targetAction = target-&gt;<span class="hljs-built_in">respondToJueDou</span>(source);<br>        <span class="hljs-keyword">if</span> (!targetAction.<span class="hljs-built_in">isPlay</span>()) &#123;<br>            winner = source;<br>            loser = target;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-type">const</span> Action&amp; sourceAction = source-&gt;<span class="hljs-built_in">respondToJueDou</span>(target);<br>        <span class="hljs-keyword">if</span> (!sourceAction.<span class="hljs-built_in">isPlay</span>()) &#123;<br>            winner = target;<br>            loser = source;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">dealDamage</span>(winner, loser, Card::JUE_DOU);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::resolveAOE</span><span class="hljs-params">(Player* source, <span class="hljs-type">const</span> vector&lt;Player*&gt;&amp; targets,</span></span><br><span class="hljs-params"><span class="hljs-function">                           Card sourceCard, Card respondCard)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (Player* target : targets) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">resolveWuXieKeJi</span>(source, target, Intent::XIAN_YIN_QIN)) &#123;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-type">const</span> Action&amp; action = target-&gt;<span class="hljs-built_in">tryPlayCard</span>(respondCard, source);<br>        <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">isPlay</span>()) &#123;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-built_in">dealDamage</span>(source, target, sourceCard);<br>        <span class="hljs-keyword">if</span> (winner != Role::UNKNOWN) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">ZhuGuoSha::resolveWuXieKeJi</span><span class="hljs-params">(<span class="hljs-type">const</span> Player* source, Player* target,</span></span><br><span class="hljs-params"><span class="hljs-function">                                 Intent intent)</span> </span>&#123;<br>    Player* wuXiePlayer = <span class="hljs-literal">nullptr</span>;<br>    <span class="hljs-type">const</span> vector&lt;Player*&gt; players = <span class="hljs-built_in">alivePlayersAfter</span>(source, <span class="hljs-literal">true</span>);<br>    <span class="hljs-keyword">for</span> (Player* player : players) &#123;<br>        <span class="hljs-type">const</span> Action&amp; action = player-&gt;<span class="hljs-built_in">respondToWuXieKeJi</span>(target, intent);<br>        <span class="hljs-keyword">if</span> (action.<span class="hljs-built_in">isPlay</span>()) &#123;<br>            wuXiePlayer = player;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (wuXiePlayer == <span class="hljs-literal">nullptr</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> !<span class="hljs-built_in">resolveWuXieKeJi</span>(wuXiePlayer, target,<br>                             intent == Intent::XIAN_YIN_QIN<br>                                 ? Intent::BIAO_DI_YI<br>                                 : Intent::XIAN_YIN_QIN);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::dealDamage</span><span class="hljs-params">(Player* source, Player* target, Card card)</span> </span>&#123;<br>    target-&gt;<span class="hljs-built_in">decreaseHp</span>();<br>    target-&gt;<span class="hljs-built_in">onDamaged</span>(source, card);<br>    <span class="hljs-keyword">if</span> (target-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    target-&gt;<span class="hljs-built_in">trySaveSelf</span>();<br>    <span class="hljs-keyword">if</span> (target-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">determineWinner</span>() != Role::UNKNOWN) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    source-&gt;<span class="hljs-built_in">onKill</span>(target, deck);<br>&#125;<br><br><span class="hljs-function">Role <span class="hljs-title">ZhuGuoSha::determineWinner</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (!players[ZHU_ZHU_IDX]-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>        <span class="hljs-keyword">return</span> winner = Role::FAN_ZHU;<br>    &#125;<br><br>    <span class="hljs-type">bool</span> allFanZhuIsDead = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">const</span> unique_ptr&lt;Player&gt;&amp; player : players) &#123;<br>        <span class="hljs-keyword">if</span> (player-&gt;<span class="hljs-built_in">is</span>(Role::FAN_ZHU) &amp;&amp; player-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>            allFanZhuIsDead = <span class="hljs-literal">false</span>;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (allFanZhuIsDead) &#123;<br>        <span class="hljs-keyword">return</span> winner = Role::ZHU_ZHU;<br>    &#125;<br>    <span class="hljs-keyword">return</span> winner = Role::UNKNOWN;<br>&#125;<br><br>ZhuGuoSha::<span class="hljs-built_in">ZhuGuoSha</span>(<span class="hljs-type">int</span> n, <span class="hljs-type">const</span> vector&lt;Role&gt;&amp; roles,<br>                     <span class="hljs-type">const</span> vector&lt;vector&lt;Card&gt;&gt;&amp; hands,<br>                     <span class="hljs-type">const</span> vector&lt;Card&gt;&amp; deck)<br>    : <span class="hljs-built_in">deck</span>(deck), <span class="hljs-built_in">winner</span>(Role::UNKNOWN) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        players.<span class="hljs-built_in">emplace_back</span>(<br>            PlayerFactory::<span class="hljs-built_in">createPlayer</span>(i, roles[i], hands[i]));<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::run</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">determineWinner</span>();<br>    <span class="hljs-type">int</span> playerIdx = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (winner == Role::UNKNOWN) &#123;<br>        Player* player = players[playerIdx].<span class="hljs-built_in">get</span>();<br>        playerIdx = (playerIdx + <span class="hljs-number">1</span>) % players.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">if</span> (!player-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-built_in">runPlayPhase</span>(player);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ZhuGuoSha::printFinalState</span><span class="hljs-params">()</span> </span>&#123;<br>    cout &lt;&lt; winner &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">const</span> unique_ptr&lt;Player&gt;&amp; player : players) &#123;<br>        <span class="hljs-keyword">if</span> (!player-&gt;<span class="hljs-built_in">isAlive</span>()) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;DEAD&quot;</span> &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        player-&gt;<span class="hljs-built_in">outputHand</span>();<br>        cout &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E6%96%87/" class="category-chain-item">博文</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+        <a href="/tags/ACM/" class="print-no-link">#ACM</a>
+      
+        <a href="/tags/%E6%B4%9B%E8%B0%B7/" class="print-no-link">#洛谷</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>洛谷 P2482 [SDOI2010] 猪国杀 题解</div>
+      <div>https://exroc.github.io/博文/洛谷-P2482-SDOI2010-猪国杀-题解/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ExRoc</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年10月26日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年10月27日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="ND - 禁止演绎">
+                    <i class="iconfont icon-nd"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E6%9D%82%E8%AE%B0/%E7%94%9F%E6%B4%BB/%E8%80%83%E9%A9%BE%E7%85%A7%E6%96%B0%E6%89%8B%E5%90%91%E6%80%BB%E7%BB%93/" title="考驾照新手向总结">
+                        <span class="hidden-mobile">考驾照新手向总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'ExRoc/ExRoc.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
